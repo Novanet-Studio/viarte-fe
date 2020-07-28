@@ -1,0 +1,7 @@
+.mascara {
+  text-align: center;
+  background-image: url('images/mascara.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  /* clip-path: url(#sample); */
+}
