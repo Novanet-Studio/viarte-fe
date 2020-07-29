@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { Modal, Button } from "antd"
 import "antd/dist/antd.css"
 
-import Mascara from '../assets/images/mascara.svg'
+import Mascara from "../assets/images/mascara.svg"
 
-const Productos = ({content}) => {
+const Productos = ({ content }) => {
   const INITIAL_STATE = [
     { id: 1, show: false },
     { id: 2, show: false },
@@ -20,7 +20,12 @@ const Productos = ({content}) => {
       <ul className="container">
         {content.map((data, id) => (
           <li key={id}>
-            <img className="vallas" src={Mascara} alt={data.title} />
+            {/* <img className="vallas" src={Mascara} alt={data.title} /> */}
+            <img
+              className="mascara"
+              src={data.thumbnail.publicURL}
+              alt={data.title}
+            />
             <h3>{data.title}</h3>
             <p>{data.short_description}</p>
             <Button
