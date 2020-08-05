@@ -14,7 +14,7 @@ import Contacto from "../components/contacto"
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="IndexPage" />
+    <SEO title="Viarte" />
     <Inicio 
       content={data.allStrapiCarousel.nodes}
     />
