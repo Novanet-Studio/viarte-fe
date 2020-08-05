@@ -70,13 +70,13 @@ ul {
   font-family:"Lato";
   font-style:normal;
   font-weight:300;
-  src:url("fonts/lato/lato-v16-latin-300.eot");
+  src:url("../fonts/lato/lato-v16-latin-300.eot");
   src:local("Lato Light"), local("Lato-Light"),
-    url("fonts/lato/lato-v16-latin-300.eot?#iefix") format("embedded-opentype"),
-    url("fonts/lato/lato-v16-latin-300.woff2") format("woff2"),
-    url("fonts/lato/lato-v16-latin-300.woff") format("woff"),
-    url("fonts/lato/lato-v16-latin-300.ttf") format("truetype"),
-    url("fonts/lato/lato-v16-latin-300.svg#Lato") format("svg");
+    url("../fonts/lato/lato-v16-latin-300.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/lato/lato-v16-latin-300.woff2") format("woff2"),
+    url("../fonts/lato/lato-v16-latin-300.woff") format("woff"),
+    url("../fonts/lato/lato-v16-latin-300.ttf") format("truetype"),
+    url("../fonts/lato/lato-v16-latin-300.svg#Lato") format("svg");
 }
 
 /* lato-regular - latin */
@@ -84,16 +84,16 @@ ul {
   font-family:"Lato";
   font-style:normal;
   font-weight:400;
-  src:url("fonts/lato/lato-v16-latin-regular.eot"); /* IE9 Compat Modes */
+  src:url("../fonts/lato/lato-v16-latin-regular.eot"); /* IE9 Compat Modes */
   src:local("Lato Regular"), local("Lato-Regular"),
-    url("fonts/lato/lato-v16-latin-regular.eot?#iefix")
+    url("../fonts/lato/lato-v16-latin-regular.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("fonts/lato/lato-v16-latin-regular.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("fonts/lato/lato-v16-latin-regular.woff")
+    /* IE6-IE8 */ url("../fonts/lato/lato-v16-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/lato/lato-v16-latin-regular.woff")
       format("woff"),
-    /* Modern Browsers */ url("fonts/lato/lato-v16-latin-regular.ttf")
+    /* Modern Browsers */ url("../fonts/lato/lato-v16-latin-regular.ttf")
       format("truetype"),
-    /* Safari, Android, iOS */ url("fonts/lato/lato-v16-latin-regular.svg#Lato")
+    /* Safari, Android, iOS */ url("../fonts/lato/lato-v16-latin-regular.svg#Lato")
       format("svg"); /* Legacy iOS */
 }
 
@@ -102,13 +102,13 @@ ul {
   font-family:"Lato";
   font-style:normal;
   font-weight:700;
-  src:url("fonts/lato/lato-v16-latin-700.eot");
+  src:url("../fonts/lato/lato-v16-latin-700.eot");
   src:local("Lato Bold"), local("Lato-Bold"),
-    url("fonts/lato/lato-v16-latin-700.eot?#iefix") format("embedded-opentype"),
-    url("fonts/lato/lato-v16-latin-700.woff2") format("woff2"),
-    url("fonts/lato/lato-v16-latin-700.woff") format("woff"),
-    url("fonts/lato/lato-v16-latin-700.ttf") format("truetype"),
-    url("fonts/lato/lato-v16-latin-700.svg#Lato") format("svg");
+    url("../fonts/lato/lato-v16-latin-700.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/lato/lato-v16-latin-700.woff2") format("woff2"),
+    url("../fonts/lato/lato-v16-latin-700.woff") format("woff"),
+    url("../fonts/lato/lato-v16-latin-700.ttf") format("truetype"),
+    url("../fonts/lato/lato-v16-latin-700.svg#Lato") format("svg");
 }
 
 /* lato-900 - latin */
@@ -116,13 +116,13 @@ ul {
   font-family:"Lato";
   font-style:normal;
   font-weight:900;
-  src:url("fonts/lato/lato-v16-latin-900.eot");
+  src:url("../fonts/lato/lato-v16-latin-900.eot");
   src:local("Lato Black"), local("Lato-Black"),
-    url("fonts/lato/lato-v16-latin-900.eot?#iefix") format("embedded-opentype"),
-    url("fonts/lato/lato-v16-latin-900.woff2") format("woff2"),
-    url("fonts/lato/lato-v16-latin-900.woff") format("woff"),
-    url("fonts/lato/lato-v16-latin-900.ttf") format("truetype"),
-    url("fonts/lato/lato-v16-latin-900.svg#Lato") format("svg");
+    url("../fonts/lato/lato-v16-latin-900.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/lato/lato-v16-latin-900.woff2") format("woff2"),
+    url("../fonts/lato/lato-v16-latin-900.woff") format("woff"),
+    url("../fonts/lato/lato-v16-latin-900.ttf") format("truetype"),
+    url("../fonts/lato/lato-v16-latin-900.svg#Lato") format("svg");
 }
 
 /* changa-one-regular - latin */
@@ -130,19 +130,19 @@ ul {
   font-family:"Changa One";
   font-style:normal;
   font-weight:400;
-  src:url("fonts/changa-one/changa-one-v12-latin-regular.eot"); /* IE9 Compat Modes */
+  src:url("../fonts/changa-one/changa-one-v12-latin-regular.eot"); /* IE9 Compat Modes */
   src:local("Changa One"), local("ChangaOne"),
-    url("fonts/changa-one/changa-one-v12-latin-regular.eot?#iefix")
+    url("../fonts/changa-one/changa-one-v12-latin-regular.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("fonts/changa-one/changa-one-v12-latin-regular.woff2")
+    /* IE6-IE8 */ url("../fonts/changa-one/changa-one-v12-latin-regular.woff2")
       format("woff2"),
     /* Super Modern Browsers */
-      url("fonts/changa-one/changa-one-v12-latin-regular.woff") format("woff"),
+      url("../fonts/changa-one/changa-one-v12-latin-regular.woff") format("woff"),
     /* Modern Browsers */
-      url("fonts/changa-one/changa-one-v12-latin-regular.ttf")
+      url("../fonts/changa-one/changa-one-v12-latin-regular.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("fonts/changa-one/changa-one-v12-latin-regular.svg#ChangaOne")
+      url("../fonts/changa-one/changa-one-v12-latin-regular.svg#ChangaOne")
       format("svg"); /* Legacy iOS */
 }
 
@@ -206,7 +206,7 @@ i {
   bottom:-0.5%;
   background-position:bottom;
   background-repeat:no-repeat;
-  background-image:url("images/ciudad-svg.svg")
+  background-image:url("../images/ciudad-svg.svg")
 }
 
 /*--------------------Sección Cabecera--------------------*/
@@ -268,15 +268,15 @@ header li a.activo {
 }
 
 #Inicio .bg1 {
-  background-image:url("images/caracas-bg1.jpg")
+  background-image:url("../images/caracas-bg1.jpg")
 }
 
 #Inicio .bg2 {
-  background-image:url("images/caracas-bg2.jpg")
+  background-image:url("../images/caracas-bg2.jpg")
 }
 
 #Inicio .bg3 {
-  background-image:url("images/caracas-bg3.jpg")
+  background-image:url("../images/caracas-bg3.jpg")
 }
 
 #Inicio .ant-carousel {
@@ -287,7 +287,7 @@ header li a.activo {
 
 #Inicio .valla {
   text-align:center;
-  background-image:url("./images/valla.svg");
+  background-image:url("../images/valla.svg");
   background-position:center;
   background-repeat:no-repeat
 }
@@ -371,7 +371,7 @@ header li a.activo {
 }
 
 #Productos ul li img.mascara {
-  clip-path: polygon(3% 22%, 97% 0, 100% 3%, 100% 97%, 97% 100%, 3% 78%, 0 75%, 0 25%);
+  mask:url(../images/mascara.svg)
 }
 
 #Productos ul li img.vallas {
@@ -409,41 +409,6 @@ header li a.activo {
   font-family:"Lato";
   font-weight:400
 }
-
-/*
-.vallas {
-  background-image:url("images/vallas.jpg");
-}
-.adosamientos {
-  background-image:url("images/adosamientos.jpg");
-}
-.gigantografias {
-  background-image:url("images/gigantografias.jpg");
-}
-.avisos {
-  background-image:url("images/avisos.jpg");
-}
-.cajas {
-  background-image:url("images/cajas.jpg");
-}
-.fachadas {
-  background-image:url("images/fachadas.jpg");
-}
-.impresos {
-  background-image:url("images/impresos.jpg");
-}
-.estructuras {
-  background-image:url("images/estructuras.jpg");
-}
-.banderines {
-  background-image:url("images/banderines.jpg");
-}
-.totems {
-  background-image:url("images/totems.jpg");
-}
-.proyectos {
-  background-image:url("images/proyectos.jpg");
-}*/
 
 .ant-modal .ant-modal-content {
   background-color:var(--blanco);
@@ -488,7 +453,7 @@ header li a.activo {
 address {
   text-align:center;
   font-style:normal;
-  background-image:url("images/cont-img.svg");
+  background-image:url("../images/cont-img.svg");
   background-position:top;
   background-repeat:no-repeat
 }

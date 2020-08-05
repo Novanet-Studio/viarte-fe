@@ -11,8 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import "../assets/viarte.css"
-import "../assets/fontawesome.css"
+import "../assets/css/viarte.css"
+import "../assets/css/fontawesome.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
