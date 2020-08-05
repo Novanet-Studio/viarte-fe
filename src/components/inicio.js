@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Carousel } from "antd"
 import logo from "../assets/images/logo.svg"
 
@@ -6,9 +6,9 @@ const settings = {
   dots: false,
   arrows: true,
   infinite: false,
-  autoplat: true,
-  speed: 600,
-  autoplaySpeed: 6000,
+  autoplay: true,
+  speed: 500,
+  autoplaySpeed: 5000,
 }
 
 const Inicio = ({ content }) => (

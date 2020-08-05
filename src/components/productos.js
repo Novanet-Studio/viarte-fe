@@ -20,7 +20,7 @@ const Productos = ({ content }) => {
       <ul className="container">
         {content.map((data, id) => (
           <li key={id}>
-            {/* <img className="vallas" src={Mascara} alt={data.title} /> */}
+           {<img className="vallas" src={Mascara} alt={data.title} />}
             <img
               className="mascara"
               src={data.thumbnail.publicURL}

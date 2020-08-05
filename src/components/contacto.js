@@ -6,10 +6,10 @@ const Contacto = () => (
     <h2>Contacto</h2>
     <div className="container">
       <address>
-        <i></i>
+        <i class="fas fa-envelope-open"></i>
         <p>director@viarte.net</p>
 
-        <i></i>
+        <i class="fas fa-phone"></i>
         <p>0212.414.65.99</p>
       </address>
 
