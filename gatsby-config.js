@@ -38,7 +38,7 @@ module.exports = {
         apiURL: 'https://viarte.herokuapp.com',
         queryLimit: 1000,
         contentTypes: [
-          'about',
+          'statement',
           'carousel',
           'product'
         ]

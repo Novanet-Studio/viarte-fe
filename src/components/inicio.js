@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Carousel } from "antd"
 import logo from "../assets/images/logo.svg"
+import ReactMarkdown from "react-markdown"
 
 const settings = {
   dots: false,
@@ -15,7 +16,17 @@ const Inicio = ({ content }) => (
   <section id="Inicio">
     {/* {console.log("from inicio:", content)} */}
     <Carousel {...settings}>
-      <div className="bg1">
+      {content.map((data, id) => (
+        <div className={`bg${id+1}`}>
+          <div className="container">
+            <ReactMarkdown 
+              source={data.content}
+              escapeHtml={true}
+            />
+          </div>
+        </div>
+      ))}
+      {/* <div className="bg1">
         <div className="container">
           <p>
             <span>Somos</span> una compañía de publicidad exterior.
@@ -37,7 +48,7 @@ const Inicio = ({ content }) => (
             <span>Adaptadas</span> siempre a su arte.
           </p>
         </div>
-      </div>
+      </div> */}
     </Carousel>
 
     <div className="container">

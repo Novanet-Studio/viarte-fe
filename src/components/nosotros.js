@@ -1,7 +1,7 @@
 import React from "react"
 import { Collapse } from "antd"
-import Valores from '../assets/images/valores-icono.svg'
 import "antd/dist/antd.css"
+import ReactMarkdown from "react-markdown"
 
 const { Panel } = Collapse
 
@@ -13,14 +13,18 @@ const Nosotros = ({ content }) => (
           <img src={data.icon.publicURL} alt={data.title} />
           <Collapse>
             <Panel header={data.title}>
-              <p>{data.description}</p>
+              <ReactMarkdown 
+                source={data.description}
+                escapeHtml={false}
+              />
+              {/* {<p>{data.description}</p>} */}
             </Panel>
           </Collapse>
         </div>
       ))}
 
       {/* Ul List! Es mostrada de manera independiente */}
-      <div className="ficha">
+      {/* <div className="ficha">
         <img src={Valores} alt="Valores" />
         <Collapse>
           <Panel header="Valores" key="3">
@@ -33,7 +37,7 @@ const Nosotros = ({ content }) => (
             </ul>
           </Panel>
         </Collapse>
-      </div>
+      </div> */}
     </div>
   </section>
 )

@@ -45,7 +45,7 @@ const Footer = ({}) => (
       </ul>
 
       <p>
-        Derechos reservados © 2020 | desarrollado por:
+        Derechos reservados © {new Date().getFullYear()} | desarrollado por:
         <a
           href="http://www.gruponovanet.com.ve/"
           target="_blank"
