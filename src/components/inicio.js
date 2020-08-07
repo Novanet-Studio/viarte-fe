@@ -1,6 +1,9 @@
 import React from 'react'
 import { Carousel } from "antd"
 import logo from "../assets/images/logo.svg"
+import bg1 from "../assets/images/caracas-bg1.jpg"
+import bg2 from "../assets/images/caracas-bg2.jpg"
+import bg3 from "../assets/images/caracas-bg3.jpg"
 import ReactMarkdown from "react-markdown"
 
 const settings = {
@@ -24,6 +27,7 @@ const Inicio = ({ content }) => (
               escapeHtml={true}
             />
           </div>
+          <img  className="bgsli" src={bg1}/>
         </div>
       ))}
       {/* <div className="bg1">
