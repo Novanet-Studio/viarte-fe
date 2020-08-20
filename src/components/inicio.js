@@ -14,7 +14,6 @@ const settings = {
 
 const Inicio = ({ content }) => (
   <section id="Inicio">
-    {/* {console.log("from inicio:", content)} */}
     <Carousel {...settings}>
       {content.map((data, id) => (
         <div className={`bg${id+1}`}>
