@@ -15,6 +15,8 @@ const settings = {
   autoplaySpeed: 5000,
 }
 
+/* Test */
+
 const Inicio = ({ content }) => (
   <section id="Inicio">
     <Carousel {...settings}>
