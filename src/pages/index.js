@@ -19,7 +19,7 @@ const IndexPage = ({data}) => (
       content={data.allStrapiCarousel.nodes}
     />
     <Nosotros 
-      content={data.allStrapiAbout.nodes}
+      content={data.allStrapiStatement.nodes}
     />
     <Productos 
       content={data.allStrapiProduct.nodes}
@@ -38,7 +38,7 @@ export const query = graphql`
         }
       }
     }
-    allStrapiAbout {
+    allStrapiStatement {
       nodes {
         title
         description
