@@ -37,15 +37,13 @@ module.exports = {
         // apiURL: process.env.API_URL || 'http://localhost:1337',
         apiURL: 'https://viarte.herokuapp.com',
         queryLimit: 1000,
-        contentTypes: [
-          'statement',
-          'carousel',
-          'product'
-        ]
+        contentTypes: [],
+        singleTypes: [`about`]
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
+    `gatsby-plugin-less`,
     `gatsby-plugin-offline`,
   ],
 }
