@@ -1,17 +1,17 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
 
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import Footer from "./footer"
 import "../assets/css/styles.less"
+// @fortawesome libraries
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+// add fas and fab to the library
+library.add(fab, fas)
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
