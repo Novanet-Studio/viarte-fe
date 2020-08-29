@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Carousel } from "antd"
 import ReactMarkdown from "react-markdown"
+import Logo from "../assets/images/viarte--logo.svg";
 
 const settings = {
   dots: false,
@@ -15,21 +16,24 @@ const settings = {
 }
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <div className="Inicio">
     <SEO
       title={data.strapiHome.seo.title}
       description={data.strapiHome.seo.description}
       image={data.strapiHome.seo.image}
     />
-    <h1 className="hidden">{data.strapiHome.seo.title}</h1>
-    <Carousel {...settings}>
-      {data.strapiHome.message.map((document) => (
-        <div key={document.id}>
-          <ReactMarkdown source={document.content} escapeHtml={false} />
-        </div>
-      ))}
-    </Carousel>
-  </Layout>
+    <Layout>
+      <h1>{data.strapiHome.seo.title}</h1>
+      <img className="Logo" src={Logo} alt="logo viarte" />
+      <Carousel {...settings}>
+        {data.strapiHome.message.map((document) => (
+          <div className="mensaje" key={document.id}>
+            <ReactMarkdown source={document.content} escapeHtml={false} />
+          </div>
+        ))}
+      </Carousel>
+    </Layout>
+  </div>
 )
 
 export default IndexPage
