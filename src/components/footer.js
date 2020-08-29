@@ -59,7 +59,8 @@ const Footer = () => (
             ))}
           </div>
           <p>
-            Viarte.net - Derechos reservados © {new Date().getFullYear()} | desarrollado por:
+            Viarte.net - Derechos reservados © {new Date().getFullYear()} |
+            desarrollado por:
             <a
               href="https://novanet.studio"
               target="_blank"
@@ -68,7 +69,7 @@ const Footer = () => (
               <img src={data.logonn.publicURL} />
             </a>
           </p>
-        </div>  
+        </div>
       </footer>
     )}
   />

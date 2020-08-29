@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Carousel } from "antd"
 import ReactMarkdown from "react-markdown"
-import Logo from "../assets/images/viarte--logo.svg";
+import Logo from "../assets/images/viarte--logo.svg"
 
 const settings = {
   dots: false,

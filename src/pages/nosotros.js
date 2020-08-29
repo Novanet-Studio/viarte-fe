@@ -4,30 +4,33 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Nosotros = ({ data }) => (
-  <Layout>
-    <SEO 
-      title={data.strapiAbout.seo.title} 
-      description={data.strapiAbout.seo.description} 
+  <div className="Nosotros">
+    <SEO
+      title={data.strapiAbout.seo.title}
+      description={data.strapiAbout.seo.description}
       image={data.strapiAbout.seo.image}
     />
-    <div>
-      <h1 className="hidden">Nosotros</h1>
-      <p>{data.strapiAbout.description}</p>
-      <ul>
+    <Layout>
+      <h1>{data.strapiAbout.seo.title}</h1>
+      <h2>{data.strapiAbout.description}</h2>
+
+      <ul className="columns">
         {data.strapiAbout.Statement.map((document) => (
-          <li key={document.id}>
-            <h2>{document.title}</h2>
-            <p>{document.description}</p>
-            <img
-              src={document.image.publicURL}
-              title={document.image_seo.title}
-              alt={document.image_seo.alt}
-            />
+          <li className="col3" key={document.id}>
+            <div className="nos--ficha">
+              <img
+                src={document.image.publicURL}
+                title={document.image_seo.title}
+                alt={document.image_seo.alt}
+              />
+              <h3>{document.title}</h3>
+              <p>{document.description}</p>
+            </div>
           </li>
         ))}
       </ul>
-    </div>
-  </Layout>
+    </Layout>
+  </div>
 )
 
 export default Nosotros
@@ -39,7 +42,7 @@ export const query = graphql`
         title
         description
       }
-      
+
       description
       Statement {
         id

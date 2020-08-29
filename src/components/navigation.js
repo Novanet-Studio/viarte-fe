@@ -7,16 +7,16 @@ const Navigation = () => (
       Inicio
     </Link>
     <Link to="/nosotros" aria-label="Ir al vínculo de nosotros">
-     Nosotros
+      Nosotros
     </Link>
     <Link to="/productos" aria-label="Ir al vínculo de productos">
-     Producto
+      Producto
     </Link>
     <Link to="/productos" aria-label="Ir al vínculo de vallas">
-     Vallas
+      Vallas
     </Link>
     <Link to="/productos" aria-label="Ir al vínculo de blog">
-     Blog
+      Blog
     </Link>
     <Link to="/contacto" aria-label="Ir al vínculo de contacto">
       Contacto
