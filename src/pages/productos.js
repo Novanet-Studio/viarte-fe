@@ -5,27 +5,37 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 
 const Nosotros = ({ data }) => (
-  <Layout>
+  <div className="Productos">
     <SEO
       title={data.strapiProduct.seo.title}
       description={data.strapiProduct.seo.description}
       image={data.strapiProduct.seo.image}
     />
-    <div>
-      <h1 className="hidden">Nosotros</h1>
-      <p>{data.strapiProduct.description}</p>
-      <ul>
+    <Layout>
+      <h1>{data.strapiProduct.seo.title}</h1>
+      <h2 className="hidden">{data.strapiProduct.description}</h2>
+
+      <ul className="columns">
         {data.allStrapiProducto.nodes.map((document) => (
-          <li key={document.id}>
-            <h2>{document.name}</h2>
-            <p>{document.short_description}</p>
-            <p>{document.long_description}</p>
-            <Img fluid={document.image.childImageSharp.fluid} />
+          <li className="col2" key={document.id}>
+            <div className="pro--ficha">
+              <Img
+                fluid={document.image.childImageSharp.fluid}
+                title={document.seo_image.title}
+                alt={document.seo_image.alt}
+              />
+              <div className="pro--ficha__txt">
+                <h4>{document.name}</h4>
+                <p>{document.short_description}</p>
+                <p className="hidden">{document.long_description}</p>
+                <a>Ver más</a>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
-    </div>
-  </Layout>
+    </Layout>
+  </div>
 )
 
 export default Nosotros

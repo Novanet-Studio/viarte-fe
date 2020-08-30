@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => (
       <img className="Logo" src={Logo} alt="logo viarte" />
       <Carousel {...settings}>
         {data.strapiHome.message.map((document) => (
-          <div className="mensaje" key={document.id}>
+          <div className="carousel--txt" key={document.id}>
             <ReactMarkdown source={document.content} escapeHtml={false} />
           </div>
         ))}

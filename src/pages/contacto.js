@@ -67,7 +67,7 @@ export default function ContactPage() {
             description={data.strapiContact.seo.description}
           />
           <Layout>
-            <h1>Contacto</h1>
+            <h1>{data.strapiContact.seo.title}</h1>
             <div className="col2">
               <div className="con--info">
                 {data.strapiContact.info.map((document) => (

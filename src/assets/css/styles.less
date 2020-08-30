@@ -19,7 +19,9 @@ html {
   box-sizing: border-box;
 }
 
-.hidden {display:none}
+.hidden {
+  display: none;
+}
 
 /* Sections
      ========================================================================== */
@@ -403,7 +405,7 @@ template {
   src: local("Lato Medium"), local("Lato-Medium"),
     url("../fonts/lato/lato-v16-latin-500.woff2") format("woff2"),
     url("../fonts/lato/lato-v16-latin-500.woff") format("woff"),
-    url("../fonts/lato/lato-v16-latin-500.ttf") format("truetype"),
+    url("../fonts/lato/lato-v16-latin-500.ttf") format("truetype");
 }
 
 /* lato-700 - latin */
@@ -497,7 +499,6 @@ template {
       url("../fonts/changa-one/changa-one-v12-latin-regular.svg#ChangaOne")
       format("svg"); /* Legacy iOS */
 }
-
 
 /* Estilos carrusel */
 .slick-list,
@@ -655,9 +656,8 @@ template {
 }
 
 .changa-one {
-  font-family: 'Changa One', cursive;
+  font-family: "Changa One", cursive;
 }
-
 
 .txtshadow {
   text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.49);
@@ -673,7 +673,6 @@ h2 {
   .blancogris();
   .txtshadow();
 }
-
 
 h3,
 h4 {
@@ -801,12 +800,14 @@ main {
   .w100();
 }
 
-.mensaje p {
-  .changa();
-  .blanco();
-  .txtshadow();
-  a {
+.carousel--txt {
+  p {
+    .changa();
     .blanco();
+    .txtshadow();
+    a {
+      .blanco();
+    }
   }
 }
 
@@ -834,13 +835,39 @@ main {
   }
 }
 
-/*
-
+/*Productos*/
+.pro--ficha {
+  .flex();
+  .blangris-bg();
+  .gatsby-image-wrapper {
+    img {
+      mask: url(../images/mascara.svg);
+      height: auto !important;
+    }
+  }
+  .pro--ficha__txt {
+    h4 {
+      font-weight: 400;
+      .naranja();
+    }
+    p {
+      font-weight: 500;
+      .grisosc();
+    }
+    a {
+      cursor: pointer;
+      .lato();
+      font-weight: 900;
+      .azul();
+    }
+  }
+}
 
 /*Contacto*/
 .con--info {
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
+  .flex();
   ul {
     li {
       svg {
@@ -866,13 +893,13 @@ main {
     .naranja();
   }
   label {
-    font-weight:500;
+    font-weight: 500;
     .gris();
     .lato();
   }
   input,
   textarea {
-    font-weight:500;
+    font-weight: 500;
     border: none;
     background: none;
     border-bottom: #f37021 1px solid;
@@ -1018,10 +1045,12 @@ footer {
     margin-bottom: -15vh;
   }
 
-  .mensaje p {
-    text-align: center;
-    font-size: 2.07rem;
-    padding-bottom: 4vh;
+  .carousel--txt {
+    p {
+      text-align: center;
+      font-size: 2.07rem;
+      padding-bottom: 4vh;
+    }
   }
 
   /*Nosotros*/
@@ -1033,7 +1062,7 @@ footer {
   }
 
   .nos--ficha {
-    height: 250px;
+    height: 31vh;
     padding: 3vh 1.2vw;
     img {
       width: 27%;
@@ -1049,10 +1078,36 @@ footer {
     }
   }
 
+  /*Productos*/
+  .pro--ficha {
+    margin: 0.8vh 0;
+    padding: 2.5vh 1vw;
+    height: 20.5vh;
+    .gatsby-image-wrapper {
+      width: 30%;
+    }
+    .pro--ficha__txt {
+      width: 70%;
+      padding-left: 1vw;
+      h4 {
+        font-size: 1.35rem;
+      }
+      p {
+        padding: 0.4vh 0;
+        font-size: 0.95rem;
+        line-height: 1.2rem;
+      }
+      a {
+        font-size: 0.96rem;
+      }
+    }
+  }
+
   /*Contacto*/
   .con--info {
     ul {
-      padding:4.1vh 0;
+      padding: 4.1vh 0;
+      .w100();
       li {
         svg {
           width: 4.9vw !important;
@@ -1069,17 +1124,17 @@ footer {
   }
 
   .con--form {
-    padding:2.5vh 1.5vw;
+    padding: 2.5vh 1.5vw;
     h4 {
-      font-size: 1.33rem;
+      font-size: 1.35rem;
     }
-    input{
+    input {
       margin-top: 2.5vh;
       margin-bottom: 3vh;
     }
     textarea {
       margin-top: 0.5vh;
-    margin-bottom: 3vh;
+      margin-bottom: 3vh;
     }
     button {
       padding: 0.8vh 0;
@@ -1096,7 +1151,7 @@ footer {
         a {
           padding: 0.7vw;
           svg {
-            width: 0.7em !important;
+            width: 0.63em !important;
           }
         }
       }
