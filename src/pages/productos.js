@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 
 const Nosotros = ({ data }) => (
-  <div className="Productos">
+  <div className="productos">
     <SEO
       title={data.strapiProduct.seo.title}
       description={data.strapiProduct.seo.description}
@@ -13,7 +13,7 @@ const Nosotros = ({ data }) => (
     />
     <Layout>
       <h1>{data.strapiProduct.seo.title}</h1>
-      <h2 className="hidden">{data.strapiProduct.description}</h2>
+      <p className="hidden">{data.strapiProduct.description}</p>
 
       <ul className="columns">
         {data.allStrapiProducto.nodes.map((document) => (
@@ -25,10 +25,10 @@ const Nosotros = ({ data }) => (
                 alt={document.seo_image.alt}
               />
               <div className="pro--ficha__txt">
-                <h4>{document.name}</h4>
+                <h2>{document.name}</h2>
                 <p>{document.short_description}</p>
                 <p className="hidden">{document.long_description}</p>
-                <a>Ver más</a>
+                <a href="#">Ver más</a>
               </div>
             </div>
           </li>

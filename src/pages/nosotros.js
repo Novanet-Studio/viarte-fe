@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Nosotros = ({ data }) => (
-  <div className="Nosotros">
+  <div className="nosotros">
     <SEO
       title={data.strapiAbout.seo.title}
       description={data.strapiAbout.seo.description}
@@ -12,7 +12,7 @@ const Nosotros = ({ data }) => (
     />
     <Layout>
       <h1>{data.strapiAbout.seo.title}</h1>
-      <h2>{data.strapiAbout.description}</h2>
+      <p className="description">{data.strapiAbout.description}</p>
 
       <ul className="columns">
         {data.strapiAbout.Statement.map((document) => (
@@ -23,7 +23,7 @@ const Nosotros = ({ data }) => (
                 title={document.image_seo.title}
                 alt={document.image_seo.alt}
               />
-              <h3>{document.title}</h3>
+              <h2>{document.title}</h2>
               <p>{document.description}</p>
             </div>
           </li>

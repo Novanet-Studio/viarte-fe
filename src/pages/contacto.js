@@ -61,7 +61,7 @@ export default function ContactPage() {
         }
       `}
       render={(data) => (
-        <div className="Contacto">
+        <div className="contacto">
           <SEO
             title={data.strapiContact.seo.title}
             description={data.strapiContact.seo.description}
@@ -90,7 +90,7 @@ export default function ContactPage() {
 
             <div className="col2">
               <div className="con--form">
-                <h4>Envíanos un mensaje</h4>
+                <h2>Envíanos un mensaje</h2>
                 <Form
                   onSubmit={handleSubmit}
                   render={({ handleSubmit, pristine, invalid }) => (
