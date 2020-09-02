@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const linkActivo = {
   borderBottom: 2,
@@ -11,71 +11,55 @@ const linkStyles = {}
 
 const Navigation = () => (
   <nav>
-    <Link
+    <AniLink
+      cover
+      direction="right"
+      duration={0.75}
+      bg="#f36f21"
       to="/"
       activeStyle={linkActivo}
       aria-label="Ir al vínculo de Inicio"
     >
       Inicio
-    </Link>
-    <Link
+    </AniLink>
+    <AniLink
+      fade
+      duration={0.75}
       to="/nosotros"
       activeStyle={linkActivo}
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent
-          ? { style: { ...linkStyles, ...linkActivo } }
-          : null
-      }
       aria-label="Ir al vínculo de Nosotros"
-    >
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
+      }
+    > 
       Nosotros
-    </Link>
-    <Link
+    </AniLink>
+    <AniLink
+      paintDrip
+      color="#00a5e7"
+      duration={0.75}
       to="/productos"
       activeStyle={linkActivo}
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent
-          ? { style: { ...linkStyles, ...linkActivo } }
-          : null
-      }
       aria-label="Ir al vínculo de Productos"
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
+      }
     >
       Productos
-    </Link>
-    {/* <Link 
-      to="/vallas" 
-      activeStyle={linkActivo}
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent
-          ? { style: { ...linkStyles, ...linkActivo } }
-          : null
-      }  
-      aria-label="Ir al vínculo de Vallas">
-      Vallas
-    </Link>
-    <Link 
-      to="/blog" 
-      activeStyle={linkActivo}
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent
-          ? { style: { ...linkStyles, ...linkActivo } }
-          : null
-      }  
-      aria-label="Ir al vínculo de Blog">
-      Blog
-    </Link> */}
-    <Link
+    </AniLink>
+    <AniLink
+      swipe 
+      top="entry"
+      entryOffset={80}
       to="/contacto"
       activeStyle={linkActivo}
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent
-          ? { style: { ...linkStyles, ...linkActivo } }
-          : null
-      }
       aria-label="Ir al vínculo de Contacto"
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
+      }
     >
       Contacto
-    </Link>
+    </AniLink>
   </nav>
 )
 

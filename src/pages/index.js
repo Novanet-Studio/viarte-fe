@@ -6,6 +6,7 @@ import { Carousel } from "antd"
 import ReactMarkdown from "react-markdown"
 import Logo from "../assets/images/viarte-logo.png"
 
+
 const settings = {
   dots: false,
   arrows: false,
