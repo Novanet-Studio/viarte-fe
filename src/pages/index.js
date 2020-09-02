@@ -11,8 +11,8 @@ const settings = {
   arrows: false,
   infinite: true,
   autoplay: true,
-  speed: 1000,
-  autoplaySpeed: 5000,
+  speed: 1500,
+  autoplaySpeed: 7000,
 }
 
 const IndexPage = ({ data }) => (

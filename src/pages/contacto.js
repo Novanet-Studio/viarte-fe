@@ -68,86 +68,82 @@ export default function ContactPage() {
           />
           <Layout>
             <h1>{data.strapiContact.seo.title}</h1>
-            <div className="col2">
-              <div className="con--info">
-                {data.strapiContact.info.map((document) => (
-                  <ul>
-                    <li key={document.id}>
-                      <FontAwesomeIcon
-                        icon={[
-                          (faprefix = document.prefix.replace(/'/g, "")),
-                          (faicon = document.icon.replace(/'/g, "")),
-                        ]}
-                        fixedWidth
-                        size="lg"
-                      />
-                      <span>{document.content}</span>
-                    </li>
-                  </ul>
-                ))}
-              </div>
-            </div>
 
-            <div className="col2">
-              <div className="con--form">
-                <h2>Envíanos un mensaje</h2>
-                <Form
-                  onSubmit={handleSubmit}
-                  render={({ handleSubmit, pristine, invalid }) => (
-                    <form
-                      id="contact-form"
-                      className="contact_form"
-                      name="contact"
-                      method="post"
-                      action="/thank-you/"
-                      // Netlify form
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                    >
-                      {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                      <input type="hidden" name="form-name" value="contact" />
-                      <p hidden>
-                        <label>
-                          Don’t fill this out:{" "}
-                          <input name="bot-field" onChange={handleChange} />
-                        </label>
-                      </p>
-                      <label className="hidden">Nombre</label>
-                      <Field
-                        name="name"
-                        component="input"
-                        type="text"
-                        required
-                        maxLength={20}
-                        tooLong="That name is too long!"
-                        pattern="[A-Z].+"
-                        placeholder="Nombre"
-                      />
-                      <label className="hidden">Correo</label>
-                      <Field
-                        name="email"
-                        type="email"
-                        typeMismatch="That's not an email address"
-                        component="input"
-                        required
-                        placeholder="Correo"
-                      />
-                      <label className="hidden">Teléfono</label>
-                      <Field
-                        name="tel"
-                        type="tel"
-                        typeMismatch="That's not an phone"
-                        component="input"
-                        required
-                        placeholder="Teléfono"
-                      />
-                      <label>Mensaje</label>
-                      <Field name="message" component="textarea" required />
-                      <button type="submit">Enviar &#9654;</button>
-                    </form>
-                  )}
-                />
-              </div>
+            <div className="con--info">
+              {data.strapiContact.info.map((document) => (
+                <ul>
+                  <li key={document.id}>
+                    <FontAwesomeIcon
+                      icon={[
+                        (faprefix = document.prefix.replace(/'/g, "")),
+                        (faicon = document.icon.replace(/'/g, "")),
+                      ]}
+                      fixedWidth
+                      size="lg"
+                    />
+                    <span>{document.content}</span>
+                  </li>
+                </ul>
+              ))}
+            </div>
+            <div className="con--form">
+              <h2>Envíanos un mensaje</h2>
+              <Form
+                onSubmit={handleSubmit}
+                render={({ handleSubmit, pristine, invalid }) => (
+                  <form
+                    id="contact-form"
+                    className="contact_form"
+                    name="contact"
+                    method="post"
+                    action="/thank-you/"
+                    // Netlify form
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                  >
+                    {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p hidden>
+                      <label>
+                        Don’t fill this out:{" "}
+                        <input name="bot-field" onChange={handleChange} />
+                      </label>
+                    </p>
+                    <label className="hidden">Nombre</label>
+                    <Field
+                      name="name"
+                      component="input"
+                      type="text"
+                      required
+                      maxLength={20}
+                      tooLong="That name is too long!"
+                      pattern="[A-Z].+"
+                      placeholder="Nombre"
+                    />
+                    <label className="hidden">Correo</label>
+                    <Field
+                      name="email"
+                      type="email"
+                      typeMismatch="That's not an email address"
+                      component="input"
+                      required
+                      placeholder="Correo"
+                    />
+                    <label className="hidden">Teléfono</label>
+                    <Field
+                      name="tel"
+                      type="tel"
+                      typeMismatch="That's not an phone"
+                      component="input"
+                      required
+                      placeholder="Teléfono"
+                    />
+                    <label>Mensaje</label>
+                    <Field name="message" component="textarea" required />
+                    <button type="submit">Enviar &#9654;</button>
+                  </form>
+                )}
+              />
             </div>
           </Layout>
         </div>

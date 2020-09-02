@@ -14,9 +14,9 @@ const Nosotros = ({ data }) => (
       <h1>{data.strapiAbout.seo.title}</h1>
       <p className="description">{data.strapiAbout.description}</p>
 
-      <ul className="columns">
+      <ul>
         {data.strapiAbout.Statement.map((document) => (
-          <li className="col3" key={document.id}>
+          <li key={document.id}>
             <div className="nos--ficha">
               <img
                 src={document.image.publicURL}
