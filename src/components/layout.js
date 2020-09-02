@@ -1,18 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import Footer from "./footer"
-import "../assets/css/viarte.css"
-import "../assets/css/fontawesome.css"
+import "../assets/css/styles.less"
+// Triangles
+import TriBlue from "../assets/images/triangle--blue.svg";
+import TriOrange from "../assets/images/triangle--orange.svg";
+// @fortawesome libraries
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+// add fas and fab to the library
+library.add(fab, fas)
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,21 +24,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
   return (
-    <>
+    <div>
+      <img className="triangle--blue" src={TriBlue} alt="Triangulo azul" />
       <Header siteTitle={data.site.siteMetadata.title} />
-      {/* <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      > */}
       <main>{children}</main>
       <Footer />
-      {/* </div> */}
-    </>
+      <img className="triangle--orange" src={TriOrange} alt="Triangulo naranja"/>
+    </div>
   )
 }
 

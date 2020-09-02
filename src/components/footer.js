@@ -1,61 +1,79 @@
-import React from 'react'
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-// Images
-import logopie from "../assets/images/logo.svg"
-import Novanet from "../assets/images/logo-nn.svg"
+/* eslint-disable */
 
-const Footer = ({}) => (
-  // <footer>
-  //   © {new Date().getFullYear()}, Built with
-  //   {` `}
-  //   <a href="https://www.gatsbyjs.org">Gatsby</a>
-  // </footer>
-  <footer>
-    <div className="container">
-      <img src={logopie} alt="logopie" />
+let faicon = null
+let faprefix = null
 
-      <ul>
-        <li>
-          <a href="#Inicio">Inicio</a>
-        </li>
-
-        <li>
-          <a href="#Nosotros">Nosotros</a>
-        </li>
-
-        <li>
-          <a href="#Productos">Productos</a>
-        </li>
-
-        <li>
-          <a href="#Contacto">Contacto</a>
-        </li>
-      </ul>
-
-      <ul className="rrss">
-        <li>
-          <i className="fab fa-facebook-f" />
-        </li>
-        <li>
-          <i className="fab fa-twitter" />
-        </li>
-        <li>
-          <i className="fab fa-instagram" />
-        </li>
-      </ul>
-
-      <p>
-        Derechos reservados © {new Date().getFullYear()} | desarrollado por:
-        <a
-          href="http://www.gruponovanet.com.ve/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={Novanet} alt="Novanet" />
-        </a>
-      </p>
-    </div>
-  </footer>
+const Footer = () => (
+  <StaticQuery
+    query={graphql`
+      query FooterQuery {
+        strapiContact {
+          seo {
+            title
+            description
+            image
+          }
+          contact {
+            id
+            content
+            icon
+            link
+            prefix
+          }
+          seo_image {
+            alt
+            title
+          }
+        }
+        logonn: file(relativePath: { eq: "logo-nn.svg" }) {
+          publicURL
+        }
+      }
+    `}
+    render={(data) => (
+      <footer>
+        <div className="footer--container">
+          <div className="footer--rrss">
+            {data.strapiContact.contact.map((document) => (
+              <div className="footer--rrss__boton" key={document.id}>
+                <a
+                  href={document.link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label={`Ir a ${document.content}`}
+                >
+                  <FontAwesomeIcon
+                    icon={[
+                      (faprefix = document.prefix.replace(/'/g, "")),
+                      (faicon = document.icon.replace(/'/g, "")),
+                    ]}
+                    fixedWidth
+                    size="lg"
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
+          <p>
+            Viarte.net - Derechos reservados © {new Date().getFullYear()} |
+            desarrollado por:
+            <a
+              href="https://novanet.studio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              &nbsp;
+              <img src={data.logonn.publicURL} />
+            </a>
+          </p>
+        </div>
+      </footer>
+    )}
+  />
 )
 
 export default Footer
