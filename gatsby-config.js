@@ -33,9 +33,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.DEPLOY_URL
-          ? "http://localhost:1337"
-          : "https://viarte.herokuapp.com",
+        apiURL: process.env.DEPLOY_URL,
         contentTypes: [`producto`],
         singleTypes: [`home`, `about`, `product`, `contact`],
         queryLimit: 1000,
