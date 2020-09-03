@@ -13,7 +13,7 @@ const Nosotros = ({ data }) => (
     />
     <Layout>
       <h1>{data.strapiProduct.seo.title}</h1>
-      <p className="hidden">{data.strapiProduct.description}</p>
+      <p className="description">{data.strapiProduct.description}</p>
       <ul>
         {data.allStrapiProducto.nodes.map((document) => (
           <li key={document.id}>

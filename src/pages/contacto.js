@@ -70,8 +70,8 @@ export default function ContactPage() {
             <h1>{data.strapiContact.seo.title}</h1>
 
             <div className="con--info">
-              {data.strapiContact.info.map((document) => (
-                <ul>
+              <ul>
+                {data.strapiContact.info.map((document) => (
                   <li key={document.id}>
                     <FontAwesomeIcon
                       icon={[
@@ -83,8 +83,8 @@ export default function ContactPage() {
                     />
                     <span>{document.content}</span>
                   </li>
-                </ul>
-              ))}
+                ))}
+              </ul>
             </div>
             <div className="con--form">
               <h2>Envíanos un mensaje</h2>

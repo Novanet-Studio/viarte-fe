@@ -59,8 +59,8 @@ const Footer = () => (
             ))}
           </div>
           <p>
-            Viarte.net - Derechos reservados © {new Date().getFullYear()} |
-            desarrollado por:
+            viarte.net - Derechos reservados © {new Date().getFullYear()} |
+            Desarrollado por:
             <a
               href="https://novanet.studio"
               target="_blank"
