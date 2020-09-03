@@ -5,34 +5,36 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 
 const Nosotros = ({ data }) => (
-  <div className="productos">
+  <Layout>
     <SEO
       title={data.strapiProduct.seo.title}
       description={data.strapiProduct.seo.description}
       image={data.strapiProduct.seo.image}
     />
-    <Layout>
-      <h1>{data.strapiProduct.seo.title}</h1>
-      <p className="description">{data.strapiProduct.description}</p>
-      <ul>
-        {data.allStrapiProducto.nodes.map((document) => (
-          <li key={document.id}>
-            <Img
-              fluid={document.image.childImageSharp.fluid}
-              title={document.seo_image.title}
-              alt={document.seo_image.alt}
-            />
-            <div className="pro--ficha__txt">
-              <h2>{document.name}</h2>
-              <p>{document.short_description}</p>
-              <p className="hidden">{document.long_description}</p>
-              <a href="/">Ver más</a>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </Layout>
-  </div>
+    <div className="productos">
+      <div className="container">
+        <h1>{data.strapiProduct.seo.title}</h1>
+        <p className="description">{data.strapiProduct.description}</p>
+        <ul>
+          {data.allStrapiProducto.nodes.map((document) => (
+            <li key={document.id}>
+              <Img
+                fluid={document.image.childImageSharp.fluid}
+                title={document.seo_image.title}
+                alt={document.seo_image.alt}
+              />
+              <div className="pro--ficha__txt">
+                <h2>{document.name}</h2>
+                <p>{document.short_description}</p>
+                <p className="hidden">{document.long_description}</p>
+                <a href="/">Ver más</a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Layout>
 )
 
 export default Nosotros
