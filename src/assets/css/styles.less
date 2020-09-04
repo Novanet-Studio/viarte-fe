@@ -860,8 +860,8 @@ template {
   left: 0;
   overflow: auto;
   outline: 0;
-  -webkit-overflow-scrolling: touch;}
-
+  -webkit-overflow-scrolling: touch;
+}
 
 /* Variables
 ========================================================================== */
@@ -964,13 +964,10 @@ p {
 
 .description {
   font-weight: 600;
-  font-size: 1.4rem;
   line-height: 2rem;
   .changa();
   .blanco();
   .txt-shadow();
-  padding-top: 2vh;
-  padding-bottom: 2vh;
 }
 
 ul {
@@ -1062,6 +1059,10 @@ main > div {
   .flex();
   .center();
   flex-direction: column;
+  .container {
+    .flex();
+    flex-direction: row;
+  }
 }
 /* ------------ Footer ------------ */
 footer {
@@ -1237,7 +1238,6 @@ footer {
     .flex();
     ul {
       li {
-        padding-top: 9%;
         svg {
           -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
           clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
@@ -1256,6 +1256,7 @@ footer {
   .con--form {
     .flex();
     .gris-claro-bg();
+    justify-content: left;
     margin-left: 2%;
     h2 {
       font-weight: 400;
@@ -1311,6 +1312,180 @@ footer {
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/
 @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  /* Contenedores principales
+  ========================================================================== */
+  header {
+    /* Menú */
+    nav {
+      height: 10vh;
+      a {
+        font-size: 1.2rem;
+        margin: 0 2vw;
+        padding: 0 0.5vw 0.7vh;
+      }
+    }
+  }
+  main > div {
+    .container {
+      width: 85vw;
+    }
+  }
+  footer {
+    .footer--container {
+      height: 10vh;
+      .footer--rrss {
+        .footer--rrss__boton {
+          a {
+            padding: 0.9vw;
+            svg {
+              width: 0.5em !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Inicio
+  ========================================================================== */
+  .inicio {
+    .logo {
+      height: 28vh;
+      width: 36vw;
+      margin-top: -7vh;
+      margin-bottom: 7vh;
+
+      img {
+        width: 26vw;
+      }
+    }
+    .ant-carousel {
+      .carousel--txt {
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  /* Nosotros
+  ========================================================================== */
+  .nosotros {
+    ul {
+      .nos--ficha {
+        .w-third();
+        &:nth-child(2n) {
+          margin-left: 1.833333333%;
+        }
+        &:nth-child(3n) {
+          margin-left: 1.833333333%;
+        }
+        padding:3vh 1.2vw;
+        img {
+          width: 27%;
+        }
+        h2 {
+          font-size: 1.35rem;
+          padding-left: 1vw;
+        }
+        p {
+          padding-top: 1.5vh;
+          font-size: 0.9rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 1.5rem;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+  }
+
+  /* Productos
+  ========================================================================== */
+  .productos {
+    ul {
+      .flex();
+      li {
+        .w-half();
+        margin-bottom: 1%;
+        &:nth-child(2n) {
+          margin-left: 1%;
+        }
+        padding: 1.5vh;
+        height: 18vh;
+        .gatsby-image-wrapper {
+          width: 28%;
+        }
+        .pro--ficha__txt {
+          width: 72%;
+          padding-left:1vw;
+          h2 {
+            font-size: 1.34rem;
+          }
+          p {
+            padding: 0.3vh 0;
+            font-size: 0.92rem;
+            line-height: 1.1rem;
+          }
+          a {
+            font-size: 0.87rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Contacto
+  ========================================================================== */
+  .contacto {
+    .con--info,
+    .con--form {
+      .w-half();
+    }
+    .con--info {
+      min-height: 46vh;
+      ul {
+        .w-full();
+        li {
+          padding-top: 14%;
+          svg {
+            width: 5.4vw !important;
+            height: 5.4vw;
+            padding: 2vh 1.5vw;
+            margin: 0 auto 2vh;
+          }
+          span {
+            padding-top: 1.5vh;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .con--form {
+      min-height: 46vh;
+      padding: 2.5vh 1.5vw;
+      h2 {
+        font-size: 1.34rem;
+      }
+      input {
+        font-size: 1rem;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+      }
+      textarea {
+        font-size: 1rem;
+        margin-top: 1vh;
+        margin-bottom: 3vh;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.8vh 0;
+      }
+    }
+  }
 }
 
 /*-------------------------------------------- Desktop responsive --------------------------------------------*/
@@ -1321,18 +1496,11 @@ footer {
     /* Menú */
     nav {
       height: 14vh;
-      a {
-        font-size: 1.2rem;
-        margin: 0 2vw;
-        padding: 0 0.3vw 0.7vh;
-      }
     }
   }
   main > div {
     .container {
       width: 65vw;
-      .flex();
-      flex-direction: row;
     }
   }
   footer {
@@ -1357,7 +1525,6 @@ footer {
     .logo {
       height: 26vh;
       width: 30vw;
-      margin-top: -15vh;
       margin-bottom: 10vh;
 
       img {
@@ -1378,28 +1545,27 @@ footer {
   .nosotros {
     ul {
       .nos--ficha {
-        .w-third();
         &:nth-child(2n) {
-          margin-left: 1.833333333%;
+          margin-left: 1.633333333%;
         }
         &:nth-child(3n) {
-          margin-left: 1.833333333%;
-        }
-        padding: 3vh 1.2vw;
-        img {
-          width: 27%;
+          margin-left: 1.633333333%;
         }
         h2 {
           font-size: 1.47rem;
-          padding-left: 1vw;
+          padding-left: 1.2vw;
         }
         p {
-          padding-top: 1.6vh;
           font-size: 1rem;
           line-height: 1.4rem;
         }
       }
     }
+  }
+
+  .description {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
   }
 
   /* Productos
@@ -1408,7 +1574,6 @@ footer {
     ul {
       .flex();
       li {
-        .w-half();
         margin-bottom: 2%;
         &:nth-child(2n) {
           margin-left: 2%;
@@ -1420,12 +1585,7 @@ footer {
         }
         .pro--ficha__txt {
           width: 74%;
-          padding-left: 1vw;
-          h2 {
-            font-size: 1.34rem;
-          }
           p {
-            padding: 0.4vh 0;
             font-size: 0.95rem;
             line-height: 1.2rem;
           }
@@ -1440,24 +1600,16 @@ footer {
   /* Contacto
   ========================================================================== */
   .contacto {
-    .con--info,
-    .con--form {
-      .w-half();
-    }
     .con--info {
       min-height: 50vh;
       ul {
-        padding: 4.1vh 0;
-        .w-full();
         li {
+          padding-top: 10%;
           svg {
             width: 4.9vw !important;
             height: 4.9vw;
-            padding: 2vh 1.5vw;
-            margin: 0 auto 2vh;
           }
           span {
-            padding-top: 1.5vh;
             font-size: 1.3rem;
           }
         }
@@ -1465,24 +1617,19 @@ footer {
     }
     .con--form {
       min-height: 50vh;
-      padding: 2.5vh 1.5vw;
-      justify-content: left;
       h2 {
         font-size: 1.4rem;
       }
       input {
         font-size: 1.04rem;
         margin-top: 2.5vh;
-        margin-bottom: 3vh;
       }
       textarea {
         font-size: 1.04rem;
         margin-top: 0.5vh;
-        margin-bottom: 3vh;
       }
       button {
         font-size: 1.03rem;
-        padding: 0.8vh 0;
       }
     }
   }
