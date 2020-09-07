@@ -976,7 +976,6 @@ p {
 
 .description {
   font-weight: 600;
-  line-height: 2rem;
   .changa();
   .blanco();
   .txt-shadow();
@@ -1312,6 +1311,196 @@ footer {
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
 @media only screen and (min-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  /* Contenedores principales
+  ========================================================================== */
+  header {
+    /* Menú */
+    nav {
+      height: 12vh;
+      background-size: 16vw;
+      a {
+        font-size: 0.9rem;
+        margin: 0 1.2vw;
+        padding: 0 0.6vw 0.4vh;
+      }
+    }
+  }
+  main > div {
+    .container {
+      padding: 15vh 3vw;
+    }
+  }
+  footer {
+    .footer--container {
+      height: 12vh;
+      padding-right: 17vw;
+      background-size: 17vw;
+      .footer--rrss {
+        .footer--rrss__boton {
+          a {
+            padding: 1.2vh 1.2vw;
+            margin: 0 1vw;
+            svg {
+              width: 0.45em !important;
+            }
+          }
+        }
+      }
+      p {
+        font-size: 0.75rem;
+        img {
+          width: 17vh;
+          margin-bottom: -0.35em;
+        }
+      }
+    }
+  }
+
+  /* Inicio
+  ========================================================================== */
+  .inicio {
+    .logo {
+      height: 38vh;
+      width: 50vw;
+      margin-top: -5vh;
+      margin-bottom: 5vh;
+
+      img {
+        width: 28vw;
+      }
+    }
+    .ant-carousel {
+      .carousel--txt {
+        p {
+          font-size: 1.33rem;
+        }
+      }
+    }
+  }
+
+  /* Nosotros
+  ========================================================================== */
+  .nosotros {
+    ul {
+      .nos--ficha {
+        .w-full();
+        &:nth-child(2n) {
+          margin-top: 2%;
+        }
+        &:nth-child(3n) {
+          margin-top: 2%;
+        }
+        padding: 5vh 3vw;
+        .clip-mask__full();
+        img {
+          width: 10%;
+        }
+        h2 {
+          font-size: 1.25rem;
+          padding-left: 2vw;
+        }
+        p {
+          padding-top: 2.3vh;
+          font-size: 0.95rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 1.28rem;
+    line-height: 1.6rem;
+    padding-bottom: 3vh;
+  }
+
+  /* Productos
+  ========================================================================== */
+  .productos {
+    ul {
+      .flex();
+      li {
+        .w-full();
+        .clip-mask__full();
+        margin-bottom: 1%;
+        &:nth-child(2n) {
+          margin-left: 1%;
+        }
+        padding: 3vh 2vw;
+        height: 37vh;
+        .gatsby-image-wrapper {
+          width: 20%;
+        }
+        .pro--ficha__txt {
+          width: 80%;
+          padding-left: 2vw;
+          h2 {
+            font-size: 1.25rem;
+          }
+          p {
+            padding: 0.3vh 0;
+            font-size: 0.95rem;
+            line-height: 1.3rem;
+          }
+          a {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Contacto
+  ========================================================================== */
+  .contacto {
+    .con--info,
+    .con--form {
+      .w-half();
+    }
+    .con--info {
+      min-height: 69vh;
+      ul {
+        .w-full();
+        li {
+          padding-top: 12%;
+          svg {
+            width: 7vw !important;
+            height: 7vw;
+            padding: 2vh 2vw;
+            margin: 0 auto 2vh;
+          }
+          span {
+            padding-top: 1.5vh;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+    .con--form {
+      min-height: 69vh;
+      padding: 1.5vh 2vw 3vh 2vw;
+      h2 {
+        font-size: 1.2rem;
+      }
+      input {
+        font-size: 0.85rem;
+        margin-top: 2.5vh;
+        margin-bottom: 3.5vh;
+      }
+      label {
+        font-size: 0.85rem;
+      }
+      textarea {
+        font-size: 0.85rem;
+        margin-top: 2.5vh;
+        margin-bottom: 3vh;
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 1vh 0;
+      }
+    }
+  }
 }
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
@@ -1413,6 +1602,7 @@ footer {
 
   .description {
     font-size: 1.6rem;
+    line-height: 2rem;
     padding-bottom: 3vh;
   }
 
@@ -1512,10 +1702,10 @@ footer {
     /* Menú */
     nav {
       height: 10vh;
+      background-size: 16vw;
       a {
         font-size: 1.2rem;
         margin: 0 2vw;
-        padding: 0 0.5vw 0.7vh;
       }
     }
   }
@@ -1528,17 +1718,18 @@ footer {
   footer {
     .footer--container {
       height: 10vh;
+      padding-right: 8vw;
       .footer--rrss {
         .footer--rrss__boton {
           a {
-            padding: 0.9vw;
             svg {
-              width: 0.5em !important;
+              width: 0.6em !important;
             }
           }
         }
       }
       p {
+        font-size: 1rem;
         img {
           width: 9vh;
           margin-bottom: -0.3em;
@@ -1552,13 +1743,9 @@ footer {
   .inicio {
     .logo {
       height: 28vh;
-      width: 36vw;
+      width: 40vw;
       margin-top: -7vh;
       margin-bottom: 7vh;
-
-      img {
-        width: 26vw;
-      }
     }
     .ant-carousel {
       .carousel--txt {
@@ -1576,9 +1763,11 @@ footer {
       .nos--ficha {
         .w-third();
         &:nth-child(2n) {
+          margin-top: 0;
           margin-left: 1.833333333%;
         }
         &:nth-child(3n) {
+          margin-top: 0;
           margin-left: 1.833333333%;
         }
         padding: 3vh 1.2vw;
@@ -1592,8 +1781,6 @@ footer {
         }
         p {
           padding-top: 1.5vh;
-          font-size: 0.9rem;
-          line-height: 1.3rem;
         }
       }
     }
@@ -1601,8 +1788,8 @@ footer {
 
   .description {
     font-size: 1.5rem;
+    line-height: 2rem;
     padding-top: 3vh;
-    padding-bottom: 3vh;
   }
 
   /* Productos
@@ -1613,24 +1800,18 @@ footer {
       li {
         .w-half();
         .clip-mask__half();
-        margin-bottom: 1%;
-        &:nth-child(2n) {
-          margin-left: 1%;
-        }
         padding: 1.5vh;
-        height: 18vh;
+        height: 18.5vh;
         .gatsby-image-wrapper {
-          width: 28%;
+          width: 32%;
         }
         .pro--ficha__txt {
-          width: 72%;
+          width: 68%;
           padding-left: 1vw;
           h2 {
             font-size: 1.34rem;
           }
           p {
-            padding: 0.3vh 0;
-            font-size: 0.92rem;
             line-height: 1.1rem;
           }
           a {
@@ -1646,22 +1827,18 @@ footer {
   .contacto {
     .con--info,
     .con--form {
-      .w-half();
     }
     .con--info {
       min-height: 46vh;
       ul {
-        .w-full();
         li {
           padding-top: 14%;
           svg {
             width: 5.4vw !important;
             height: 5.4vw;
             padding: 2vh 1.5vw;
-            margin: 0 auto 2vh;
           }
           span {
-            padding-top: 1.5vh;
             font-size: 1.2rem;
           }
         }
@@ -1682,6 +1859,9 @@ footer {
         font-size: 1rem;
         margin-top: 1vh;
         margin-bottom: 3vh;
+      }
+      label {
+        font-size: 1rem;
       }
       button {
         font-size: 1rem;
@@ -1713,10 +1893,12 @@ footer {
         .footer--rrss__boton {
           a {
             padding: 0.7vw;
-            svg {
-              width: 0.63em !important;
-            }
           }
+        }
+      }
+      p {
+        img {
+          width: 10vh;
         }
       }
     }
@@ -1756,7 +1938,6 @@ footer {
         }
         h2 {
           font-size: 1.47rem;
-          padding-left: 1.2vw;
         }
         p {
           font-size: 1rem;
@@ -1832,7 +2013,7 @@ footer {
         margin-top: 0.5vh;
       }
       button {
-        font-size: 1.03rem;
+        font-size: 1.06rem;
       }
     }
   }
