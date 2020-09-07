@@ -1064,6 +1064,8 @@ header {
   }
 }
 /* ------------ Main ------------ */
+.relative {position:relative}
+
 main > div {
   width: 100vw;
   min-height: 100vh;
@@ -1307,6 +1309,199 @@ footer {
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
 @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+    /* Contenedores principales
+  ========================================================================== */
+  header {
+    /* Menú */
+    nav {
+      height: 10vh;
+      background-size: 20vw;
+      a {
+        font-size: 0.8rem;
+        margin: 0 1.5vw;
+        padding: 0 1vw 0.5vh;
+      }
+    }
+  }
+  main > div {
+    .container {
+      padding: 13vh 3vw 16vh 3vw;
+    }
+  }
+  footer {
+    .footer--container {
+      height: 12vh;
+      justify-content: left;
+      padding-right: 20vw;
+      padding-left: 1vw;
+      background-size: 20vw;
+      .footer--rrss {
+        .footer--rrss__boton {
+          a {
+            padding: 0.9vh 2vw;
+            margin: 0 2vw;
+            svg {
+              width: 0.45em !important;
+            }
+          }
+        }
+      }
+      p {
+        font-size: 0.68rem;
+        padding-left:2vw;
+        img {
+          width: 8.7vh;
+          margin-bottom: -0.35em;
+        }
+      }
+    }
+  }
+
+    /* Inicio
+  ========================================================================== */
+  .inicio {
+    .logo {
+      height: 30vh;
+      width: 75vw;
+      margin-top: -5vh;
+      margin-bottom: 5vh;
+
+      img {
+        width: 55vw;
+      }
+    }
+    .ant-carousel {
+      .carousel--txt {
+        p {
+          font-size: 1.3rem;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+
+    /* Nosotros
+  ========================================================================== */
+  .nosotros {
+    ul {
+      .nos--ficha {
+        .w-full();
+        &:nth-child(2n) {
+          margin-top: 2%;
+        }
+        &:nth-child(3n) {
+          margin-top: 2%;
+        }
+        padding:2.5vh 3vw 2vh 3vw;
+        .clip-mask__full();
+        img {
+          width: 17%;
+        }
+        h2 {
+          font-size: 1.2rem;
+          padding-left: 2vw;
+        }
+        p {
+          padding-top: 2vh;
+          font-size: 0.9rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 1.21rem;
+    line-height: 1.6rem;
+    padding-bottom: 3vh;
+  }
+
+    /* Productos
+  ========================================================================== */
+  .productos {
+    ul {
+      .flex();
+      li {
+        .w-full();
+        .clip-mask__full();
+        margin-bottom: 2%;
+        &:nth-child(2n) {
+          margin-bottom: 2%;
+        }
+        padding: 2.5vh 3vw;
+        .gatsby-image-wrapper {
+          width: 35%;
+        }
+        .pro--ficha__txt {
+          .w-full();
+          padding-left: 2vw;
+          h2 {
+            padding-top:1vh;
+            font-size: 1.2rem;
+          }
+          p {
+            padding: 0.3vh 0;
+            font-size: 0.9rem;
+            line-height: 1.3rem;
+          }
+          a {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+    /* Contacto
+  ========================================================================== */
+  .contacto {
+    .con--info,
+    .con--form {
+      .w-full();
+    }
+    .con--info {
+      padding-bottom: 9%;
+      ul {
+        .w-full();
+        .flex();
+        li {
+          .w-full();
+          padding-top: 9%;
+          svg {
+            width: 13vw !important;
+            height: 13vw;
+            padding: 1.8vh 3vw;
+            margin: 0 auto 3vh;
+          }
+          span {
+            font-size: 1.12rem;
+          }
+        }
+      }
+    }
+    .con--form {
+      margin: 1vh 0 0 0;
+      padding: 2vh 2.5vw 2.5vh 2.5vw;
+      h2 {
+        font-size: 1.2rem;
+      }
+      input {
+        font-size: 0.9rem;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+      }
+      label {font-size: 0.9rem;}
+      textarea {
+        font-size: 0.9rem;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+      }
+      button {
+        font-size: 0.92rem;
+        padding: 0.8vh 0;
+      }
+    }
+  }
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
@@ -1385,10 +1580,10 @@ footer {
       .nos--ficha {
         .w-full();
         &:nth-child(2n) {
-          margin-top: 2%;
+          margin-top: 1%;
         }
         &:nth-child(3n) {
-          margin-top: 2%;
+          margin-top: 1%;
         }
         padding: 5vh 3vw;
         .clip-mask__full();
@@ -1511,11 +1706,9 @@ footer {
     /* Menú */
     nav {
       height: 8vh;
-      background-size: 17vw;
+      background-size: 18vw;
       a {
         font-size: 1.1rem;
-        margin: 0 1.5vw;
-        padding: 0 0.5vw 0.5vh;
       }
     }
   }
@@ -1527,12 +1720,15 @@ footer {
   footer {
     .footer--container {
       height: 8vh;
-      padding-right: 15vw;
-      background-size: 17vw;
+      padding-right: 11vw;
+      padding-left: 0;
+      background-size: 18vw;
+      justify-content: center;
       .footer--rrss {
         .footer--rrss__boton {
           a {
             padding: 1.2vw;
+            margin: 0 1vw;
             svg {
               width: 0.6em !important;
             }
@@ -1540,9 +1736,9 @@ footer {
         }
       }
       p {
+        font-size:1rem;
         img {
-          width: 8vh;
-          margin-bottom: -0.4em;
+          width: 6.6vh;
         }
       }
     }
@@ -1554,8 +1750,6 @@ footer {
     .logo {
       height: 19vh;
       width: 49vw;
-      margin-top: -5vh;
-      margin-bottom: 5vh;
 
       img {
         width: 37vw;
@@ -1575,21 +1769,12 @@ footer {
   .nosotros {
     ul {
       .nos--ficha {
-        .w-full();
-        &:nth-child(2n) {
-          margin-top: 2%;
-        }
-        &:nth-child(3n) {
-          margin-top: 2%;
-        }
         padding: 3vh 2vw;
-        .clip-mask__full();
         img {
           width: 11%;
         }
         h2 {
-          font-size: 1.5rem;
-          padding-left: 2vw;
+          font-size: 1.55rem;
         }
         p {
           padding-top: 1.8vh;
@@ -1603,7 +1788,6 @@ footer {
   .description {
     font-size: 1.6rem;
     line-height: 2rem;
-    padding-bottom: 3vh;
   }
 
   /* Productos
@@ -1625,7 +1809,8 @@ footer {
         }
         .pro--ficha__txt {
           .w-full();
-          padding-top: 1vw;
+          padding-top: 0;
+          padding-left: 0;
           h2 {
             font-size: 1.4rem;
           }
@@ -1651,6 +1836,7 @@ footer {
     }
     .con--info {
       min-height: 16vh;
+      padding-bottom: 0;
       ul {
         .w-full();
         .flex();
@@ -1672,22 +1858,20 @@ footer {
     .con--form {
       margin: 1vh 0 0 0;
       min-height: 39vh;
-      padding: 2.5vh 2.5vw;
       h2 {
         font-size: 1.34rem;
       }
       input {
         font-size: 1.1rem;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
       }
+      label {font-size: 1.1rem;}
       textarea {
         font-size: 1.1rem;
         margin-top: 1vh;
         margin-bottom: 2vh;
       }
       button {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         padding: 1vh 0;
       }
     }
@@ -1702,7 +1886,6 @@ footer {
     /* Menú */
     nav {
       height: 10vh;
-      background-size: 16vw;
       a {
         font-size: 1.2rem;
         margin: 0 2vw;
@@ -1889,6 +2072,7 @@ footer {
   footer {
     .footer--container {
       height: 12vh;
+      background-size: 15vw;
       .footer--rrss {
         .footer--rrss__boton {
           a {
