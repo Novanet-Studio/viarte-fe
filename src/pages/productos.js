@@ -6,20 +6,25 @@ import SEO from "../components/seo"
 
 export default function Productos() {
   // When the user clicks on the button, open the modal
-  const openModal = (e) => {
-    let a = document.querySelector(`.${e}`)
+  let [state, setState] = React.useState({})
+  let openModal = (e) => {
+    let a = document.querySelector(`#${e}`)
     a.style.display = "block"
+    setState({ ...state, currentEvent: e })
   }
-
   // When the user clicks on <span> (x), close the modal
-  const closeModal = (e) => {
-    const b = document.querySelector(`.${e}`)
+  let closeModal = () => {
+    let { currentEvent } = state
+    let b = document.querySelector(`#${currentEvent}`)
     b.style.display = "none"
   }
-
   // When the user clicks anywhere outside of the modal, close it
-  const sameModal = (e) => {
-    e.style.display = "none"
+  let windowClose = (e) => {
+    let { currentEvent } = state
+    let c = document.querySelector(`#${currentEvent}`)
+    if (e === currentEvent) {
+      c.style.display = "none"
+    }
   }
 
   return (
@@ -78,7 +83,7 @@ export default function Productos() {
                       <h2>{document.name}</h2>
                       <p>{document.short_description}</p>
                       <button
-                        id="btnA"                       
+                        id="btnA"
                         tabIndex="0"
                         value={document.id}
                         onClick={(e) => openModal(e.target.value)}
@@ -86,21 +91,20 @@ export default function Productos() {
                         Ver más
                       </button>
                       <div
-                        id="myModal"
+                        id={document.id}
                         role="button"
                         tabIndex="0"
-                        className={`modal ${document.id}`}
-                        onClick={(e) => sameModal(e.target)}
-                        onKeyDown={(e) => sameModal(e.target)}
+                        className="modal"
+                        onClick={(e) => windowClose(e.target.id)}
+                        onKeyDown={(e) => windowClose(e.target.id)}
                       >
                         <div className="modal-content">
                           <span
                             className="close"
                             role="button"
-                            tabIndex="0"
-                            id={document.id}
-                            onClick={(e) => closeModal(e.target.id)}
-                            onKeyDown={(e) => closeModal(e.target.id)}
+                            tabIndex="0"                      
+                            onClick={() => closeModal()}
+                            onKeyDown={() => closeModal()}
                           >
                             &times;
                           </span>
