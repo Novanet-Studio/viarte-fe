@@ -108,13 +108,15 @@ export default function Productos() {
                           >
                             &times;
                           </span>
-                          <h2>{document.name}</h2>
-                          <p>{document.long_description}</p>
                           <Img
                             fluid={document.image.childImageSharp.fluid}
                             title={document.seo_image.title}
                             alt={document.seo_image.alt}
                           />
+                          <div className="modal-text">                          
+                            <h2>{document.name}</h2>
+                            <p>{document.long_description}</p>
+                          </div>
                         </div>
                       </div>
                     </div>
