@@ -1239,6 +1239,7 @@ footer {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
+    bottom:0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -1256,6 +1257,7 @@ footer {
     .gris-claro-bg();
     margin: 10% auto; /* 15% from the top and centered */
     position: relative;
+    top:10%;
   }
 
   @keyframes fadeInOpacity {
@@ -1371,7 +1373,7 @@ footer {
       a {
         font-size: 0.8rem;
         margin: 0 0.5vw;
-        padding: 0 1vw 0.5vh;
+        padding: 0.5vh;
       }
     }
   }
@@ -1390,7 +1392,7 @@ footer {
       .footer--rrss {
         .footer--rrss__boton {
           a {
-            padding: 1vh 2.5vw;
+            padding: 2.5vw;
             margin: 0 2vw;
             svg {
               width: 0.55em !important;
@@ -1447,7 +1449,7 @@ footer {
         &:nth-child(3n) {
           margin-top: 7.5%;
         }
-        padding: 2.5vh 4.5vw;
+        padding: 2.5vh;
         img {
           width: 18%;
         }
@@ -1482,7 +1484,7 @@ footer {
         &:nth-child(2n) {
           margin-left: 7.5%;
         }
-        padding: 2vh 3.5vw;
+        padding: 2vh;
         .gatsby-image-wrapper {
           .w-full();
         }
@@ -1496,18 +1498,18 @@ footer {
             display: none;
           }
           button {
-            font-size: 0.82rem;
+            font-size: 0.88rem;
           }
         }
 
         .modal-content {
           width: 88%;
-          padding: 3vh 5vw;
+          padding: 3vh;
           .close {
             padding: 0.2vh 2.6vw;
           }
           .gatsby-image-wrapper {
-            width: 60%;
+            width: 50%;
             margin-bottom: 2vw;
           }
           .modal-text {
@@ -1535,28 +1537,28 @@ footer {
       .w-full();
     }
     .con--info {
-      padding-bottom: 9%;
+      padding-bottom: 12%;
       ul {
         .w-full();
         .flex();
         li {
           .w-full();
-          padding-top: 9%;
+          padding-top: 12%;
           svg {
             width: 13vw !important;
             height: 13vw;
             padding: 1.8vh 4vw;
-            margin: 0 auto 3vh;
+            margin: 0 auto 1vh;
           }
           span {
-            font-size: 1.12rem;
+            font-size: 1rem;
           }
         }
       }
     }
     .con--form {
       margin: 7.5% 0 0 0;
-      padding: 2.5vh 5vw 3.5vh 5vw;
+      padding: 3.3vh;
       h2 {
         font-size: 1.3rem;
       }
@@ -1593,13 +1595,13 @@ footer {
       a {
         font-size: 0.9rem;
         margin: 0 2vw;
-        padding: 0 0.6vw 0.4vh;
+        padding: 0.6vh;
       }
     }
   }
   main > div {
     .container {
-      padding: 20vh 3vw 22vh 3vw;
+      padding: 22vh 3vw 24vh 3vw;
     }
   }
   footer {
@@ -1610,10 +1612,10 @@ footer {
       .footer--rrss {
         .footer--rrss__boton {
           a {
-            padding: 1.4vh 1.3vw;
+            padding: 1.3vw;
             margin: 0 0.5vw;
             svg {
-              width: 0.5em !important;
+              width: 0.48em !important;
             }
           }
         }
@@ -1664,7 +1666,7 @@ footer {
         &:nth-child(3n) {
           margin-top: 4%;
         }
-        padding: 4.3vh 3vw;
+        padding: 4vh;
         img {
           width: 12%;
         }
@@ -1699,7 +1701,7 @@ footer {
         &:nth-child(2n) {
           margin-left: 4%;
         }
-        padding: 3.5vh 2.5vw;
+        padding: 3.5vh;
         height: 35vh;
         .gatsby-image-wrapper {
           width: 40%;
@@ -1708,20 +1710,20 @@ footer {
           width: 60%;
           padding-left: 2vw;
           h2 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             padding-bottom: 0.5vw;
           }
           p {
             display: none;
           }
           button {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
           }
         }
 
         .modal-content {
           width: 94%;
-          padding: 5vh 2.5vw;
+          padding: 5vh;
           .flex();
           .close {
             padding: 0.2vh 1vw;
@@ -1776,7 +1778,7 @@ footer {
     }
     .con--form {
       min-height: 84vh;
-      padding: 4vh 3vw 6vh 3vw;
+      padding: 5.5vh;
       margin-left: 4%;
       h2 {
         font-size: 1.15rem;
@@ -1820,7 +1822,7 @@ footer {
   }
   main > div {
     .container {
-      padding: 10vh 2.7vw;
+      padding: 10vh 2.7vw 12vh 2.7vw;
     }
   }
   footer {
@@ -1878,7 +1880,6 @@ footer {
     background-image: url(../images/nosotros-tab-bg.jpg);
     ul {
       .nos--ficha {
-        padding: 2vh 2.7vw;
         &:nth-child(2n) {
           margin-top: 3.2%;
         }
@@ -1917,28 +1918,27 @@ footer {
         &:nth-child(2n) {
           margin-left: 3.2%;
         }
-        padding: 1.5vh 2vw;
         .gatsby-image-wrapper {
-          width: 45%;
+          width: 43%;
         }
         .pro--ficha__txt {
-          width: 55%;
+          width: 57%;
           padding-left: 2vw;
           h2 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             padding: 0 0 0.5vh 0;
           }
           p {
             font-size: 1rem;
           }
           button {
-            font-size: 1rem;
+            font-size: 1.2rem;
           }
         }
 
         .modal-content {
           width: 93%;
-          padding: 2vh 3vw;
+          padding: 2vh ;
           .flex();
           .close {
             padding: 0.2vh 1vw;
@@ -1951,11 +1951,11 @@ footer {
             width: 75%;
             padding-left: 2.5vw;
             h2 {
-              font-size: 1.4rem;
+              font-size: 1.6rem;
               padding: 0 0 0.5vh 0;
             }
             p {
-              font-size: 1.05rem;
+              font-size: 1.03rem;
               line-height: 1.5rem;
             }
           }
@@ -1978,7 +1978,7 @@ footer {
       ul {
         li {
           .w-half();
-          padding-top: 5%;
+          padding: 5vh 0 6vh 0;
           svg {
             width: 8vw !important;
             height: 8vw;
@@ -1994,7 +1994,6 @@ footer {
     .con--form {
       margin: 2.7vh 0 0 0;
       min-height: 39vh;
-      padding: 2vh 3vw 3vh 3vw;
       h2 {
         font-size: 1.5rem;
       }
@@ -2092,7 +2091,7 @@ footer {
           margin-top: 0;
           margin-left: 1.833333333%;
         }
-        padding: 2vh 1.5vw;
+        padding: 2vh;
         img {
           width: 27%;
         }
@@ -2120,8 +2119,8 @@ footer {
       .flex();
       li {
         .w-half();
-        padding: 1.5vh;
-        height: 19.5vh;
+        padding: 2vh;
+        height: 22vh;
         margin-bottom: 1.83333333%;
         &:nth-child(2n) {
           margin-left: 1.83333333%;
@@ -2149,7 +2148,7 @@ footer {
 
         .modal-content {
           width: 85%;
-          padding: 3.5vh 2.5vw;
+          padding: 3.5vh ;
           .close {
             padding: 0.2vh 1vw;
           }
@@ -2195,7 +2194,7 @@ footer {
     .con--form {
       min-height: 47vh;
       margin-left: 1.83333333%;
-      padding: 2.5vh 2.5vw 3.5vh 2.5vw;
+      padding: 3vh;
       h2 {
         font-size: 1.34rem;
       }
@@ -2278,7 +2277,6 @@ footer {
   .nosotros {
     ul {
       .nos--ficha {
-        padding: 2vh 1vw;
         &:nth-child(2n) {
           margin-left: 1.633333333%;
         }
@@ -2311,7 +2309,6 @@ footer {
         &:nth-child(2n) {
           margin-left: 1.6333%;
         }
-        padding: 2vh;
         height: 20vh;
         .gatsby-image-wrapper {
           width: 26%;
@@ -2333,7 +2330,7 @@ footer {
 
         .modal-content {
           width: 70%;
-          padding: 3vh 1.5vw;
+          padding: 3vh;
           .close {
             padding: 0.2vh 0.5vw;
           }
@@ -2352,7 +2349,7 @@ footer {
       min-height: 50vh;
       ul {
         li {
-          padding-top: 10%;
+          padding-top: 11%;
           svg {
             width: 4.9vw !important;
             height: 4.9vw;
@@ -2365,7 +2362,6 @@ footer {
     }
     .con--form {
       min-height: 50vh;
-      padding: 2vh 1.5vw;
       h2 {
         font-size: 1.4rem;
       }
