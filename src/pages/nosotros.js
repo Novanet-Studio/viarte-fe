@@ -3,22 +3,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-
 const Nosotros = ({ data }) => (
-  <div className="nosotros">
+  <Layout>
     <SEO
       title={data.strapiAbout.seo.title}
       description={data.strapiAbout.seo.description}
       image={data.strapiAbout.seo.image}
     />
-    <Layout>
+    <div className="nosotros">
       <h1>{data.strapiAbout.seo.title}</h1>
-      <p className="description">{data.strapiAbout.description}</p>
-
-      <ul>
-        {data.strapiAbout.Statement.map((document) => (
-          <li key={document.id}>
-            <div className="nos--ficha">
+      <div className="container">
+        <p className="description">{data.strapiAbout.description}</p>
+        <ul>
+          {data.strapiAbout.Statement.map((document) => (
+            <li key={document.id} className="nos--ficha">
               <img
                 src={document.image.publicURL}
                 title={document.image_seo.title}
@@ -26,12 +24,12 @@ const Nosotros = ({ data }) => (
               />
               <h2>{document.title}</h2>
               <p>{document.description}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </Layout>
-  </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Layout>
 )
 
 export default Nosotros
