@@ -31,7 +31,7 @@ const Navigation = () => (
       getProps={({ isPartiallyCurrent }) =>
         isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
       }
-    > 
+    >
       Nosotros
     </AniLink>
     <AniLink
@@ -48,7 +48,20 @@ const Navigation = () => (
       Productos
     </AniLink>
     <AniLink
-      swipe 
+      paintDrip
+      color="#00a5e7"
+      duration={0.75}
+      to="/mapas"
+      activeStyle={linkActivo}
+      aria-label="Ir al vínculo de Ubicaciones"
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
+      }
+    >
+      Ubicaciones
+    </AniLink>
+    <AniLink
+      swipe
       top="entry"
       entryOffset={80}
       to="/contacto"
