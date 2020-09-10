@@ -12,12 +12,12 @@ const Mapas = ({ data }) => (
       image={data.strapiMapa.image}
     />
     <ul>
-      {data.allStrapiMap.edges.map((el, i) => (
-        <li key={i}>
-          <p>{el.node.location}</p>
-          <p>{el.node.direction}</p>
-          <p>{el.node.url}</p>
-          <GoogleMap lat={el.node.lat} lng={el.node.lng} text={"Here"}/>
+      {data.allStrapiMap.edges.map((item) => (
+        <li key={item.node.id}>
+          <p>{item.node.location}</p>
+          <p>{item.node.direction}</p>
+          <p>{item.node.url}</p>
+          <GoogleMap lat={item.node.lat} lng={item.node.lng} id={item.node.id}/>
         </li>
       ))}
     </ul>
@@ -38,6 +38,7 @@ export const query = graphql`
     allStrapiMap {
       edges {
         node {
+          id
           location
           direction
           url
