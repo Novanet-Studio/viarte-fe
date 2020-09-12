@@ -1239,7 +1239,7 @@ footer {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    bottom:0;
+    bottom: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -1257,7 +1257,7 @@ footer {
     .gris-claro-bg();
     margin: 10% auto; /* 15% from the top and centered */
     position: relative;
-    top:10%;
+    top: 10%;
   }
 
   @keyframes fadeInOpacity {
@@ -1293,6 +1293,27 @@ footer {
 
 /* Mapas
 ========================================================================== */
+.vallas {
+  .img-bg();
+  ul {
+    .flex();
+    .vall--ficha {
+      .gris-claro-bg();
+      > div {
+        .blanco-bg();
+      }
+      h2 {
+        font-weight: 400;
+        .naranja();
+      }
+      p {
+        font-weight: 500;
+        .gris-oscuro();
+      }
+    }
+  }
+}
+
 .marker {
   position: absolute;
   top: 50%;
@@ -1387,10 +1408,10 @@ footer {
     nav {
       height: 10vh;
       background-size: 33vw;
-      padding-left: 18vw;
+      padding-left: 30vw;
       a {
         font-size: 0.8rem;
-        margin: 0 0.5vw;
+        margin: 0 0.8vw;
         padding: 0.5vh;
       }
     }
@@ -1541,6 +1562,37 @@ footer {
               line-height: 1.3rem;
             }
           }
+        }
+      }
+    }
+  }
+
+  /* Vallas / Mapas
+  ========================================================================== */
+  .vallas {
+    background-image: url(../images/vallas-mov-bg.jpg);
+    ul {
+      .vall--ficha {
+        .w-full();
+        &:nth-child(2n) {
+          margin-top: 7.5%;
+        }
+        &:nth-child(3n) {
+          margin-top: 7.5%;
+        }
+        padding: 2.5vh;
+        > div {
+          width: 100% !important;
+          height: 20vh !important;
+        }
+        h2 {
+          padding-top: 1.5vh;
+          font-size: 1.25rem;
+        }
+        p {
+          padding-top: 1vh;
+          font-size: 0.9rem;
+          line-height: 1.3rem;
         }
       }
     }
@@ -1767,6 +1819,35 @@ footer {
     }
   }
 
+  /* Vallas / Mapas
+  ========================================================================== */
+  .vallas {
+    background-image: url(../images/vallas-lan-bg.jpg);
+    ul {
+      .vall--ficha {
+        width: 48%;
+        margin-bottom: 4%;
+        &:nth-child(2n) {
+          margin-left: 4%;
+        }
+        padding: 4vh;
+        > div {
+          width: 100% !important;
+          height: 30vh !important;
+        }
+        h2 {
+          padding-top: 2vh;
+          font-size: 1.25rem;
+        }
+        p {
+          padding-top: 2vh;
+          font-size: 0.91rem;
+          line-height: 1.2rem;
+        }
+      }
+    }
+  }
+
   /* Contacto
   ========================================================================== */
   .contacto {
@@ -1956,7 +2037,7 @@ footer {
 
         .modal-content {
           width: 93%;
-          padding: 2vh ;
+          padding: 2vh;
           .flex();
           .close {
             padding: 0.2vh 1vw;
@@ -1977,6 +2058,35 @@ footer {
               line-height: 1.5rem;
             }
           }
+        }
+      }
+    }
+  }
+
+  /* Vallas / Mapas
+  ========================================================================== */
+  .vallas {
+    background-image: url(../images/vallas-tab-bg.jpg);
+    ul {
+      .vall--ficha {
+        width: 48.4%;
+        margin-bottom: 3.2%;
+        &:nth-child(2n) {
+          margin-left: 3.2%;
+          margin-top: 0;
+        }
+        &:nth-child(3n) {
+          margin-top: 0;
+        }
+        > div {
+          height: 15vh !important;
+        }
+        h2 {
+          font-size: 1.4rem;
+        }
+        p {
+          font-size: 1.1rem;
+          line-height: 1.7rem;
         }
       }
     }
@@ -2051,7 +2161,7 @@ footer {
   main > div {
     .container {
       width: 85vw;
-      padding: 0;
+      padding: 9vh 0;
     }
   }
   footer {
@@ -2166,7 +2276,7 @@ footer {
 
         .modal-content {
           width: 85%;
-          padding: 3.5vh ;
+          padding: 3.5vh;
           .close {
             padding: 0.2vh 1vw;
           }
@@ -2185,6 +2295,37 @@ footer {
               line-height: 1.7rem;
             }
           }
+        }
+      }
+    }
+  }
+
+  /* Vallas / Mapas
+  ========================================================================== */
+  .vallas {
+    ul {
+      .flex();
+      .vall--ficha {
+        .w-third();
+        margin-bottom: 1.833333333%;
+        &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6) {
+          margin-top: 0;
+          margin-left: 1.833333333%;
+        }
+        &:nth-child(4) {
+          margin-left: 0;
+        }
+        padding: 2vh;
+        > div {
+          height: 14vh !important;
+        }
+        h2 {
+          padding-top: 1vh;
+          font-size: 1.25rem;
+        }
+        p {
+          padding-top: 0.5vh;
+          line-height: 1.4rem;
         }
       }
     }
@@ -2251,6 +2392,7 @@ footer {
   main > div {
     .container {
       width: 65vw;
+      padding: 11vh 0;
     }
   }
   footer {
@@ -2359,6 +2501,29 @@ footer {
       }
     }
   }
+
+ /* Vallas / Mapas
+  ========================================================================== */
+  .vallas {
+    ul {
+      .flex();
+      .vall--ficha {
+        margin-bottom: 1.633333333%;
+        &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6) {
+          margin-top: 0;
+          margin-left: 1.633333333%;
+        }
+        h2 {
+          font-size: 1.3rem;
+        }
+        p {
+          line-height: 1.4rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
 
   /* Contacto
   ========================================================================== */

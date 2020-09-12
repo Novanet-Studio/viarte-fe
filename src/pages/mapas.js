@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import GoogleMap from '../components/googleMap'
+import GoogleMap from "../components/googleMap"
 
 const Mapas = ({ data }) => (
   <Layout>
@@ -11,16 +11,26 @@ const Mapas = ({ data }) => (
       description={data.strapiMapa.description}
       image={data.strapiMapa.image}
     />
-    <ul>
-      {data.allStrapiMap.edges.map((item) => (
-        <li key={item.node.id}>
-          <p>{item.node.location}</p>
-          <p>{item.node.direction}</p>
-          <p>{item.node.url}</p>
-          <GoogleMap lat={item.node.lat} lng={item.node.lng} id={item.node.id}/>
-        </li>
-      ))}
-    </ul>
+    <div className="vallas">
+      <div className="container">
+        <h1>{data.strapiMapa.seo.title}</h1>
+        <p className="description">{data.strapiMapa.description}</p>
+        <ul>
+          {data.allStrapiMap.edges.map((item) => (
+            <li className="vall--ficha" key={item.node.id}>
+              <GoogleMap
+                lat={item.node.lat}
+                lng={item.node.lng}
+                id={item.node.id}
+              />
+              <h2>{item.node.location}</h2>
+              <p>{item.node.direction}</p>
+              <p className="hidden">{item.node.url}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </Layout>
 )
 

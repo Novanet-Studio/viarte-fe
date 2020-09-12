@@ -58,7 +58,7 @@ const Navigation = () => (
         isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
       }
     >
-      Ubicaciones
+      Vallas
     </AniLink>
     <AniLink
       swipe
