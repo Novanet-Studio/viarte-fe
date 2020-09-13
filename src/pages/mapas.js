@@ -12,12 +12,12 @@ const Mapas = ({ data }) => (
       image={data.strapiMapa.image}
     />
     <div className="vallas">
-      <div className="container">
+      <div className="contenedor">
         <h1>{data.strapiMapa.seo.title}</h1>
-        <p className="description">{data.strapiMapa.description}</p>
+        <p className="descripcion">{data.strapiMapa.description}</p>
         <ul>
           {data.allStrapiMap.edges.map((item) => (
-            <li className="vall--ficha" key={item.node.id}>
+            <li className="vallas__ficha" key={item.node.id}>
               <GoogleMap
                 lat={item.node.lat}
                 lng={item.node.lng}
@@ -25,7 +25,7 @@ const Mapas = ({ data }) => (
               />
               <h2>{item.node.location}</h2>
               <p>{item.node.direction}</p>
-              <p className="hidden">{item.node.url}</p>
+              <p className="oculto">{item.node.url}</p>
             </li>
           ))}
         </ul>

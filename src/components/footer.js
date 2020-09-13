@@ -36,10 +36,10 @@ const Footer = () => (
     `}
     render={(data) => (
       <footer>
-        <div className="footer--container">
-          <div className="footer--rrss">
+        <div className="footer__contenedor">
+          <div className="footer__rrss">
             {data.strapiContact.contact.map((document) => (
-              <div className="footer--rrss__boton" key={document.id}>
+              <div className="footer__rrssbtn" key={document.id}>
                 <a
                   href={document.link}
                   rel="noopener noreferrer"

@@ -19,7 +19,7 @@ html {
   box-sizing: border-box;
 }
 
-.hidden {
+.oculto {
   display: none;
 }
 
@@ -947,6 +947,7 @@ template {
   text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.49);
 }
 
+/*
 .clip-mask__full {
   clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
 }
@@ -957,7 +958,7 @@ template {
 
 .clip-mask__third {
   clip-path: polygon(22% 0, 100% 0, 100% 90%, 78% 100%, 0 100%, 0 10%);
-}
+}*/
 
 /* Estilos generales
 ========================================================================== */
@@ -975,7 +976,7 @@ p {
   .lato();
 }
 
-.description {
+.descripcion {
   font-weight: 600;
   .changa();
   .blanco();
@@ -990,15 +991,15 @@ a {
   text-decoration: none;
 }
 
-.triangle--blue {
-  background-image: url(../images/triangle--blue.svg);
+.triangulo-azul {
+  background-image: url(../images/triangulo-azul.svg);
   background-repeat: no-repeat;
   background-position: left top;
   background-size: contain;
 }
 
-.triangle--orange {
-  background-image: url(../images/triangle--orange.svg);
+.triangulo-naranja {
+  background-image: url(../images/triangulo-naranja.svg);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
@@ -1047,7 +1048,7 @@ header {
   nav {
     .flex();
     .center();
-    .triangle--blue();
+    .triangulo-azul();
     a {
       text-decoration: none;
       text-transform: uppercase;
@@ -1075,7 +1076,7 @@ main > div {
   .flex();
   .center();
   flex-direction: column;
-  .container {
+  .contenedor {
     .flex();
     flex-direction: row;
   }
@@ -1120,18 +1121,20 @@ footer {
   .w-full();
   .flex();
   .center();
-  .footer--container {
+  .footer__contenedor {
     .flex();
     .center();
     .w-full();
-    .triangle--orange();
-    .footer--rrss {
+    .triangulo-naranja();
+    .footer__rrss {
       .flex();
       margin-right: 1vw;
-      .footer--rrss__boton a {
-        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        .blanco();
-        .azul-bg();
+      .footer__rrssbtn {
+        a {
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          .blanco();
+          .azul-bg();
+        }
       }
     }
     p {
@@ -1148,7 +1151,7 @@ footer {
 ========================================================================== */
 .inicio {
   .img-bg();
-  .logo {
+  .inicio__logo {
     .flex();
     .center();
     background-image: radial-gradient(
@@ -1159,7 +1162,7 @@ footer {
   }
   .ant-carousel {
     .w-full();
-    .carousel--txt {
+    .inicio__carouseltxt {
       p {
         text-align: center;
         .changa();
@@ -1179,7 +1182,7 @@ footer {
   .img-bg();
   ul {
     .flex();
-    .nos--ficha {
+    .nosotros__ficha {
       align-items: center;
       align-content: flex-start;
       display: flex;
@@ -1213,7 +1216,7 @@ footer {
           height: auto !important;
         }
       }
-      .pro--ficha__txt {
+      .productos__fichatxt {
         h2 {
           font-weight: 400;
           .naranja();
@@ -1297,7 +1300,7 @@ footer {
   .img-bg();
   ul {
     .flex();
-    .vall--ficha {
+    .vallas__ficha {
       .gris-claro-bg();
       > div {
         .blanco-bg();
@@ -1334,7 +1337,7 @@ footer {
 ========================================================================== */
 .contacto {
   .img-bg();
-  .con--info {
+  .contacto__info {
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
     .flex();
@@ -1355,7 +1358,7 @@ footer {
       }
     }
   }
-  .con--form {
+  .contacto__form {
     .flex();
     .gris-claro-bg();
     justify-content: left;
@@ -1417,19 +1420,19 @@ footer {
     }
   }
   main > div {
-    .container {
+    .contenedor {
       padding: 15vh 6vw 20vh;
     }
   }
   footer {
-    .footer--container {
+    .footer__contenedor {
       height: 14vh;
       justify-content: left;
       padding-right: 32vw;
       padding-left: 1vw;
       background-size: 33vw;
-      .footer--rrss {
-        .footer--rrss__boton {
+      .footer__rrss {
+        .footer__rrssbtn {
           a {
             padding: 2.5vw;
             margin: 0 2vw;
@@ -1455,7 +1458,7 @@ footer {
   ========================================================================== */
   .inicio {
     background-image: url(../images/inicio-mov-bg.jpg);
-    .logo {
+    .inicio__logo {
       height: 30vh;
       width: 85vw;
       margin-top: -5vh;
@@ -1466,7 +1469,7 @@ footer {
       }
     }
     .ant-carousel {
-      .carousel--txt {
+      .inicio__carouseltxt {
         p {
           font-size: 1.32rem;
           line-height: 1.8rem;
@@ -1480,7 +1483,7 @@ footer {
   .nosotros {
     background-image: url(../images/nosotros-mov-bg.jpg);
     ul {
-      .nos--ficha {
+      .nosotros__ficha {
         .w-full();
         &:nth-child(2n) {
           margin-top: 7.5%;
@@ -1505,7 +1508,7 @@ footer {
     }
   }
 
-  .description {
+  .descripcion {
     font-size: 1.14rem;
     line-height: 1.5rem;
     padding-bottom: 2.7vh;
@@ -1527,7 +1530,7 @@ footer {
         .gatsby-image-wrapper {
           .w-full();
         }
-        .pro--ficha__txt {
+        .productos__fichatxt {
           .w-full();
           h2 {
             padding: 1.3vh 0 0.5vh 0;
@@ -1572,7 +1575,7 @@ footer {
   .vallas {
     background-image: url(../images/vallas-mov-bg.jpg);
     ul {
-      .vall--ficha {
+      .vallas__ficha {
         .w-full();
         &:nth-child(2n) {
           margin-top: 7.5%;
@@ -1602,11 +1605,11 @@ footer {
   ========================================================================== */
   .contacto {
     background-image: url(../images/contacto-mov-bg.jpg);
-    .con--info,
-    .con--form {
+    .contacto__info,
+    .contacto__form {
       .w-full();
     }
-    .con--info {
+    .contacto__info {
       padding-bottom: 12%;
       ul {
         .w-full();
@@ -1626,7 +1629,7 @@ footer {
         }
       }
     }
-    .con--form {
+    .contacto__form {
       margin: 7.5% 0 0 0;
       padding: 3.3vh;
       h2 {
@@ -1670,17 +1673,17 @@ footer {
     }
   }
   main > div {
-    .container {
+    .contenedor {
       padding: 22vh 3vw 24vh 3vw;
     }
   }
   footer {
-    .footer--container {
+    .footer__contenedor {
       height: 18vh;
       padding-right: 13vw;
       background-size: 19vw;
-      .footer--rrss {
-        .footer--rrss__boton {
+      .footer__rrss {
+        .footer__rrssbtn {
           a {
             padding: 1.3vw;
             margin: 0 0.5vw;
@@ -1704,7 +1707,7 @@ footer {
   ========================================================================== */
   .inicio {
     background-image: url(../images/inicio-lan-bg.jpg);
-    .logo {
+    .inicio__logo {
       height: 38vh;
       width: 50vw;
       margin-top: -5vh;
@@ -1715,7 +1718,7 @@ footer {
       }
     }
     .ant-carousel {
-      .carousel--txt {
+      .inicio__carouseltxt {
         p {
           font-size: 1.33rem;
         }
@@ -1728,7 +1731,7 @@ footer {
   .nosotros {
     background-image: url(../images/nosotros-lan-bg.jpg);
     ul {
-      .nos--ficha {
+      .nosotros__ficha {
         .w-full();
         &:nth-child(2n) {
           margin-top: 4%;
@@ -1753,7 +1756,7 @@ footer {
     }
   }
 
-  .description {
+  .descripcion {
     font-size: 1.2rem;
     line-height: 1.6rem;
     padding-bottom: 4.5vh;
@@ -1776,7 +1779,7 @@ footer {
         .gatsby-image-wrapper {
           width: 40%;
         }
-        .pro--ficha__txt {
+        .productos__fichatxt {
           width: 60%;
           padding-left: 2vw;
           h2 {
@@ -1824,7 +1827,7 @@ footer {
   .vallas {
     background-image: url(../images/vallas-lan-bg.jpg);
     ul {
-      .vall--ficha {
+      .vallas__ficha {
         width: 48%;
         margin-bottom: 4%;
         &:nth-child(2n) {
@@ -1852,11 +1855,11 @@ footer {
   ========================================================================== */
   .contacto {
     background-image: url(../images/contacto-lan-bg.jpg);
-    .con--info,
-    .con--form {
+    .contacto__info,
+    .contacto__form {
       width: 48%;
     }
-    .con--info {
+    .contacto__info {
       min-height: 84vh;
       ul {
         .w-full();
@@ -1875,7 +1878,7 @@ footer {
         }
       }
     }
-    .con--form {
+    .contacto__form {
       min-height: 84vh;
       padding: 5.5vh;
       margin-left: 4%;
@@ -1920,19 +1923,19 @@ footer {
     }
   }
   main > div {
-    .container {
+    .contenedor {
       padding: 10vh 2.7vw 12vh 2.7vw;
     }
   }
   footer {
-    .footer--container {
+    .footer__contenedor {
       height: 8vh;
       padding-right: 6vw;
       padding-left: 0;
       background-size: 20vw;
       justify-content: center;
-      .footer--rrss {
-        .footer--rrss__boton {
+      .footer__rrss {
+        .footer__rrssbtn {
           a {
             padding: 1.2vw;
             margin: 0 1vw;
@@ -1956,7 +1959,7 @@ footer {
   ========================================================================== */
   .inicio {
     background-image: url(../images/inicio-tab-bg.jpg);
-    .logo {
+    .inicio__logo {
       height: 20vh;
       width: 52vw;
 
@@ -1965,7 +1968,7 @@ footer {
       }
     }
     .ant-carousel {
-      .carousel--txt {
+      .inicio__carouseltxt {
         p {
           font-size: 1.9rem;
         }
@@ -1978,7 +1981,7 @@ footer {
   .nosotros {
     background-image: url(../images/nosotros-tab-bg.jpg);
     ul {
-      .nos--ficha {
+      .nosotros__ficha {
         &:nth-child(2n) {
           margin-top: 3.2%;
         }
@@ -1999,7 +2002,7 @@ footer {
     }
   }
 
-  .description {
+  .descripcion {
     font-size: 1.45rem;
     line-height: 2rem;
     padding-bottom: 2vh;
@@ -2020,7 +2023,7 @@ footer {
         .gatsby-image-wrapper {
           width: 43%;
         }
-        .pro--ficha__txt {
+        .productos__fichatxt {
           width: 57%;
           padding-left: 2vw;
           h2 {
@@ -2068,7 +2071,7 @@ footer {
   .vallas {
     background-image: url(../images/vallas-tab-bg.jpg);
     ul {
-      .vall--ficha {
+      .vallas__ficha {
         width: 48.4%;
         margin-bottom: 3.2%;
         &:nth-child(2n) {
@@ -2096,11 +2099,11 @@ footer {
   ========================================================================== */
   .contacto {
     background-image: url(../images/contacto-tab-bg.jpg);
-    .con--info,
-    .con--form {
+    .contacto__info,
+    .contacto__form {
       .w-full();
     }
-    .con--info {
+    .contacto__info {
       min-height: 16vh;
       padding-bottom: 0;
       ul {
@@ -2119,7 +2122,7 @@ footer {
         }
       }
     }
-    .con--form {
+    .contacto__form {
       margin: 2.7vh 0 0 0;
       min-height: 39vh;
       h2 {
@@ -2159,17 +2162,17 @@ footer {
     }
   }
   main > div {
-    .container {
+    .contenedor {
       width: 85vw;
       padding: 9vh 0;
     }
   }
   footer {
-    .footer--container {
+    .footer__contenedor {
       height: 10vh;
       padding-right: 8vw;
-      .footer--rrss {
-        .footer--rrss__boton {
+      .footer__rrss {
+        .footer__rrssbtn {
           a {
             svg {
               width: 0.7em !important;
@@ -2190,14 +2193,14 @@ footer {
   /* Inicio
   ========================================================================== */
   .inicio {
-    .logo {
+    .inicio__logo {
       height: 30vh;
       width: 40vw;
       margin-top: -7vh;
       margin-bottom: 7vh;
     }
     .ant-carousel {
-      .carousel--txt {
+      .inicio__carouseltxt {
         p {
           font-size: 2.3rem;
         }
@@ -2209,7 +2212,7 @@ footer {
   ========================================================================== */
   .nosotros {
     ul {
-      .nos--ficha {
+      .nosotros__ficha {
         .w-third();
         &:nth-child(2n) {
           margin-top: 0;
@@ -2234,7 +2237,7 @@ footer {
     }
   }
 
-  .description {
+  .descripcion {
     font-size: 1.4rem;
     line-height: 1.7rem;
     padding-bottom: 1.7vh;
@@ -2256,7 +2259,7 @@ footer {
         .gatsby-image-wrapper {
           width: 32%;
         }
-        .pro--ficha__txt {
+        .productos__fichatxt {
           width: 68%;
           padding-left: 1vw;
           h2 {
@@ -2305,10 +2308,13 @@ footer {
   .vallas {
     ul {
       .flex();
-      .vall--ficha {
+      .vallas__ficha {
         .w-third();
         margin-bottom: 1.833333333%;
-        &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6) {
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(6) {
           margin-top: 0;
           margin-left: 1.833333333%;
         }
@@ -2334,7 +2340,7 @@ footer {
   /* Contacto
   ========================================================================== */
   .contacto {
-    .con--info {
+    .contacto__info {
       min-height: 47vh;
       ul {
         li {
@@ -2350,7 +2356,7 @@ footer {
         }
       }
     }
-    .con--form {
+    .contacto__form {
       min-height: 47vh;
       margin-left: 1.83333333%;
       padding: 3vh;
@@ -2390,17 +2396,17 @@ footer {
     }
   }
   main > div {
-    .container {
+    .contenedor {
       width: 65vw;
       padding: 11vh 0;
     }
   }
   footer {
-    .footer--container {
+    .footer__contenedor {
       height: 12vh;
       background-size: 15vw;
-      .footer--rrss {
-        .footer--rrss__boton {
+      .footer__rrss {
+        .footer__rrssbtn {
           a {
             padding: 0.7vw;
             svg {
@@ -2421,7 +2427,7 @@ footer {
   /* Inicio
   ========================================================================== */
   .inicio {
-    .logo {
+    .inicio__logo {
       height: 26vh;
       width: 30vw;
       margin-bottom: 10vh;
@@ -2436,7 +2442,7 @@ footer {
   ========================================================================== */
   .nosotros {
     ul {
-      .nos--ficha {
+      .nosotros__ficha {
         &:nth-child(2n) {
           margin-left: 1.633333333%;
         }
@@ -2454,7 +2460,7 @@ footer {
     }
   }
 
-  .description {
+  .descripcion {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -2473,7 +2479,7 @@ footer {
         .gatsby-image-wrapper {
           width: 26%;
         }
-        .pro--ficha__txt {
+        .productos__fichatxt {
           width: 74%;
           h2 {
             font-size: 1.4rem;
@@ -2502,14 +2508,17 @@ footer {
     }
   }
 
- /* Vallas / Mapas
+  /* Vallas / Mapas
   ========================================================================== */
   .vallas {
     ul {
       .flex();
-      .vall--ficha {
+      .vallas__ficha {
         margin-bottom: 1.633333333%;
-        &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6) {
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(6) {
           margin-top: 0;
           margin-left: 1.633333333%;
         }
@@ -2524,11 +2533,10 @@ footer {
     }
   }
 
-
   /* Contacto
   ========================================================================== */
   .contacto {
-    .con--info {
+    .contacto__info {
       min-height: 50vh;
       ul {
         li {
@@ -2543,7 +2551,7 @@ footer {
         }
       }
     }
-    .con--form {
+    .contacto__form {
       min-height: 50vh;
       h2 {
         font-size: 1.4rem;

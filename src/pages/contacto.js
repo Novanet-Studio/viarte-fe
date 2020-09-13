@@ -67,9 +67,9 @@ export default function ContactPage() {
             description={data.strapiContact.seo.description}
           />
           <div className="contacto">
-            <div className="container">
+            <div className="contenedor">
               <h1>{data.strapiContact.seo.title}</h1>
-              <div className="con--info">
+              <div className="contacto__info">
                 <ul>
                   {data.strapiContact.info.map((document) => (
                     <li key={document.id}>
@@ -86,7 +86,8 @@ export default function ContactPage() {
                   ))}
                 </ul>
               </div>
-              <div className="con--form">
+
+              <div className="contacto__form">
                 <h2>Envíanos un mensaje</h2>
                 <Form
                   onSubmit={handleSubmit}
@@ -109,7 +110,7 @@ export default function ContactPage() {
                           <input name="bot-field" onChange={handleChange} />
                         </label>
                       </p>
-                      <label className="hidden">Nombre</label>
+                      <label className="oculto">Nombre</label>
                       <Field
                         name="name"
                         component="input"
@@ -120,7 +121,7 @@ export default function ContactPage() {
                         pattern="[A-Z].+"
                         placeholder="Nombre"
                       />
-                      <label className="hidden">Correo</label>
+                      <label className="oculto">Correo</label>
                       <Field
                         name="email"
                         type="email"
@@ -129,7 +130,7 @@ export default function ContactPage() {
                         required
                         placeholder="Correo"
                       />
-                      <label className="hidden">Teléfono</label>
+                      <label className="oculto">Teléfono</label>
                       <Field
                         name="tel"
                         type="tel"

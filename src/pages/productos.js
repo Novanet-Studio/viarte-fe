@@ -68,9 +68,9 @@ export default function Productos() {
             image={data.strapiProduct.seo.image}
           />
           <div className="productos">
-            <div className="container">
+            <div className="contenedor">
               <h1>{data.strapiProduct.seo.title}</h1>
-              <p className="description">{data.strapiProduct.description}</p>
+              <p className="descripcion">{data.strapiProduct.description}</p>
               <ul>
                 {data.allStrapiProducto.nodes.map((document) => (
                   <li key={document.id}>
@@ -79,7 +79,7 @@ export default function Productos() {
                       title={document.seo_image.title}
                       alt={document.seo_image.alt}
                     />
-                    <div className="pro--ficha__txt">
+                    <div className="productos__fichatxt">
                       <h2>{document.name}</h2>
                       <p>{document.short_description}</p>
                       <button

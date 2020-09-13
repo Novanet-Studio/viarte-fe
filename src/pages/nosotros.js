@@ -12,11 +12,11 @@ const Nosotros = ({ data }) => (
     />
     <div className="nosotros">
       <h1>{data.strapiAbout.seo.title}</h1>
-      <div className="container">
-        <p className="description">{data.strapiAbout.description}</p>
+      <div className="contenedor">
+        <p className="descripcion">{data.strapiAbout.description}</p>
         <ul>
           {data.strapiAbout.Statement.map((document) => (
-            <li key={document.id} className="nos--ficha">
+            <li key={document.id} className="nosotros__ficha">
               <img
                 src={document.image.publicURL}
                 title={document.image_seo.title}
