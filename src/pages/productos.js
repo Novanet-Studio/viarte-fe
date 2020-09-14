@@ -82,8 +82,7 @@ export default function Productos() {
                     <div className="productos__fichatxt">
                       <h2>{document.name}</h2>
                       <p>{document.short_description}</p>
-                      <button
-                        id="btnA"
+                      <button                       
                         tabIndex="0"
                         value={document.id}
                         onClick={(e) => openModal(e.target.value)}

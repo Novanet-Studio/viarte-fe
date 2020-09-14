@@ -21,11 +21,11 @@ const Mapas = ({ data }) => (
               <GoogleMap
                 lat={item.node.lat}
                 lng={item.node.lng}
-                id={item.node.id}
+            
               />
               <h2>{item.node.location}</h2>
               <p>{item.node.direction}</p>
-              <p className="oculto">{item.node.url}</p>
+              <a href={item.node.url} target="_blank" rel="noreferrer">Abrir en Google Maps</a>
             </li>
           ))}
         </ul>

@@ -14,7 +14,7 @@ const Navigation = () => (
     <AniLink
       cover
       direction="right"
-      duration={0.75}
+      duration={0.55}
       bg="#f36f21"
       to="/"
       activeStyle={linkActivo}
@@ -23,8 +23,10 @@ const Navigation = () => (
       Inicio
     </AniLink>
     <AniLink
-      fade
-      duration={0.75}
+      cover
+      direction="left"
+      duration={0.55}
+      bg="#00a5e7"
       to="/nosotros"
       activeStyle={linkActivo}
       aria-label="Ir al vínculo de Nosotros"
@@ -35,9 +37,9 @@ const Navigation = () => (
       Nosotros
     </AniLink>
     <AniLink
-      paintDrip
-      color="#00a5e7"
-      duration={0.75}
+      cover
+      direction="right"
+      duration={0.55}
       to="/productos"
       activeStyle={linkActivo}
       aria-label="Ir al vínculo de Productos"
@@ -48,12 +50,13 @@ const Navigation = () => (
       Productos
     </AniLink>
     <AniLink
-      paintDrip
-      color="#00a5e7"
-      duration={0.75}
+      cover
+      direction="left"
+      duration={0.55}
+      bg="#00a5e7"
       to="/mapas"
       activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Ubicaciones"
+      aria-label="Ir al vínculo de Vallas"
       getProps={({ isPartiallyCurrent }) =>
         isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
       }
@@ -61,9 +64,9 @@ const Navigation = () => (
       Vallas
     </AniLink>
     <AniLink
-      swipe
-      top="entry"
-      entryOffset={80}
+      cover
+      direction="right"
+      duration={0.55}
       to="/contacto"
       activeStyle={linkActivo}
       aria-label="Ir al vínculo de Contacto"
