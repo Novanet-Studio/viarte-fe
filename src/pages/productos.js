@@ -79,7 +79,7 @@ export default function Productos() {
                       title={document.seo_image.title}
                       alt={document.seo_image.alt}
                     />
-                    <div className="productos__fichatxt">
+                    <div className="productos__ficha">
                       <h2>{document.name}</h2>
                       <p>{document.short_description}</p>
                       <button                       
