@@ -64,6 +64,19 @@ const Navigation = () => (
       Vallas
     </AniLink>
     <AniLink
+      swipe
+      top="entry"
+      entryOffset={80}
+      to="/blog/"
+      activeStyle={linkActivo}
+      aria-label="Ir al vínculo de Contacto"
+      getProps={({ isPartiallyCurrent }) =>
+        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
+      }
+    >
+      Blog
+    </AniLink>
+    <AniLink
       cover
       direction="right"
       duration={0.55}
