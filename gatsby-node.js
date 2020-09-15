@@ -5,3 +5,32 @@
  */
 
 // You can delete this file if you're not using it
+
+const path = require('path')
+
+exports.createPages = async ({ actions:{ createPage }, graphql }) => {
+  const { data } = await graphql(`
+    {
+      allStrapiEntrada {
+        edges {
+          node {
+            id
+            Slug
+          }
+        }
+      }
+    }
+  `) 
+
+  data.allStrapiEntrada.edges.forEach(({ node }) => {
+    const slug = node.Slug
+
+    createPage({
+      path: `/blog/${slug}`,
+      component: path.resolve('./src/pages/blog/entradas.js'),
+      context: {
+        id: node.id
+      }
+    })
+  })
+}
