@@ -1,9 +1,9 @@
 {
   "name": "viarte",
   "private": true,
-  "description": "Viarte main page with Gatsby",
+  "description": "Viarte web app",
   "version": "0.1.0",
-  "author": "David Arenas <darenas@novanet.studio>",
+  "author": "Novanet Studio <info@novanet.studio>",
   "homepage": "http://www.viarte.net/site/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -55,9 +55,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Novanet-Studio/viarte-fe"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Novanet-Studio/viarte-fe/issues"
   }
 }

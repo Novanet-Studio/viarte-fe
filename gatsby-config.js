@@ -5,48 +5,21 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Publicidad exterior en vallas publicitarias de diversos formatos`,
-    titleTemplate: " Viarte",
     description: `Empresa dedicada al alquiler de espacios publicitarios y a la publicidad exterior en general.`,
+    type: "website",
     author: `@novanetstudio`,
+    siteUrl: "https://viarte.net",
+    image: `${process.env.SEO_IMAGE}`,
+    titleTemplate: " Viarte",
+    twitterUsername: "@novanetstudio",
   },
-  plugins: [    
+  plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: "./src/assets/images/icon.png",
-  
-        // WebApp Manifest Configuration
-        appName: null, // Inferred with your package.json
-        appDescription: null,
-        developerName: null,
-        developerURL: null,
-        dir: 'auto',
-        lang: 'es-ES',
-        background: '#fff',
-        theme_color: '#00a5e7',
-        display: 'standalone',
-        orientation: 'any',
-        start_url: '/',
-        version: '1.0',
-  
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          yandex: false,
-          windows: false
-        }
-      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -57,20 +30,34 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#00a5e7`,
         display: `standalone`,
-        icon: "src/assets/images/icon.png",
+        icon: `src/assets/images/icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/assets/images/icon.png",
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          yandex: false,
+          windows: false,
+        },
       },
     },
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
+        apiURL: process.env.API_URL,
         contentTypes: [`producto`, 'map', 'entrada'],
         singleTypes: [`home`, `about`, `product`, 'mapa', 'blog', `contact`],
         queryLimit: 1000,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

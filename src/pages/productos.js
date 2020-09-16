@@ -38,6 +38,10 @@ export default function Productos() {
               title
             }
             description
+            seo_image {
+              title
+              alt
+            }
           }
           allStrapiProducto {
             nodes {
@@ -67,7 +71,11 @@ export default function Productos() {
             description={data.strapiProduct.seo.description}
             image={data.strapiProduct.seo.image}
           />
-          <div className="productos">
+          <div
+            className="productos"
+            title={data.strapiProduct.seo_image.title}
+            alt={data.strapiProduct.seo_image.alt}
+          >
             <div className="contenedor">
               <h1>{data.strapiProduct.seo.title}</h1>
               <p className="descripcion">{data.strapiProduct.description}</p>
@@ -82,7 +90,7 @@ export default function Productos() {
                     <div className="productos__ficha">
                       <h2>{document.name}</h2>
                       <p>{document.short_description}</p>
-                      <button                       
+                      <button
                         tabIndex="0"
                         value={document.id}
                         onClick={(e) => openModal(e.target.value)}
@@ -101,7 +109,7 @@ export default function Productos() {
                           <span
                             className="close"
                             role="button"
-                            tabIndex="0"                      
+                            tabIndex="0"
                             onClick={() => closeModal()}
                             onKeyDown={() => closeModal()}
                           >
@@ -112,7 +120,7 @@ export default function Productos() {
                             title={document.seo_image.title}
                             alt={document.seo_image.alt}
                           />
-                          <div className="modal-text">                          
+                          <div className="modal-text">
                             <h2>{document.name}</h2>
                             <p>{document.long_description}</p>
                           </div>

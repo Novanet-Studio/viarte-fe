@@ -10,7 +10,11 @@ const Nosotros = ({ data }) => (
       description={data.strapiAbout.seo.description}
       image={data.strapiAbout.seo.image}
     />
-    <div className="nosotros">
+    <div
+      className="nosotros"
+      title={data.strapiAbout.image_seo.title}
+      alt={data.strapiAbout.image_seo.alt}
+    >
       <h1>{data.strapiAbout.seo.title}</h1>
       <div className="contenedor">
         <p className="descripcion">{data.strapiAbout.description}</p>
@@ -41,7 +45,6 @@ export const query = graphql`
         title
         description
       }
-
       description
       Statement {
         id
@@ -54,6 +57,10 @@ export const query = graphql`
           title
           alt
         }
+      }
+      image_seo {
+        title
+        alt
       }
     }
   }

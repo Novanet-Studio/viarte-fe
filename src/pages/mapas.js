@@ -11,7 +11,7 @@ const Mapas = ({ data }) => (
       description={data.strapiMapa.description}
       image={data.strapiMapa.image}
     />
-    <div className="vallas">
+    <div className="vallas" title={data.strapiMapa.image_seo.title} alt={data.strapiMapa.image_seo.alt}>
       <div className="contenedor">
         <h1>{data.strapiMapa.seo.title}</h1>
         <p className="descripcion">{data.strapiMapa.description}</p>
@@ -43,6 +43,10 @@ export const query = graphql`
         id
         image
         title
+      }
+      image_seo {
+        title
+        alt
       }
     }
     allStrapiMap {

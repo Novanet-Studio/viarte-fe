@@ -20,9 +20,8 @@ const IndexPage = ({ data }) => (
     <SEO
       title={data.strapiHome.seo.title}
       description={data.strapiHome.seo.description}
-      image={data.strapiHome.seo.image}
     />
-    <div className="inicio">
+    <div className="inicio" title={data.strapiHome.seo_image.title} alt={data.strapiHome.seo_image.alt}>
       <h1>{data.strapiHome.seo.title}</h1>
       <div className="inicio__logo">
         <img src={Logo} alt="logo viarte" />
