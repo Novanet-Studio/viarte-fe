@@ -1,15 +1,17 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from "react"
+import { Link, graphql } from "gatsby"
 // import Img from 'gatsby-image'
-import Layout from '../../components/layout'
+import Layout from "../components/layout"
 
 const IndexBlog = ({ data }) => (
   <Layout>
-    <div style={{
-      padding: '20px',
-      marginTop: '20px',
-      border: '1px solid #ccc'
-    }}>
+    <div
+      style={{
+        padding: "20px",
+        marginTop: "20px",
+        border: "1px solid #ccc",
+      }}
+    >
       <h1>Viarte Blog</h1>
       <p>Welcome to the blog</p>
       <ul>
