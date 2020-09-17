@@ -3,37 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-const showArticles = (data) =>
-  data.allStrapiEntrada.edges.map(({ node }) =>
-    node.destacado ? (
-      <li key={node.id}>
-        <p style={{fontSize: '1rem', color: 'red'}}>DESTACADO</p>
-        <h2>
-          <Link to={`/blog/${node.Slug}`}>{node.title}</Link>
-          <Img
-            fluid={node.image.childImageSharp.fluid}
-            title={node.seo_image.title}
-            alt={node.seo_image.alt}
-          />
-        </h2>
-      </li>
-    ) : (
-      <li key={node.id}>
-        <p>NO DESTACADO: </p>
-        <h2>
-          <Link to={`/blog/${node.Slug}`}>{node.title}</Link>
-          <Img
-            fluid={node.image.childImageSharp.fluid}
-            title={node.seo_image.title}
-            alt={node.seo_image.alt}
-            width="200"
-            height="200"
-          />
-        </h2>
-      </li>
-    )
-  )
+import ReactMarkdown from "react-markdown"
 
 const Blog = ({ data }) => (
   <Layout>
@@ -50,22 +20,46 @@ const Blog = ({ data }) => (
       <div className="contenedor">
         <h1>{data.strapiBlog.title}</h1>
         <p>{data.strapiBlog.description}</p>
-        <ul>
-          {showArticles(data)}
-          {/* {data.allStrapiEntrada.edges.map((item) => (
-            <li key={item.node.id}>
-              <h2>
-                <Link to={`/blog/${item.node.Slug}`}>{item.node.title}</Link>
-              </h2>
+
+        {/* ====== Entrada destacada ====== */}
+        {data.allStrapiEntradaTrue.edges.map((item) => (
+          <div className="destacado" key={item.node.id}>
+            <Link to={`/blog/${item.node.Slug}`}>
+              <h2>{item.node.title}</h2>
               <Img
                 fluid={item.node.image.childImageSharp.fluid}
                 title={item.node.seo_image.title}
                 alt={item.node.seo_image.alt}
               />
-              <p>{item.node.description}</p>
+              <ReactMarkdown
+                className="descripcion"
+                source={item.node.description.substring(0, 540).concat("...")}
+                escapeHtml={false}
+              />
+            </Link>
+          </div>
+        ))}
+
+        {/* ====== Entradas no destacadas ====== */}
+        {data.allStrapiEntradaFalse.edges.map((item) => (
+          <ul>
+            <li key={item.node.id}>
+              <Link to={`/blog/${item.node.Slug}`}>
+                <h2>{item.node.title}</h2>
+                <Img
+                  fluid={item.node.image.childImageSharp.fluid}
+                  title={item.node.seo_image.title}
+                  alt={item.node.seo_image.alt}
+                />
+                <ReactMarkdown
+                  className="description"
+                  source={item.node.description.substring(0, 144).concat("...")}
+                  escapeHtml={false}
+                />
+              </Link>
             </li>
-          ))} */}
-        </ul>
+          </ul>
+        ))}
       </div>
     </div>
   </Layout>
@@ -88,14 +82,38 @@ export const query = graphql`
         alt
       }
     }
-    allStrapiEntrada {
+    allStrapiEntradaTrue: allStrapiEntrada(
+      filter: { destacado: { eq: true } }
+    ) {
       edges {
         node {
           id
           title
-          description
           Slug
-          destacado
+          description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 450) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          seo_image {
+            title
+            alt
+          }
+        }
+      }
+    }
+    allStrapiEntradaFalse: allStrapiEntrada(
+      filter: { destacado: { eq: false } }
+    ) {
+      edges {
+        node {
+          id
+          title
+          Slug
+          description
           image {
             childImageSharp {
               fluid(maxWidth: 450) {

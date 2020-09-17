@@ -25,6 +25,7 @@ const EntradaTemplate = ({ data }) => (
           alt={data.strapiEntrada.seo_image.alt}
         />
         <ReactMarkdown
+          className="descripcion"
           source={data.strapiEntrada.description}
           escapeHtml={false}
         />
@@ -40,7 +41,7 @@ export const query = graphql`
     strapiBlog {
       seo_image {
         title
-        alt        
+        alt
       }
     }
     strapiEntrada(id: { eq: $id }) {
