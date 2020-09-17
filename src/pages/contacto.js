@@ -70,7 +70,11 @@ export default function ContactPage() {
             title={data.strapiContact.seo.title}
             description={data.strapiContact.seo.description}
           />
-          <div className="contacto" title={data.strapiContact.seo_image.title} alt={data.strapiContact.seo_image.alt}>
+          <div
+            className="contacto"
+            title={data.strapiContact.seo_image.title}
+            alt={data.strapiContact.seo_image.alt}
+          >
             <div className="contenedor">
               <h1>{data.strapiContact.seo.title}</h1>
               <div className="contacto__info">
