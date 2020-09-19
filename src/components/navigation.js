@@ -87,7 +87,7 @@ const Navigation = () => (
         isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
       }
     >
-      contacto
+      Contacto
     </AniLink>
   </nav>
 )

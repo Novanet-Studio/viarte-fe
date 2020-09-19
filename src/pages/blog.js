@@ -19,40 +19,40 @@ const Blog = ({ data }) => (
     >
       <div className="contenedor">
         <h1>{data.strapiBlog.title}</h1>
-        <p>{data.strapiBlog.description}</p>
+        <p className="descripcion">{data.strapiBlog.description}</p>
 
         {/* ====== Entrada destacada ====== */}
         {data.allStrapiEntradaTrue.edges.map((item) => (
-          <div className="destacado" key={item.node.id}>
+          <div className="blog__destacado" key={item.node.id}>
             <Link to={`/blog/${item.node.Slug}`}>
-              <h2>{item.node.title}</h2>
               <Img
                 fluid={item.node.image.childImageSharp.fluid}
                 title={item.node.seo_image.title}
                 alt={item.node.seo_image.alt}
               />
+              <div className="blog__destacadotexto">
+              <h2>{item.node.title}</h2>
               <ReactMarkdown
-                className="descripcion"
                 source={item.node.description.substring(0, 540).concat("...")}
                 escapeHtml={false}
               />
+              </div>
             </Link>
           </div>
         ))}
 
         {/* ====== Entradas no destacadas ====== */}
         {data.allStrapiEntradaFalse.edges.map((item) => (
-          <ul>
+          <ul className="blog__ficha">
             <li key={item.node.id}>
               <Link to={`/blog/${item.node.Slug}`}>
-                <h2>{item.node.title}</h2>
                 <Img
                   fluid={item.node.image.childImageSharp.fluid}
                   title={item.node.seo_image.title}
                   alt={item.node.seo_image.alt}
                 />
+                                <h3>{item.node.title}</h3>
                 <ReactMarkdown
-                  className="description"
                   source={item.node.description.substring(0, 144).concat("...")}
                   escapeHtml={false}
                 />
