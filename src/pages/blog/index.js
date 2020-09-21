@@ -31,19 +31,19 @@ const Blog = ({ data }) => (
                 alt={item.node.seo_image.alt}
               />
               <div className="blog__destacadotexto">
-              <h2>{item.node.title}</h2>
-              <ReactMarkdown
-                source={item.node.description.substring(0, 540).concat("...")}
-                escapeHtml={false}
-              />
+                <h2>{item.node.title}</h2>
+                <ReactMarkdown
+                  source={item.node.description.substring(0, 540).concat("...")}
+                  escapeHtml={false}
+                />
               </div>
             </Link>
           </div>
         ))}
 
         {/* ====== Entradas no destacadas ====== */}
-        {data.allStrapiEntradaFalse.edges.map((item) => (
-          <ul className="blog__ficha">
+        <ul className="blog__ficha">
+          {data.allStrapiEntradaFalse.edges.map((item) => (
             <li key={item.node.id}>
               <Link to={`/blog/${item.node.Slug}`}>
                 <Img
@@ -51,15 +51,15 @@ const Blog = ({ data }) => (
                   title={item.node.seo_image.title}
                   alt={item.node.seo_image.alt}
                 />
-                                <h3>{item.node.title}</h3>
+                <h3>{item.node.title}</h3>
                 <ReactMarkdown
                   source={item.node.description.substring(0, 144).concat("...")}
                   escapeHtml={false}
                 />
               </Link>
             </li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
     </div>
   </Layout>
