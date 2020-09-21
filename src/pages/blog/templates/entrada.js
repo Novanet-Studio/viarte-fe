@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql} from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
 import ReactMarkdown from "react-markdown"
 
 const EntradaTemplate = ({ data }) => (
@@ -37,7 +37,7 @@ const EntradaTemplate = ({ data }) => (
 export default EntradaTemplate
 
 export const query = graphql`
-  query EntradaTemplate($id: String!) {
+  query EntradaTemplate($id: String) {
     strapiBlog {
       seo_image {
         title
@@ -62,5 +62,5 @@ export const query = graphql`
         alt
       }
     }
-  }
+  } 
 `
