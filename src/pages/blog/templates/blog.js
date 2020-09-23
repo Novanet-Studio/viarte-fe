@@ -76,19 +76,13 @@ export default class Blog extends React.Component {
                 </li>
               ))}
             </ul>
-            <div className="nav">
+            <div className="paginacion">
               {!isFirst && (
                 <Link to={prevPage} rel="prev">
-                  ← Anteriores
+                  ◀
                 </Link>
               )}
-              {!isLast && (
-                <Link to={nextPage} rel="next">
-                  Siguientes →
-                </Link>
-              )}
-            </div>
-            {Array.from({ length: numPages }, (_, i) => (
+              {Array.from({ length: numPages }, (_, i) => (
               <Link
                 key={`pagination-number${i + 1}`}
                 to={`/blog/${i === 0 ? "" : i + 1}`}
@@ -96,6 +90,13 @@ export default class Blog extends React.Component {
                 {i + 1}
               </Link>
             ))}
+
+              {!isLast && (
+                <Link to={nextPage} rel="next">
+                  ▶
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </Layout>
