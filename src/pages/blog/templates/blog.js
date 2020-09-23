@@ -76,9 +76,9 @@ export default class Blog extends React.Component {
                 </li>
               ))}
             </ul>
-            <div className="paginacion">
+            <div className="blog__pag">
               {!isFirst && (
-                <Link to={prevPage} rel="prev">
+                <Link className="pag__ant" to={prevPage} rel="prev">
                   ◀
                 </Link>
               )}
@@ -92,7 +92,7 @@ export default class Blog extends React.Component {
             ))}
 
               {!isLast && (
-                <Link to={nextPage} rel="next">
+                <Link className="pag__sig" to={nextPage} rel="next">
                   ▶
                 </Link>
               )}

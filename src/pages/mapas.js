@@ -25,9 +25,6 @@ const Mapas = ({ data }) => (
               <GoogleMap lat={item.node.lat} lng={item.node.lng} />
               <h2>{item.node.location}</h2>
               <p>{item.node.direction}</p>
-              <a href={item.node.url} target="_blank" rel="noreferrer">
-                Abrir en Google Maps
-              </a>
             </li>
           ))}
         </ul>
@@ -57,7 +54,6 @@ export const query = graphql`
           id
           location
           direction
-          url
           lat
           lng
         }
