@@ -1409,10 +1409,12 @@ footer {
     .gatsby-image-wrapper {
     }
     .post__cabecera {
+      .post__boton {
+      }
       h1 {
-      display:block; 
-      font-weight:500;
-      .naranja();
+        display: block;
+        font-weight: 500;
+        .naranja();
       }
       .post__compartir {
       }
@@ -1423,7 +1425,6 @@ footer {
     }
   }
 }
-
 
 /* Contacto
 ========================================================================== */
@@ -1618,7 +1619,6 @@ footer {
     padding-bottom: 2.7vh;
   }
 
-
   /* Productos
   ========================================================================== */
   .productos {
@@ -1769,43 +1769,45 @@ footer {
       }
       .pag__ant {
         margin-left: 0;
-        font-size: 1.25rem;
-        padding-bottom: 0.2vh;
+        font-size: 1.3rem;
+        align-items: baseline;
       }
       .pag__sig {
         margin-right: 0;
-        font-size: 1.25rem;
-        padding-right: 0.4vh;
-        padding-bottom: 0.2vh;
+        font-size: 1.3rem;
+        align-items: baseline;
+        span {margin:0 0 0 -0.3vh}
       }
     }
   }
 
   /* Post
 ========================================================================== */
-.post {
-  background-image: url(../images/blog-mov-bg.jpg);
-  .post__contenedor {
-    padding: 2.5vh;
-    .gatsby-image-wrapper {
-      .w-full();
-      height: 30vh;
-    }
-    .post__cabecera {
-      padding-top: 1.5vh;
-      h1 {
-        font-size: 1.4rem;
+  .post {
+    background-image: url(../images/blog-mov-bg.jpg);
+    .post__contenedor {
+      padding: 2.5vh;
+      .gatsby-image-wrapper {
+        .w-full();
+        height: 30vh;
       }
-      .post__compartir {
+      .post__cabecera {
+        .post__boton {
+        }
+        padding-top: 1.5vh;
+        h1 {
+          font-size: 1.4rem;
+        }
+        .post__compartir {
+        }
       }
-    }
-    p {
-      padding-top: 1.5vh;
-      font-size: 0.9rem;
-      line-height: 1.3rem;
+      p {
+        padding-top: 1.5vh;
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+      }
     }
   }
-}
 
   /* Contacto
   ========================================================================== */
@@ -2132,39 +2134,51 @@ footer {
       }
       .pag__sig {
         margin-right: 0;
-        padding-right: 0.5vh;
         font-size: 1.21rem;
+        span {margin: 0 0 0 -0.2vh;}
       }
     }
   }
 
-/* Post
+  /* Post
 ========================================================================== */
-.post {
-  background-image: url(../images/blog-lan-bg.jpg);
-  .post__contenedor {
-    .flex();
-    padding: 4vh;
-    .gatsby-image-wrapper {
-      width: 48%;
-      height: 52vh;
-    }
-    .post__cabecera {
-      width: 52%;
-      padding-left: 4vh;
-      h1 {
-        font-size: 1.4rem;
+  .post {
+    background-image: url(../images/blog-lan-bg.jpg);
+    .post__contenedor {
+      .flex();
+      padding: 4vh;
+      .gatsby-image-wrapper {
+        order: 2;
+        width: 48%;
+        height: 52vh;
       }
-      .post__compartir {
+      .post__cabecera {
+        order: 1;
+        width: 52%;
+        padding-right: 4vh;
+        text-align: right;
+        justify-content: flex-end;
+        align-content: center;
+        .flex();
+        .post__boton {
+        }
+        h1 {
+          font-size: 1.4rem;
+          .w-full();
+        }
+        .post__compartir {
+        }
       }
-    }
-    p {
-      padding-top: 3vh;
-      font-size: 0.9rem;
-      line-height: 1.2rem;
+      .post__contenido {
+        order: 3;
+        p {
+          padding-top: 3vh;
+          font-size: 0.9rem;
+          line-height: 1.2rem;
+        }
+      }
     }
   }
-}
 
   /* Contacto
   ========================================================================== */
@@ -2493,44 +2507,54 @@ footer {
         height: 3vh;
       }
       .pag__ant {
-        font-size: 1.5rem;
-        padding-bottom: 0.2vh;
+        font-size: 1.6rem;
       }
       .pag__sig {
-        font-size: 1.5rem;
-        padding-right: 0.2vh;
+        font-size: 1.6rem;
       }
     }
   }
 
-/* Post
+  /* Post
 ========================================================================== */
-.post {
-  background-image: url(../images/blog-tab-bg.jpg);
-  .post__contenedor {
-    padding: 2vh;
-    .flex();
-    .gatsby-image-wrapper {
-      width: 48%;
-      height: auto;
-    }
-    .post__cabecera {
-      padding-top:0;
-      padding-left: 2vh;
-      width: 52%;
-      h1 {
+  .post {
+    background-image: url(../images/blog-tab-bg.jpg);
+    .post__contenedor {
+      padding: 2vh;
+      .flex();
+      .gatsby-image-wrapper {
+        order: 2;
+        width: 48%;
+        height: auto;
+      }
+      .post__cabecera {
+        order: 1;
         padding-top: 0;
-        font-size: 1.6rem;
+        padding-right: 2vh;
+        width: 52%;
+        text-align: right;
+        justify-content: flex-end;
+        align-content: center;
+        .flex();
+        .post__boton {
+        }
+        h1 {
+          .w-full();
+          padding-top: 0;
+          font-size: 1.6rem;
+        }
+        .post__compartir {
+        }
       }
-      .post__compartir {
+      .post__contenido {
+        order: 3;
+        p {
+          font-size: 0.95rem;
+          line-height: 1.4rem;
+        }
       }
-    }
-    p {
-      font-size: 0.95rem;
-      line-height: 1.4rem;
     }
   }
-}
 
   /* Contacto
   ========================================================================== */
@@ -2833,51 +2857,53 @@ footer {
       }
       .pag__ant {
         font-size: 1.4rem;
+        align-items: baseline;
       }
       .pag__sig {
         font-size: 1.4rem;
-        padding-right: 0.3vh;
+        align-items: baseline;
       }
     }
   }
 
-/* Post
+  /* Post
 ========================================================================== */
-.post {
-  .post__contenedor {
-    padding: 2vh;
-    .gatsby-image-wrapper {
-      .w-half();
-      height: auto;
-    }
-    .post__cabecera {
-      width: 51%;
-      padding-left: 2vh;
-      h1 {
-        margin-top: -0.8vh;
-        padding-top: 0;
-        font-size: 1.6rem;
+  .post {
+    .post__contenedor {
+      padding: 2vh;
+      .gatsby-image-wrapper {
+        .w-half();
+        height: auto;
       }
-      .post__compartir {
-      }
-    }
-    .post__contenido {
-      padding-top: 2vh;
-      -webkit-column-count: 2;
-      column-count: 2;
-      -webkit-column-gap: 1.5em;
-      column-gap: 1.5em;
-      p {
-        &:first-child {
-          padding-top: 0
+      .post__cabecera {
+        .post__boton {
         }
-        padding-top: 1.5vh;
-        font-size: 0.95rem;
-        line-height: 1.5rem;
+        width: 51%;
+        padding-right: 3vh;
+        h1 {
+          padding-top: 0;
+          font-size: 1.6rem;
+        }
+        .post__compartir {
+        }
+      }
+      .post__contenido {
+        padding-top: 2vh;
+        -webkit-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 1.5em;
+        column-gap: 1.5em;
+        p {
+          &:first-child {
+            padding-top: 0;
+          }
+          padding-top: 1.5vh;
+          font-size: 0.95rem;
+          line-height: 1.5rem;
+        }
       }
     }
   }
-}
 
   /* Contacto
   ========================================================================== */
@@ -3145,39 +3171,36 @@ footer {
       }
       .pag__ant {
         font-size: 1.5rem;
-        padding-bottom: 0.2vh;
       }
       .pag__sig {
         font-size: 1.5rem;
-        padding-right: 0.2vh;
-        padding-bottom: 0.2vh;
       }
     }
   }
 
   /* Post
 ========================================================================== */
-.post {
-  background-image: url(../images/blog-desk-bg.jpg);
-  .post__contenedor {
-    .gatsby-image-wrapper {
-      width: 50%;
-      height: 40vh;
-    }
-    .post__cabecera {
-      width: 50%;
-      h1 {
-        font-size: 1.8rem;
+  .post {
+    background-image: url(../images/blog-desk-bg.jpg);
+    .post__contenedor {
+      .gatsby-image-wrapper {
+        width: 50%;
+        height: 40vh;
       }
-    }
-    .post__contenido {
-      p {
-        font-size: 1rem;
-        line-height: 1.6rem;
+      .post__cabecera {
+        width: 50%;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+      .post__contenido {
+        p {
+          font-size: 1rem;
+          line-height: 1.6rem;
+        }
       }
     }
   }
-}
 
   /* Contacto
   ========================================================================== */

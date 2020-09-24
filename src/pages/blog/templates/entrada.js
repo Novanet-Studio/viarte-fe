@@ -4,7 +4,6 @@ import Img from "gatsby-image"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import ReactMarkdown from "react-markdown"
-import { Divider } from "antd"
 
 const EntradaTemplate = ({ data }) => (
   <Layout>
@@ -26,6 +25,7 @@ const EntradaTemplate = ({ data }) => (
               alt={data.strapiEntrada.seo_image.alt}
             />
             <div className="post__cabecera">
+              <div className="post__boton"></div>
               <h1>{data.strapiEntrada.title}</h1>
               <div className="post__compartir"></div>
             </div>

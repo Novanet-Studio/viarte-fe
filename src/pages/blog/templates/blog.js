@@ -79,7 +79,7 @@ export default class Blog extends React.Component {
             <div className="blog__pag">
               {!isFirst && (
                 <Link className="pag__ant" to={prevPage} rel="prev">
-                  ◀
+                 <span>◀</span>
                 </Link>
               )}
               {Array.from({ length: numPages }, (_, i) => (
@@ -93,7 +93,7 @@ export default class Blog extends React.Component {
 
               {!isLast && (
                 <Link className="pag__sig" to={nextPage} rel="next">
-                  ▶
+                <span>▶</span>
                 </Link>
               )}
             </div>
