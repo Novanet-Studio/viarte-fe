@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import ReactMarkdown from "react-markdown"
+import { Divider } from "antd"
 
 const EntradaTemplate = ({ data }) => (
   <Layout>
@@ -13,22 +14,28 @@ const EntradaTemplate = ({ data }) => (
       image={data.strapiEntrada.image.publicURL}
     />
     <div
-      className="blog"
+      className="blog post"
       title={data.strapiBlog.seo_image.title}
       alt={data.strapiBlog.seo_image.alt}
     >
       <div className="contenedor">
-        <h1>{data.strapiEntrada.title}</h1>
-        <Img
-          fluid={data.strapiEntrada.image.childImageSharp.fluid}
-          title={data.strapiEntrada.seo_image.title}
-          alt={data.strapiEntrada.seo_image.alt}
-        />
-        <ReactMarkdown
-          className="descripcion"
-          source={data.strapiEntrada.description}
-          escapeHtml={false}
-        />
+        <div className="post__contenedor">
+            <Img
+              fluid={data.strapiEntrada.image.childImageSharp.fluid}
+              title={data.strapiEntrada.seo_image.title}
+              alt={data.strapiEntrada.seo_image.alt}
+            />
+            <div className="post__cabecera">
+              <h1>{data.strapiEntrada.title}</h1>
+              <div className="post__compartir"></div>
+            </div>
+            <div className="post__contenido">
+            <ReactMarkdown
+              source={data.strapiEntrada.description}
+              escapeHtml={false}
+            />
+            </div>
+        </div>
       </div>
     </div>
   </Layout>
@@ -52,7 +59,7 @@ export const query = graphql`
       image {
         publicURL
         childImageSharp {
-          fluid(maxWidth: 450) {
+          fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
         }

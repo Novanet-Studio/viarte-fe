@@ -966,6 +966,7 @@ h1 {
   display: none;
 }
 
+h1,
 h2,
 h3,
 h4 {
@@ -1294,9 +1295,9 @@ footer {
 /* Mapas
 ========================================================================== */
 .vallas {
-  .mapa__principal{
+  .mapa__principal {
     .w-full();
-    height:55vh;
+    height: 55vh;
   }
   .img-bg();
   ul {
@@ -1385,6 +1386,8 @@ footer {
     .flex();
     .center();
     a {
+      .flex();
+      .center();
       .lato();
       .gris-oscuro();
       .gris-claro-bg();
@@ -1396,6 +1399,31 @@ footer {
     }
   }
 }
+
+/* Post
+========================================================================== */
+.post {
+  .img-bg();
+  .post__contenedor {
+    .gris-claro-bg();
+    .gatsby-image-wrapper {
+    }
+    .post__cabecera {
+      h1 {
+      display:block; 
+      font-weight:500;
+      .naranja();
+      }
+      .post__compartir {
+      }
+    }
+    p {
+      font-weight: 500;
+      .gris-oscuro();
+    }
+  }
+}
+
 
 /* Contacto
 ========================================================================== */
@@ -1590,6 +1618,7 @@ footer {
     padding-bottom: 2.7vh;
   }
 
+
   /* Productos
   ========================================================================== */
   .productos {
@@ -1731,23 +1760,52 @@ footer {
     }
 
     .blog__pag {
-      margin-top:7.5%;
-      a {font-size: 0.9rem; 
-        padding:0.7vh 2vw;
-         margin:0 1vh
-        }
+      margin-top: 7.5%;
+      a {
+        font-size: 0.9rem;
+        margin: 0 1vh;
+        width: 4vh;
+        height: 4vh;
+      }
       .pag__ant {
         margin-left: 0;
-        padding:0.2vh 1.5vw;
-        font-size: 1.2rem;
-        }  
+        font-size: 1.25rem;
+        padding-bottom: 0.2vh;
+      }
       .pag__sig {
         margin-right: 0;
-        padding:0.2vh 1.5vw;
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+        padding-right: 0.4vh;
+        padding-bottom: 0.2vh;
       }
     }
   }
+
+  /* Post
+========================================================================== */
+.post {
+  background-image: url(../images/blog-mov-bg.jpg);
+  .post__contenedor {
+    padding: 2.5vh;
+    .gatsby-image-wrapper {
+      .w-full();
+      height: 30vh;
+    }
+    .post__cabecera {
+      padding-top: 1.5vh;
+      h1 {
+        font-size: 1.4rem;
+      }
+      .post__compartir {
+      }
+    }
+    p {
+      padding-top: 1.5vh;
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+    }
+  }
+}
 
   /* Contacto
   ========================================================================== */
@@ -2018,7 +2076,7 @@ footer {
         }
         .blog__destacadotexto {
           width: 52%;
-          padding-left: 3vh;
+          padding-left: 4vh;
           h2 {
             font-size: 1.4rem;
           }
@@ -2061,23 +2119,52 @@ footer {
     }
 
     .blog__pag {
-      margin-top:3.2%;
-      a {font-size: 0.8rem;
-        padding: 1.35vh 1.35vw;
+      margin-top: 3.2%;
+      a {
+        font-size: 0.8rem;
         margin: 0 2vh;
-        }
+        width: 6vh;
+        height: 6vh;
+      }
       .pag__ant {
         margin-left: 0;
-        padding: 0.24vh 1.7vh;
-        font-size: 1.23rem;
-        }  
+        font-size: 1.21rem;
+      }
       .pag__sig {
         margin-right: 0;
-        padding: 0.24vh 1.7vh;
-        font-size: 1.23rem;
+        padding-right: 0.5vh;
+        font-size: 1.21rem;
       }
     }
   }
+
+/* Post
+========================================================================== */
+.post {
+  background-image: url(../images/blog-lan-bg.jpg);
+  .post__contenedor {
+    .flex();
+    padding: 4vh;
+    .gatsby-image-wrapper {
+      width: 48%;
+      height: 52vh;
+    }
+    .post__cabecera {
+      width: 52%;
+      padding-left: 4vh;
+      h1 {
+        font-size: 1.4rem;
+      }
+      .post__compartir {
+      }
+    }
+    p {
+      padding-top: 3vh;
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+    }
+  }
+}
 
   /* Contacto
   ========================================================================== */
@@ -2361,7 +2448,6 @@ footer {
           }
           p {
             padding-top: 0.5vh;
-            font-size: 1rem;
             &:nth-child(3n) {
               display: block;
             }
@@ -2399,18 +2485,52 @@ footer {
     }
 
     .blog__pag {
-      margin-top:3.2%;
+      margin-top: 3.2%;
       a {
-        font-size: 1rem;
-        padding: 0.5vh 1.2vw;
+        font-size: 1.05rem;
         margin: 0 1.5vh;
-        }
-      .pag__ant, .pag__sig {
-        padding:0.3vh 0.8vh;
-        font-size: 1.3rem;
+        width: 3vh;
+        height: 3vh;
+      }
+      .pag__ant {
+        font-size: 1.5rem;
+        padding-bottom: 0.2vh;
+      }
+      .pag__sig {
+        font-size: 1.5rem;
+        padding-right: 0.2vh;
       }
     }
   }
+
+/* Post
+========================================================================== */
+.post {
+  background-image: url(../images/blog-tab-bg.jpg);
+  .post__contenedor {
+    padding: 2vh;
+    .flex();
+    .gatsby-image-wrapper {
+      width: 48%;
+      height: auto;
+    }
+    .post__cabecera {
+      padding-top:0;
+      padding-left: 2vh;
+      width: 52%;
+      h1 {
+        padding-top: 0;
+        font-size: 1.6rem;
+      }
+      .post__compartir {
+      }
+    }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.4rem;
+    }
+  }
+}
 
   /* Contacto
   ========================================================================== */
@@ -2704,17 +2824,60 @@ footer {
     }
 
     .blog__pag {
-      margin-top:1.83333333%;
-      a {font-size: 0.9rem;
-        padding: 0.6vh 1.1vh;
+      margin-top: 1.83333333%;
+      a {
+        font-size: 0.95rem;
         margin: 0 1.1vh;
-        }
-      .pag__ant, .pag__sig {
+        width: 3.5vh;
+        height: 3.5vh;
+      }
+      .pag__ant {
         font-size: 1.4rem;
-        padding: 0.1vh 0.8vh;
+      }
+      .pag__sig {
+        font-size: 1.4rem;
+        padding-right: 0.3vh;
       }
     }
   }
+
+/* Post
+========================================================================== */
+.post {
+  .post__contenedor {
+    padding: 2vh;
+    .gatsby-image-wrapper {
+      .w-half();
+      height: auto;
+    }
+    .post__cabecera {
+      width: 51%;
+      padding-left: 2vh;
+      h1 {
+        margin-top: -0.8vh;
+        padding-top: 0;
+        font-size: 1.6rem;
+      }
+      .post__compartir {
+      }
+    }
+    .post__contenido {
+      padding-top: 2vh;
+      -webkit-column-count: 2;
+      column-count: 2;
+      -webkit-column-gap: 1.5em;
+      column-gap: 1.5em;
+      p {
+        &:first-child {
+          padding-top: 0
+        }
+        padding-top: 1.5vh;
+        font-size: 0.95rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
 
   /* Contacto
   ========================================================================== */
@@ -2974,9 +3137,47 @@ footer {
     }
 
     .blog__pag {
-      margin-bottom:1.83333333%;
+      margin-bottom: 1.83333333%;
+      a {
+        width: 3.8vh;
+        height: 3.8vh;
+        font-size: 0.99rem;
+      }
+      .pag__ant {
+        font-size: 1.5rem;
+        padding-bottom: 0.2vh;
+      }
+      .pag__sig {
+        font-size: 1.5rem;
+        padding-right: 0.2vh;
+        padding-bottom: 0.2vh;
+      }
     }
   }
+
+  /* Post
+========================================================================== */
+.post {
+  background-image: url(../images/blog-desk-bg.jpg);
+  .post__contenedor {
+    .gatsby-image-wrapper {
+      width: 50%;
+      height: 40vh;
+    }
+    .post__cabecera {
+      width: 50%;
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    .post__contenido {
+      p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+      }
+    }
+  }
+}
 
   /* Contacto
   ========================================================================== */
