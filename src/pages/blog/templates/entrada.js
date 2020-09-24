@@ -13,7 +13,7 @@ const EntradaTemplate = ({ data }) => (
       image={data.strapiEntrada.image.publicURL}
     />
     <div
-      className="blog post"
+      className="post"
       title={data.strapiBlog.seo_image.title}
       alt={data.strapiBlog.seo_image.alt}
     >
