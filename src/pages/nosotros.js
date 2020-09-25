@@ -27,7 +27,7 @@ const Nosotros = ({ data }) => (
                 alt={document.image_seo.alt}
               />
               <h2>{document.title}</h2>
-              <p>{document.description}</p>
+              <p className="ficha__texto">{document.description}</p>
             </li>
           ))}
         </ul>

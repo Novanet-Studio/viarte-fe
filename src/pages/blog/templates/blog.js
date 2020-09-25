@@ -31,7 +31,7 @@ export default class Blog extends React.Component {
         >
           <div className="contenedor">
             <h1>{page.title}</h1>
-            <p className="descripcion">{page.description}</p>
+            {/* <p className="descripcion">{page.description}</p> */}
 
             {/* ====== Entrada destacada ====== */}
             {destacado.map((item) => (
@@ -45,8 +45,9 @@ export default class Blog extends React.Component {
                   <div className="blog__destacadotexto">
                     <h2>{item.node.title}</h2>
                     <ReactMarkdown
+                      className="ficha__texto"
                       source={item.node.description
-                        .substring(0, 540)
+                        .substring(0, 240)
                         .concat("...")}
                       escapeHtml={false}entradas
                     />
@@ -56,7 +57,7 @@ export default class Blog extends React.Component {
             ))}
 
             {/* ====== Entradas no destacadas ====== */}
-            <ul className="blog__ficha">
+            <ul id="Entradas" className="blog__entradas">
               {noDestacados.map((item) => (
                 <li key={item.node.id}>
                   <Link to={`/blog/${item.node.Slug}`}>
@@ -67,6 +68,7 @@ export default class Blog extends React.Component {
                     />
                     <h3>{item.node.title}</h3>
                     <ReactMarkdown
+                      className="ficha__texto"
                       source={item.node.description
                         .substring(0, 144)
                         .concat("...")}
@@ -78,21 +80,21 @@ export default class Blog extends React.Component {
             </ul>
             <div className="blog__pag">
               {!isFirst && (
-                <Link className="pag__ant" to={prevPage} rel="prev">
+                <Link className="pag__ant" to={`${prevPage}#Entradas`} rel="prev">
                  <span>◀</span>
                 </Link>
               )}
               {Array.from({ length: numPages }, (_, i) => (
               <Link
                 key={`pagination-number${i + 1}`}
-                to={`/blog/${i === 0 ? "" : i + 1}`}
+                to={`/blog/${i === 0 ? "" : i + 1}#Entradas`}
               >
                 {i + 1}
               </Link>
             ))}
 
               {!isLast && (
-                <Link className="pag__sig" to={nextPage} rel="next">
+                <Link className="pag__sig" to={`${nextPage}#Entradas`} rel="next">
                 <span>▶</span>
                 </Link>
               )}

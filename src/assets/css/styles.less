@@ -869,7 +869,6 @@ template {
   display: flex;
   flex-wrap: wrap;
 }
-
 .center {
   justify-content: center;
   align-items: center;
@@ -947,25 +946,20 @@ template {
   text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.49);
 }
 
-/*
-.clip-mask__full {
-  clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
+.post__principal { // Entrada landscape mobile & tablet
+  order: 1;
+  width: 50%;
+  text-align: right;
+  .flex();
+  .center();
+  h1 {
+    .w-full();
+    padding: 2vw;
+  }
 }
-
-.clip-mask__half {
-  clip-path: polygon(15% 0, 100% 0, 100% 90%, 85% 100%, 0 100%, 0 10%);
-}
-
-.clip-mask__third {
-  clip-path: polygon(22% 0, 100% 0, 100% 90%, 78% 100%, 0 100%, 0 10%);
-}*/
 
 /* Estilos generales
 ========================================================================== */
-h1 {
-  display: none;
-}
-
 h1,
 h2,
 h3,
@@ -973,8 +967,28 @@ h4 {
   .changa-one();
 }
 
+h1 {
+  display: none;
+  font-weight: 500;
+  .blanco();
+  .naranja-bg();
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  .naranja();
+}
+
+h3 {
+  font-size: 1.05rem;
+  .naranja();
+}
+
 p {
   .lato();
+  font-weight: 500;
+  .gris();
 }
 
 .descripcion {
@@ -1000,6 +1014,10 @@ a {
 }
 
 .triangulo-naranja {
+  h2 {
+    font-weight: 400;
+    .naranja();
+  }
   background-image: url(../images/tri-nar.svg);
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -1049,7 +1067,7 @@ header {
   nav {
     .flex();
     .triangulo-azul();
-    align-items: center;
+    justify-content: center;
     a {
       text-decoration: none;
       text-transform: uppercase;
@@ -1181,6 +1199,9 @@ footer {
 ========================================================================== */
 .nosotros {
   .img-bg();
+  h2 {
+    padding-left: 1.5vw;
+  }
   ul {
     .flex();
     .nosotros__ficha {
@@ -1189,14 +1210,6 @@ footer {
       display: flex;
       flex-wrap: wrap;
       .gris-claro-bg();
-      h2 {
-        font-weight: 400;
-        .naranja();
-      }
-      p {
-        font-weight: 500;
-        .gris-oscuro();
-      }
     }
   }
 }
@@ -1216,13 +1229,8 @@ footer {
         }
       }
       .productos__ficha {
-        h2 {
-          font-weight: 400;
-          .naranja();
-        }
         p {
-          font-weight: 500;
-          .gris-oscuro();
+          padding-top: 1vh;
         }
         button {
           cursor: pointer;
@@ -1275,7 +1283,7 @@ footer {
   .close {
     .blanco();
     float: right;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
     .azul-bg();
     position: absolute;
@@ -1306,10 +1314,6 @@ footer {
       .gris-claro-bg();
       .mapa {
         border: #c1c1c1 1px solid;
-      }
-      h2 {
-        font-weight: 400;
-        .naranja();
       }
       p {
         font-weight: 500;
@@ -1345,23 +1349,9 @@ footer {
   .img-bg();
   .blog__destacado {
     .gris-claro-bg();
-    a {
-      .gatsby-image-wrapper {
-      }
-      .blog__destacadotexto {
-        h2 {
-          font-weight: 400;
-          .naranja();
-        }
-        p {
-          font-weight: 500;
-          .gris-oscuro();
-        }
-      }
-    }
   }
 
-  .blog__ficha {
+  .blog__entradas {
     .flex();
     li {
       .gris-claro-bg();
@@ -1375,7 +1365,6 @@ footer {
         }
         p {
           font-weight: 500;
-          .gris-oscuro();
         }
       }
     }
@@ -1385,6 +1374,10 @@ footer {
     .w-full();
     .flex();
     .center();
+    h1 {
+      .naranja-bg();
+      .blanco();
+    }
     a {
       .flex();
       .center();
@@ -1396,33 +1389,24 @@ footer {
     .pag__sig {
       .blanco();
       .naranja-bg();
+      align-items: baseline;
+      span {
+        font-size: 1.04rem;
+      }
     }
   }
 }
 
-/* Post
-========================================================================== */
+/* Entrada */
 .post {
+  h1 {
+    display: block;
+    font-size: 1.35rem;
+  }
   .img-bg();
   .post__contenedor {
     .gris-claro-bg();
-    .gatsby-image-wrapper {
-    }
-    .post__cabecera {
-      .post__boton {
-      }
-      h1 {
-        display: block;
-        font-weight: 500;
-        .naranja();
-      }
-      .post__compartir {
-      }
-    }
-    p {
-      font-weight: 500;
-      .gris-oscuro();
-    }
+    font-weight: 400;
   }
 }
 
@@ -1455,10 +1439,6 @@ footer {
     .flex();
     .gris-claro-bg();
     justify-content: left;
-    h2 {
-      font-weight: 400;
-      .naranja();
-    }
     input:required,
     input:invalid,
     textarea:required {
@@ -1504,22 +1484,10 @@ footer {
     nav {
       height: 15vh;
       background-size: 28vw;
-      padding-left: 25vw;
-      justify-content: left;
+      align-content: flex-end;
       a {
-        font-size: 0.8rem;
-        margin: 0 2.8vw;
-        padding: 0 0.5vh 0;
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3) {
-          margin-bottom: -2vh;
-        }
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(6) {
-          margin-top: -2vh;
-        }
+        font-size: 0.9rem;
+        margin: 0 4.5vw 1.8vw;
       }
     }
   }
@@ -1531,9 +1499,6 @@ footer {
   footer {
     .footer__contenedor {
       height: 14vh;
-      justify-content: left;
-      padding-right: 32vw;
-      padding-left: 1vw;
       background-size: 28vw;
       .footer__rrss {
         .footer__rrssbtn {
@@ -1548,14 +1513,24 @@ footer {
       }
       p {
         font-size: 0.78rem;
-        padding-left: 2vw;
         line-height: 1rem;
+        text-align: center;
         img {
           width: 9.5vh;
           margin-bottom: -0.25em;
         }
       }
     }
+  }
+  /* Descripci[on general en las vistas */
+  .descripcion {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    padding-bottom: 2.7vh;
+  }
+  .ficha__texto {
+    font-size: 0.85rem;
+    line-height: 1.2rem;
   }
 
   /* Inicio
@@ -1589,39 +1564,23 @@ footer {
     ul {
       .nosotros__ficha {
         .w-full();
-        &:nth-child(2n) {
-          margin-top: 7.5%;
-        }
-        &:nth-child(3n) {
-          margin-top: 7.5%;
-        }
+        margin-bottom: 3vh;
+
         padding: 2.5vh;
         img {
           width: 15vw;
           height: 15vw;
         }
-        h2 {
-          font-size: 1.3rem;
-          padding-left: 3vw;
-        }
-        p {
-          padding-top: 2vh;
-          font-size: 0.9rem;
-          line-height: 1.3rem;
-        }
       }
     }
-  }
-
-  .descripcion {
-    font-size: 1.14rem;
-    line-height: 1.5rem;
-    padding-bottom: 2.7vh;
   }
 
   /* Productos
   ========================================================================== */
   .productos {
+    h2 {
+      font-size: 1rem;
+    }
     background-image: url(../images/pro-mov-bg.jpg);
     ul {
       .flex();
@@ -1637,15 +1596,11 @@ footer {
         }
         .productos__ficha {
           .w-full();
-          h2 {
-            padding: 1.3vh 0 0.5vh 0;
-            font-size: 1rem;
-          }
           p {
             display: none;
           }
           button {
-            font-size: 0.88rem;
+            font-size: 0.8rem;
           }
         }
 
@@ -1660,14 +1615,8 @@ footer {
             margin-bottom: 2vw;
           }
           .modal-text {
-            h2 {
-              font-size: 1.33rem;
-              padding: 0.5vh 0 1vh 0;
-            }
             p {
               display: block;
-              font-size: 0.95rem;
-              line-height: 1.3rem;
             }
           }
         }
@@ -1691,15 +1640,6 @@ footer {
           .w-full();
           height: 27vh;
         }
-        h2 {
-          padding-top: 1.5vh;
-          font-size: 1.27rem;
-        }
-        p {
-          padding: 1vh 0 0.3vh 0;
-          font-size: 0.91rem;
-          line-height: 1.3rem;
-        }
         a {
           font-size: 0.8rem;
         }
@@ -1711,32 +1651,22 @@ footer {
 ========================================================================== */
   .blog {
     background-image: url(../images/blog-mov-bg.jpg);
-
     .blog__destacado {
       padding: 2.5vh;
+      h2 {
+        padding-top: 1vh;
+      }
+      p {
+        padding-top: 0.5vh;
+      }
       a {
         .gatsby-image-wrapper {
           .w-full();
           height: 30vh;
         }
-        .blog__destacadotexto {
-          h2 {
-            padding-top: 1.5vh;
-            font-size: 1.4rem;
-          }
-          p {
-            padding-top: 1vh;
-            font-size: 0.9rem;
-            line-height: 1.3rem;
-            &:nth-child(3n) {
-              display: none;
-            }
-          }
-        }
       }
     }
-
-    .blog__ficha {
+    .blog__entradas {
       li {
         width: 100%;
         margin-top: 7.5%;
@@ -1749,7 +1679,6 @@ footer {
           }
           h3 {
             padding-left: 2.5vh;
-            font-size: 1.05rem;
             width: 60%;
           }
           p {
@@ -1758,7 +1687,6 @@ footer {
         }
       }
     }
-
     .blog__pag {
       margin-top: 7.5%;
       a {
@@ -1767,45 +1695,20 @@ footer {
         width: 4vh;
         height: 4vh;
       }
-      .pag__ant {
-        margin-left: 0;
-        font-size: 1.3rem;
-        align-items: baseline;
-      }
-      .pag__sig {
-        margin-right: 0;
-        font-size: 1.3rem;
-        align-items: baseline;
-        span {margin:0 0 0 -0.3vh}
-      }
     }
   }
 
-  /* Post
-========================================================================== */
+  /* Entradas */
   .post {
+    h1 {
+      padding: 2vh 0 2vh 2vh;
+    }
+    p {
+      padding-top: 1vh;
+    }
     background-image: url(../images/blog-mov-bg.jpg);
     .post__contenedor {
       padding: 2.5vh;
-      .gatsby-image-wrapper {
-        .w-full();
-        height: 30vh;
-      }
-      .post__cabecera {
-        .post__boton {
-        }
-        padding-top: 1.5vh;
-        h1 {
-          font-size: 1.4rem;
-        }
-        .post__compartir {
-        }
-      }
-      p {
-        padding-top: 1.5vh;
-        font-size: 0.9rem;
-        line-height: 1.3rem;
-      }
     }
   }
 
@@ -1840,9 +1743,6 @@ footer {
     .contacto__form {
       margin: 7.5% 0 0 0;
       padding: 3.3vh;
-      h2 {
-        font-size: 1.3rem;
-      }
       input {
         font-size: 0.95rem;
         margin-top: 3vh;
@@ -1874,6 +1774,7 @@ footer {
       height: 16vh;
       background-size: 17vw;
       justify-content: center;
+      align-content: flex-end;
       a {
         font-size: 0.85rem;
         margin: 0 1.5vw;
@@ -1889,7 +1790,6 @@ footer {
   footer {
     .footer__contenedor {
       height: 18vh;
-      padding-right: 13vw;
       background-size: 17vw;
       .footer__rrss {
         .footer__rrssbtn {
@@ -1911,6 +1811,16 @@ footer {
       }
     }
   }
+  /* Descripción general en las vistas */
+  .descripcion {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    padding-bottom: 4.5vh;
+  }
+  .ficha__texto {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
 
   /* Inicio
   ========================================================================== */
@@ -1921,7 +1831,6 @@ footer {
       width: 50vw;
       margin-top: -5vh;
       margin-bottom: 5vh;
-
       img {
         width: 28vw;
       }
@@ -1942,40 +1851,21 @@ footer {
     ul {
       .nosotros__ficha {
         .w-full();
-        &:nth-child(2n) {
-          margin-top: 4%;
-        }
-        &:nth-child(3n) {
-          margin-top: 4%;
-        }
+        margin-bottom: 6vh;
         padding: 4vh;
         img {
           width: 10vw;
           height: 10vw;
         }
-        h2 {
-          font-size: 1.3rem;
-          padding-left: 2vw;
-        }
-        p {
-          padding-top: 2.3vh;
-          font-size: 0.95rem;
-          line-height: 1.3rem;
-        }
       }
     }
-  }
-
-  .descripcion {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    padding-bottom: 4.5vh;
   }
 
   /* Productos
   ========================================================================== */
   .productos {
     background-image: url(../images/pro-lan-bg.jpg);
+
     ul {
       .flex();
       li {
@@ -1992,10 +1882,6 @@ footer {
         .productos__ficha {
           width: 60%;
           padding-left: 2vw;
-          h2 {
-            font-size: 1.3rem;
-            padding-bottom: 0.5vw;
-          }
           p {
             display: none;
           }
@@ -2017,14 +1903,8 @@ footer {
           .modal-text {
             width: 72%;
             padding-left: 2vw;
-            h2 {
-              font-size: 1.44rem;
-              padding: 0 0 1vh 0;
-            }
             p {
               display: block;
-              font-size: 0.94rem;
-              line-height: 1.3rem;
             }
           }
         }
@@ -2047,10 +1927,6 @@ footer {
         .mapa {
           .w-full();
           height: 40vh;
-        }
-        h2 {
-          padding-top: 2vh;
-          font-size: 1.27rem;
         }
         p {
           padding: 2vh 0 1vh 0;
@@ -2079,13 +1955,7 @@ footer {
         .blog__destacadotexto {
           width: 52%;
           padding-left: 4vh;
-          h2 {
-            font-size: 1.4rem;
-          }
           p {
-            padding-top: 1.5vh;
-            font-size: 0.9rem;
-            line-height: 1.2rem;
             &:nth-child(3n) {
               display: none;
             }
@@ -2093,8 +1963,8 @@ footer {
         }
       }
     }
-
-    .blog__ficha {
+    .blog__entradas {
+      .w-full();
       li {
         width: 48.4%;
         margin-top: 3.2%;
@@ -2105,13 +1975,12 @@ footer {
         a {
           .center();
           .gatsby-image-wrapper {
-            width: 50%;
-            height: 25vh;
+            width: 40%;
+            height: 30vh;
           }
           h3 {
-            width: 50%;
-            padding-left: 2vh;
-            font-size: 0.9rem;
+            padding-left: 2.5vh;
+            width: 60%;
           }
           p {
             display: none;
@@ -2119,7 +1988,6 @@ footer {
         }
       }
     }
-
     .blog__pag {
       margin-top: 3.2%;
       a {
@@ -2128,20 +1996,10 @@ footer {
         width: 6vh;
         height: 6vh;
       }
-      .pag__ant {
-        margin-left: 0;
-        font-size: 1.21rem;
-      }
-      .pag__sig {
-        margin-right: 0;
-        font-size: 1.21rem;
-        span {margin: 0 0 0 -0.2vh;}
-      }
     }
   }
 
-  /* Post
-========================================================================== */
+  /* Entradas */
   .post {
     background-image: url(../images/blog-lan-bg.jpg);
     .post__contenedor {
@@ -2149,32 +2007,16 @@ footer {
       padding: 4vh;
       .gatsby-image-wrapper {
         order: 2;
-        width: 48%;
+        .w-half();
         height: 52vh;
       }
       .post__cabecera {
-        order: 1;
-        width: 52%;
-        padding-right: 4vh;
-        text-align: right;
-        justify-content: flex-end;
-        align-content: center;
-        .flex();
-        .post__boton {
-        }
-        h1 {
-          font-size: 1.4rem;
-          .w-full();
-        }
-        .post__compartir {
-        }
+        .post__principal();        
       }
       .post__contenido {
         order: 3;
         p {
           padding-top: 3vh;
-          font-size: 0.9rem;
-          line-height: 1.2rem;
         }
       }
     }
@@ -2211,9 +2053,6 @@ footer {
       min-height: 84vh;
       padding: 5.5vh;
       margin-left: 4%;
-      h2 {
-        font-size: 1.15rem;
-      }
       input {
         font-size: 0.8rem;
         margin-top: 3.5vh;
@@ -2239,40 +2078,33 @@ footer {
 @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
   /* Contenedores principales
   ========================================================================== */
+  h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.2rem;
+  }
   header {
     /* Menú */
     nav {
       justify-content: center;
+      align-content: flex-end;
       height: 8vh;
       background-size: 18vw;
       padding-left: 0;
       a {
         font-size: 1.1rem;
         margin: 0 1.5vw;
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(6) {
-          margin-top: 0;
-          margin-bottom: 0;
-        }
       }
     }
   }
   main > div {
     .contenedor {
-      padding: 10vh 2.7vw 12vh 2.7vw;
+      padding: 12.5vh 2.7vw 12vh 2.7vw;
     }
   }
   footer {
     .footer__contenedor {
       height: 8vh;
-      padding-right: 6vw;
-      padding-left: 0;
       background-size: 18vw;
-      justify-content: center;
       .footer__rrss {
         .footer__rrssbtn {
           a {
@@ -2292,6 +2124,15 @@ footer {
         }
       }
     }
+  } /* Descripci[on general en las vistas */
+  .descripcion {
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    padding-bottom: 2vh;
+  }
+  .ficha__texto {
+    font-size: 0.95rem;
+    line-height: 1.25rem;
   }
 
   /* Inicio
@@ -2321,32 +2162,13 @@ footer {
     background-image: url(../images/nos-tab-bg.jpg);
     ul {
       .nosotros__ficha {
-        &:nth-child(2n) {
-          margin-top: 3.2%;
-        }
-        &:nth-child(3n) {
-          margin-top: 3.2%;
-        }
+        margin-bottom: 2vh;
         img {
           width: 10vw;
           height: 10vw;
         }
-        h2 {
-          padding-top: 1vh;
-          font-size: 1.55rem;
-        }
-        p {
-          font-size: 1.1rem;
-          line-height: 1.6rem;
-        }
       }
     }
-  }
-
-  .descripcion {
-    font-size: 1.45rem;
-    line-height: 2rem;
-    padding-bottom: 2vh;
   }
 
   /* Productos
@@ -2367,18 +2189,11 @@ footer {
         .productos__ficha {
           width: 57%;
           padding-left: 2vw;
-          h2 {
-            font-size: 1.5rem;
-            padding: 0 0 0.5vh 0;
-          }
-          p {
-            font-size: 1rem;
-          }
           button {
-            font-size: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5rem;
           }
         }
-
         .modal-content {
           width: 93%;
           padding: 2vh;
@@ -2396,10 +2211,6 @@ footer {
             h2 {
               font-size: 1.6rem;
               padding: 0 0 0.5vh 0;
-            }
-            p {
-              font-size: 1.03rem;
-              line-height: 1.5rem;
             }
           }
         }
@@ -2425,10 +2236,6 @@ footer {
         .mapa {
           height: 15vh;
         }
-        h2 {
-          padding-top: 1vh;
-          font-size: 1.42rem;
-        }
         p {
           font-size: 0.97rem;
           line-height: 1.4rem;
@@ -2446,7 +2253,7 @@ footer {
   .blog {
     background-image: url(../images/blog-tab-bg.jpg);
     .blog__destacado {
-      padding: 2vh;
+      padding: 1.5vh;
       a {
         .flex();
         .gatsby-image-wrapper {
@@ -2456,10 +2263,6 @@ footer {
         .blog__destacadotexto {
           padding-left: 2vh;
           width: 52%;
-          h2 {
-            padding-top: 0;
-            font-size: 1.6rem;
-          }
           p {
             padding-top: 0.5vh;
             &:nth-child(3n) {
@@ -2469,12 +2272,11 @@ footer {
         }
       }
     }
-
-    .blog__ficha {
+    .blog__entradas {
       li {
         width: 48.4%;
         margin-top: 3.2%;
-        padding: 2vh;
+        padding: 1.5vh;
         &:nth-child(2n) {
           margin-left: 3.2%;
         }
@@ -2486,37 +2288,33 @@ footer {
           h3 {
             width: 62%;
             padding-left: 2vh;
-            font-size: 1.2rem;
           }
           p {
             display: block;
             padding-top: 2vh;
-            font-size: 0.95rem;
-            line-height: 1.4rem;
           }
         }
       }
     }
-
     .blog__pag {
       margin-top: 3.2%;
       a {
         font-size: 1.05rem;
-        margin: 0 1.5vh;
+        margin: 0 0.5vh;
         width: 3vh;
         height: 3vh;
       }
-      .pag__ant {
-        font-size: 1.6rem;
-      }
+      .pag__ant,
       .pag__sig {
-        font-size: 1.6rem;
+        span {
+          font-size: 1.25rem;
+          line-height: 1.62rem;
+        }
       }
     }
   }
 
-  /* Post
-========================================================================== */
+  /* Entradas */
   .post {
     background-image: url(../images/blog-tab-bg.jpg);
     .post__contenedor {
@@ -2524,33 +2322,18 @@ footer {
       .flex();
       .gatsby-image-wrapper {
         order: 2;
-        width: 48%;
+        .w-half();
         height: auto;
       }
       .post__cabecera {
-        order: 1;
-        padding-top: 0;
-        padding-right: 2vh;
-        width: 52%;
-        text-align: right;
-        justify-content: flex-end;
-        align-content: center;
-        .flex();
-        .post__boton {
-        }
-        h1 {
-          .w-full();
-          padding-top: 0;
-          font-size: 1.6rem;
-        }
-        .post__compartir {
-        }
+      .post__principal();
       }
       .post__contenido {
-        order: 3;
+        order: 3;      
+        font-size: 1.05rem;
         p {
-          font-size: 0.95rem;
-          line-height: 1.4rem;
+          font-size: 1rem;
+          line-height: 1.6rem;          
         }
       }
     }
@@ -2586,9 +2369,6 @@ footer {
     .contacto__form {
       margin: 2.7vh 0 0 0;
       min-height: 39vh;
-      h2 {
-        font-size: 1.5rem;
-      }
       input {
         font-size: 1.1rem;
         margin-top: 2vh;
@@ -2613,6 +2393,12 @@ footer {
 @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   /* Contenedores principales
   ========================================================================== */
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
   header {
     /* Menú */
     nav {
@@ -2649,6 +2435,11 @@ footer {
         }
       }
     }
+  }
+  .descripcion {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    padding-bottom: 1.7vh;
   }
 
   /* Inicio
@@ -2689,7 +2480,6 @@ footer {
           height: 6vw;
         }
         h2 {
-          font-size: 1.35rem;
           padding-left: 1vw;
         }
         p {
@@ -2699,11 +2489,6 @@ footer {
     }
   }
 
-  .descripcion {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-    padding-bottom: 1.7vh;
-  }
 
   /* Productos
   ========================================================================== */
@@ -2734,7 +2519,6 @@ footer {
             font-size: 0.8rem;
           }
         }
-
         .modal-content {
           width: 85%;
           padding: 3.5vh;
@@ -2748,13 +2532,9 @@ footer {
             width: 80%;
             padding-left: 2.5vw;
             h2 {
-              font-size: 1.55rem;
               padding: 0 0 0.5vh 0;
             }
-            p {
-              font-size: 1.1rem;
-              line-height: 1.7rem;
-            }
+      
           }
         }
       }
@@ -2778,10 +2558,8 @@ footer {
         }
         h2 {
           padding-top: 1vh;
-          font-size: 1.25rem;
         }
-        p {
-          font-size: 0.97rem;
+        p {     
           padding: 0.5vh 0;
         }
         a {
@@ -2806,20 +2584,17 @@ footer {
           padding-left: 2vh;
           .w-half();
           h2 {
-            padding-top: 0;
-            font-size: 1.5rem;
+            padding-top: 0; 
           }
           p {
             line-height: 1.4rem;
-            &:nth-child(3n) {
-              display: block;
-            }
+            display: block;            
           }
         }
       }
     }
 
-    .blog__ficha {
+    .blog__entradas {
       li {
         .w-half();
         margin-top: 1.83333333%;
@@ -2834,14 +2609,11 @@ footer {
           }
           h3 {
             width: 67%;
-            padding-left: 2vh;
-            font-size: 1.3rem;
+            padding-left: 1vh;
           }
           p {
             display: block;
-            padding-top: 2vh;
-            font-size: 0.9rem;
-            line-height: 1.4rem;
+            padding-top: 1vh;
           }
         }
       }
@@ -2866,40 +2638,28 @@ footer {
     }
   }
 
-  /* Post
-========================================================================== */
+  /* Entradas */
   .post {
     .post__contenedor {
-      padding: 2vh;
+      padding: 2vw;
       .gatsby-image-wrapper {
         .w-half();
         height: auto;
       }
       .post__cabecera {
-        .post__boton {
-        }
-        width: 51%;
-        padding-right: 3vh;
-        h1 {
-          padding-top: 0;
-          font-size: 1.6rem;
-        }
-        .post__compartir {
-        }
+        .post__principal();
       }
       .post__contenido {
         padding-top: 2vh;
         -webkit-column-count: 2;
         column-count: 2;
         -webkit-column-gap: 1.5em;
-        column-gap: 1.5em;
+        column-gap: 0.8em;
         p {
+
           &:first-child {
             padding-top: 0;
-          }
-          padding-top: 1.5vh;
-          font-size: 0.95rem;
-          line-height: 1.5rem;
+          }         
         }
       }
     }
@@ -3139,7 +2899,7 @@ footer {
       }
     }
 
-    .blog__ficha {
+    .blog__entradas {
       li {
         .w-half();
         margin-top: 1.633333333%;
@@ -3321,7 +3081,7 @@ footer {
   /* Blog
 ========================================================================== */
   .blog {
-    .blog__ficha {
+    .blog__entradas {
       li {
         width: 32.2%;
         &:nth-child(2n),

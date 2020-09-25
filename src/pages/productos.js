@@ -122,7 +122,7 @@ export default function Productos() {
                           />
                           <div className="modal-text">
                             <h2>{document.name}</h2>
-                            <p>{document.long_description}</p>
+                            <p className="ficha__texto">{document.long_description}</p>
                           </div>
                         </div>
                       </div>
