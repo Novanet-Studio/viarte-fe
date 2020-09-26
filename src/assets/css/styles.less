@@ -981,7 +981,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.05rem;
+  font-size: 1.03rem;
   .naranja();
 }
 
@@ -1389,7 +1389,6 @@ footer {
     .pag__sig {
       .blanco();
       .naranja-bg();
-      align-items: baseline;
       span {
         font-size: 1.04rem;
       }
@@ -1493,7 +1492,7 @@ footer {
   }
   main > div {
     .contenedor {
-      padding: 22vh 6vw 22vh;
+      padding: 22vh 6vw;
     }
   }
   footer {
@@ -1709,6 +1708,9 @@ footer {
     background-image: url(../images/blog-mov-bg.jpg);
     .post__contenedor {
       padding: 2.5vh;
+      .post__contenido {
+        padding-top:0.5vh
+      }
     }
   }
 
@@ -1784,7 +1786,7 @@ footer {
   }
   main > div {
     .contenedor {
-      padding: 22vh 3vw 24vh 3vw;
+      padding:24vh 3vw;
     }
   }
   footer {
@@ -1881,12 +1883,12 @@ footer {
         }
         .productos__ficha {
           width: 60%;
-          padding-left: 2vw;
+          padding-left: 2vh;
           p {
             display: none;
           }
           button {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
         }
 
@@ -1902,7 +1904,7 @@ footer {
           }
           .modal-text {
             width: 72%;
-            padding-left: 2vw;
+            padding-left: 2vh;
             p {
               display: block;
             }
@@ -1979,7 +1981,7 @@ footer {
             height: 30vh;
           }
           h3 {
-            padding-left: 2.5vh;
+            padding-left: 2vh;
             width: 60%;
           }
           p {
@@ -2016,7 +2018,7 @@ footer {
       .post__contenido {
         order: 3;
         p {
-          padding-top: 3vh;
+          padding-top: 2vh;
         }
       }
     }
@@ -2402,27 +2404,28 @@ footer {
   header {
     /* Menú */
     nav {
-      height: 10vh;
+      height: 12vh;
+      align-content: center;
       a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
     }
   }
   main > div {
     .contenedor {
       width: 85vw;
-      padding: 11vh 0;
+      padding: 15vh 0;
     }
   }
   footer {
     .footer__contenedor {
-      height: 10vh;
+      height: 12vh;
       padding-right: 8vw;
       .footer__rrss {
         .footer__rrssbtn {
           a {
             svg {
-              width: 0.7em !important;
+              width: 0.6em !important;
             }
           }
         }
@@ -2437,11 +2440,12 @@ footer {
     }
   }
   .descripcion {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
+    font-size: 1.2rem;
     padding-bottom: 1.7vh;
   }
-
+  .ficha__texto {
+    font-size: 0.85rem;
+}
   /* Inicio
   ========================================================================== */
   .inicio {
@@ -2475,12 +2479,10 @@ footer {
           margin-left: 1.833333333%;
         }
         padding: 2vh;
+        margin-bottom:0;
         img {
           width: 6vw;
           height: 6vw;
-        }
-        h2 {
-          padding-left: 1vw;
         }
         p {
           padding-top: 1.5vh;
@@ -2497,7 +2499,7 @@ footer {
       .flex();
       li {
         .w-half();
-        padding: 1.5vh;
+        padding: 2vh;
         height: 18.5vh;
         margin-bottom: 1.83333333%;
         &:nth-child(2n) {
@@ -2508,20 +2510,14 @@ footer {
         }
         .productos__ficha {
           width: 72%;
-          padding-left: 1vw;
           p {
-            line-height: 1.2rem;
             display: block;
-            font-size: 0.85rem;
-          }
-
-          button {
-            font-size: 0.8rem;
+            padding-top: 0;
           }
         }
         .modal-content {
-          width: 85%;
-          padding: 3.5vh;
+          width: 75%;
+          padding: 2vh;
           .close {
             padding: 0.2vh 1vw;
           }
@@ -2530,7 +2526,6 @@ footer {
           }
           .modal-text {
             width: 80%;
-            padding-left: 2.5vw;
             h2 {
               padding: 0 0 0.5vh 0;
             }
@@ -2573,7 +2568,6 @@ footer {
 ========================================================================== */
   .blog {
     .blog__destacado {
-      padding: 2vh;
       a {
         .flex();
         .gatsby-image-wrapper {
@@ -2587,7 +2581,7 @@ footer {
             padding-top: 0; 
           }
           p {
-            line-height: 1.4rem;
+            padding-top: 1vh;
             display: block;            
           }
         }
@@ -2609,7 +2603,6 @@ footer {
           }
           h3 {
             width: 67%;
-            padding-left: 1vh;
           }
           p {
             display: block;
@@ -2627,13 +2620,9 @@ footer {
         width: 3.5vh;
         height: 3.5vh;
       }
-      .pag__ant {
-        font-size: 1.4rem;
-        align-items: baseline;
-      }
+      .pag__ant,
       .pag__sig {
         font-size: 1.4rem;
-        align-items: baseline;
       }
     }
   }
@@ -2645,9 +2634,6 @@ footer {
       .gatsby-image-wrapper {
         .w-half();
         height: auto;
-      }
-      .post__cabecera {
-        .post__principal();
       }
       .post__contenido {
         padding-top: 2vh;
@@ -2688,9 +2674,6 @@ footer {
       min-height: 47vh;
       margin-left: 1.83333333%;
       padding: 3vh;
-      h2 {
-        font-size: 1.34rem;
-      }
       input {
         font-size: 1rem;
         margin-top: 2vh;
@@ -2714,6 +2697,13 @@ footer {
 
 /*-------------------------------------------- Desktop responsive --------------------------------------------*/
 @media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  h2 {
+    font-size:1.5rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  
   /* Contenedores principales
   ========================================================================== */
   header {
@@ -2721,12 +2711,14 @@ footer {
     nav {
       height: 14vh;
       background-size: 16vw;
+      a {
+        font-size: 1.2rem;
+      }
     }
   }
   main > div {
     .contenedor {
       width: 80vw;
-      padding: 13vh 0 11vh 0;
     }
   }
   footer {
@@ -2744,13 +2736,21 @@ footer {
         }
       }
       p {
-        font-size: 0.93rem;
         img {
           width: 10vh;
           margin-bottom: -0.3em;
         }
       }
     }
+  }
+
+  .descripcion {
+    font-size: 1.45rem;
+  }
+
+  .ficha__texto {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
   }
 
   /* Inicio
@@ -2786,19 +2786,8 @@ footer {
           width: 4.5vw;
           height: 4.5vw;
         }
-        h2 {
-          font-size: 1.5rem;
-        }
-        p {
-          font-size: 1rem;
-          line-height: 1.4rem;
-        }
       }
     }
-  }
-
-  .descripcion {
-    font-size: 1.47rem;
   }
 
   /* Productos
@@ -2819,28 +2808,15 @@ footer {
         }
         .productos__ficha {
           width: 78%;
-          h2 {
-            font-size: 1.25rem;
-            padding-bottom: 0.2vw;
-          }
-          p {
-            line-height: 1.2rem;
-            font-size: 0.93rem;
-            padding-bottom: 0;
-          }
           button {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
           }
         }
 
         .modal-content {
-          width: 82%;
-          padding: 3vh;
+          width: 65%;
           .close {
             padding: 0.2vh 0.5vw;
-          }
-          .modal-text {
-            padding-left: 1.5vw;
           }
         }
       }
@@ -2869,9 +2845,6 @@ footer {
           line-height: 1.4rem;
           padding: 0.5vh 0 0;
         }
-        a {
-          font-size: 0.8rem;
-        }
       }
     }
   }
@@ -2888,13 +2861,6 @@ footer {
         }
         .blog__destacadotexto {
           width: 50%;
-          h2 {
-            font-size: 1.7rem;
-          }
-          p {
-            font-size: 1rem;
-            line-height: 1.6rem;
-          }
         }
       }
     }
@@ -2913,10 +2879,6 @@ footer {
           }
           h3 {
             width: 70%;
-            font-size: 1.4rem;
-          }
-          p {
-            font-size: 0.96rem;
           }
         }
       }
@@ -2942,22 +2904,13 @@ footer {
 ========================================================================== */
   .post {
     background-image: url(../images/blog-desk-bg.jpg);
+    h1 {
+      font-size:1.7rem
+    }
     .post__contenedor {
       .gatsby-image-wrapper {
         width: 50%;
         height: 40vh;
-      }
-      .post__cabecera {
-        width: 50%;
-        h1 {
-          font-size: 2rem;
-        }
-      }
-      .post__contenido {
-        p {
-          font-size: 1rem;
-          line-height: 1.6rem;
-        }
       }
     }
   }
@@ -2984,9 +2937,6 @@ footer {
     }
     .contacto__form {
       min-height: 50vh;
-      h2 {
-        font-size: 1.4rem;
-      }
       input {
         font-size: 1.04rem;
         margin-top: 2.5vh;
@@ -3031,34 +2981,11 @@ footer {
         }
         .productos__ficha {
           width: 75%;
-          p {
-            line-height: 1.3rem;
-          }
-          button {
-            font-size: 0.85rem;
-          }
         }
       }
     }
   }
 
-  /* Blog
-========================================================================== */
-  .blog {
-    .blog__destacado {
-      a {
-        .blog__destacadotexto {
-          h2 {
-            font-size: 1.6rem;
-          }
-          p {
-            font-size: 1.1rem;
-            line-height: 1.7em;
-          }
-        }
-      }
-    }
-  }
 }
 
 /*-------------------------------------------- Desktop responsive 1440--------------------------------------------*/
@@ -3144,34 +3071,9 @@ footer {
         }
         .productos__ficha {
           width: 82%;
-
-          h2 {
-            font-size: 1.35rem;
-          }
-          p {
-            font-size: 1rem;
-          }
         }
       }
     }
   }
 
-  /* Vallas / Mapas
-  ========================================================================== */
-  .vallas {
-    ul {
-      .vallas__ficha {
-        h2 {
-          font-size: 1.4rem;
-        }
-        p {
-          font-size: 1rem;
-          padding: 0.5vh 0;
-        }
-        a {
-          font-size: 0.9rem;
-        }
-      }
-    }
-  }
 }
