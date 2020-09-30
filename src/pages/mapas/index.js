@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import GoogleMap from "../../components/googleMap"
+import GoogleMap from "./templates/googleMap"
 
 const Mapas = ({ data }) => {
   const locations = {
@@ -67,7 +67,7 @@ const Mapas = ({ data }) => {
                 <Link
                   key={item.node.id}
                   className="dropdown-list__locations"
-                  to={`/mapa/${item.node.id}`}
+                  to={`/mapas/${item.node.slug}`}
                   onMouseOver={() => setInfoWindowActive(item.node.id)}
                   onMouseLeave={() => setInfoWindowActive(null)}
                 >
@@ -115,6 +115,7 @@ export const query = graphql`
         node {
           id
           location
+          slug
           direction
           lat
           lng
@@ -133,6 +134,7 @@ export const query = graphql`
         node {
           id
           location
+          slug
           direction
           lat
           lng
@@ -151,6 +153,7 @@ export const query = graphql`
         node {
           id
           location
+          slug
           direction
           lat
           lng

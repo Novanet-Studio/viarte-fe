@@ -2,27 +2,35 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../../../components/layout"
-import GoogleMap from "../../../components/googleMap"
+import GoogleMap from "./googleMap"
 
 const MapaTemplate = ({ data }) => (
   <Layout>
     <div className="vallas">
       <div className="contenedor">
         <div className="vallas__ficha">
-          <div  className="vallas__ficha--inf">
+          <div className="vallas__ficha--inf">
             <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
             <h1>{data.strapiMap.location}</h1>
             <p>
-              Código<span>{data.strapiMap.code}</span>
+              <span>Dirección </span>
+              {data.strapiMap.direction}
             </p>
             <p>
-              Ciudad<span>{data.strapiMap.ciudad}</span>
+              <span>Código </span>
+              {data.strapiMap.code}
             </p>
             <p>
-              Municipio<span>{data.strapiMap.municipio}</span>
+              <span>Ciudad </span>
+              {data.strapiMap.ciudad}
             </p>
             <p>
-              Medidas<span>{data.strapiMap.medidas}</span>
+              <span>Municipio </span>
+              {data.strapiMap.municipio}
+            </p>
+            <p>
+              <span>Medidas </span>
+              {data.strapiMap.medidas}
             </p>
           </div>
           <GoogleMap

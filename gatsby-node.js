@@ -78,6 +78,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           edges {
             node {
               id
+              slug
             }
           }
         }
@@ -86,10 +87,10 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
     dataMap.allStrapiMap.edges.forEach(({ node }) => {
       createPage({
-        path: `/mapa/${node.id}`,
+        path: `/mapas/${node.slug}`,
         component: path.resolve("./src/pages/mapas/templates/mapa.js"),
         context: {
-          id: node.id
+          id: node.id       
         }
       })
     })

@@ -6,7 +6,7 @@ const InfoWindow = ({ title, address, image, show }) => (
   <div className={`infowindow infowindow--${show ? "show" : "hide"}`}>
     <div className="infowindow__body">
       <Img fluid={image} />
-      <p>{title.toUpperCase()}</p>
+      <p>{title}</p>
       <p>{address}</p>
     </div>
   </div>
