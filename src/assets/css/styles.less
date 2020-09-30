@@ -946,7 +946,8 @@ template {
   text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.49);
 }
 
-.post__principal { // Entrada landscape mobile & tablet
+.post__principal {
+  // Entrada landscape mobile & tablet
   order: 1;
   width: 50%;
   text-align: right;
@@ -1303,26 +1304,63 @@ footer {
 /* Mapas
 ========================================================================== */
 .vallas {
-  .mapa__principal {
+  .dropdown-list {
+    position: absolute;
+    background-color: rgb(150, 150, 150);
+    width: 16%;
+    z-index: 1000;
+  }
+
+  .dropdown-list__locations {
     .w-full();
-    height: 55vh;
+    display: block;
+    padding: 8px;
+  }
+
+  .dropdown-list__locations:hover {
+    background: #ccc;
+  }
+
+  .infowindow {
+    position: relative;
+  }
+
+  .infowindow--hide {
+    display: none;
+  }
+
+  .infowindow--show {
+    display: block;
+  }
+
+  .infowindow__body {
+    background: rgba(206, 206, 206, 0.6);
+    width: 150px;
+    height: 180px;
+    transform: translate(-40%, -100%);
   }
   .img-bg();
-  ul {
-    .flex();
-    .vallas__ficha {
-      .gris-claro-bg();
-      .mapa {
-        border: #c1c1c1 1px solid;
-      }
-      p {
-        font-weight: 500;
-        .gris-oscuro();
-      }
-      a {
-        .lato();
-        .gris();
-      }
+  &__principal {
+    .w-full();
+  }
+  &__ficha {
+    .gris-claro-bg();
+    .w-full();
+    border: #c1c1c1 1px solid;
+    h1 {
+      display: block;
+    }
+    h2 {
+      font-weight: 400;
+      .naranja();
+    }
+    p {
+      font-weight: 500;
+      .gris-oscuro();
+    }
+    a {
+      .lato();
+      .gris();
     }
   }
 }
@@ -1627,21 +1665,24 @@ footer {
   ========================================================================== */
   .vallas {
     background-image: url(../images/vall-mov-bg.jpg);
-    ul {
-      .vallas__ficha {
-        .w-full();
-        margin-bottom: 7.5%;
-        &:nth-child(6) {
-          margin-bottom: 0;
-        }
-        padding: 2.5vh;
-        .mapa {
-          .w-full();
-          height: 27vh;
-        }
-        a {
-          font-size: 0.8rem;
-        }
+    &__ficha {
+      .w-full();
+      margin-bottom: 7.5%;
+      &:nth-child(6) {
+        margin-bottom: 0;
+      }
+      padding: 2.5vh;
+      h2 {
+        padding-top: 1.5vh;
+        font-size: 1.27rem;
+      }
+      p {
+        padding: 1vh 0 0.3vh 0;
+        font-size: 0.91rem;
+        line-height: 1.3rem;
+      }
+      a {
+        font-size: 0.8rem;
       }
     }
   }
@@ -1709,7 +1750,7 @@ footer {
     .post__contenedor {
       padding: 2.5vh;
       .post__contenido {
-        padding-top:0.5vh
+        padding-top: 0.5vh;
       }
     }
   }
@@ -1786,7 +1827,7 @@ footer {
   }
   main > div {
     .contenedor {
-      padding:24vh 3vw;
+      padding: 24vh 3vw;
     }
   }
   footer {
@@ -1918,26 +1959,27 @@ footer {
   ========================================================================== */
   .vallas {
     background-image: url(../images/vall-lan-bg.jpg);
-    ul {
-      .vallas__ficha {
-        width: 48%;
-        margin-bottom: 4%;
-        &:nth-child(2n) {
-          margin-left: 4%;
-        }
-        padding: 4vh;
-        .mapa {
-          .w-full();
-          height: 40vh;
-        }
-        p {
-          padding: 2vh 0 1vh 0;
-          font-size: 0.9rem;
-          line-height: 1.2rem;
-        }
-        a {
-          font-size: 0.77rem;
-        }
+    &__ficha {
+      width: 48%;
+      margin-bottom: 4%;
+      &:nth-child(2n) {
+        margin-left: 4%;
+      }
+      padding: 4vh;
+      h2 {
+        padding-top: 2vh;
+        font-size: 1.27rem;
+      }
+      p {
+        padding: 2vh 0 1vh 0;
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+      }
+      a {
+        font-size: 0.77rem;
+      }
+      .mapa {
+        height: 40vh;
       }
     }
   }
@@ -2013,7 +2055,7 @@ footer {
         height: 52vh;
       }
       .post__cabecera {
-        .post__principal();        
+        .post__principal();
       }
       .post__contenido {
         order: 3;
@@ -2224,28 +2266,30 @@ footer {
   ========================================================================== */
   .vallas {
     background-image: url(../images/vall-tab-bg.jpg);
-    ul {
-      .vallas__ficha {
-        width: 48.4%;
-        margin-bottom: 3.2%;
-        padding: 2vh;
-        &:nth-child(2n) {
-          margin-left: 3.2%;
-        }
-        &:nth-child(5) {
-          margin-bottom: 0;
-        }
-        .mapa {
-          height: 15vh;
-        }
-        p {
-          font-size: 0.97rem;
-          line-height: 1.4rem;
-          padding: 0.5vh 0 0.2vh 0;
-        }
-        a {
-          font-size: 0.85rem;
-        }
+    &__ficha {
+      width: 48.4%;
+      margin-bottom: 3.2%;
+      padding: 2vh;
+      &:nth-child(2n) {
+        margin-left: 3.2%;
+      }
+      &:nth-child(5) {
+        margin-bottom: 0;
+      }
+      h2 {
+        padding-top: 1vh;
+        font-size: 1.42rem;
+      }
+      p {
+        font-size: 0.97rem;
+        line-height: 1.4rem;
+        padding: 0.5vh 0 0.2vh 0;
+      }
+      a {
+        font-size: 0.85rem;
+      }
+      .mapa {
+        height: 15vh;
       }
     }
   }
@@ -2328,14 +2372,14 @@ footer {
         height: auto;
       }
       .post__cabecera {
-      .post__principal();
+        .post__principal();
       }
       .post__contenido {
-        order: 3;      
+        order: 3;
         font-size: 1.05rem;
         p {
           font-size: 1rem;
-          line-height: 1.6rem;          
+          line-height: 1.6rem;
         }
       }
     }
@@ -2445,7 +2489,7 @@ footer {
   }
   .ficha__texto {
     font-size: 0.85rem;
-}
+  }
   /* Inicio
   ========================================================================== */
   .inicio {
@@ -2479,7 +2523,7 @@ footer {
           margin-left: 1.833333333%;
         }
         padding: 2vh;
-        margin-bottom:0;
+        margin-bottom: 0;
         img {
           width: 6vw;
           height: 6vw;
@@ -2490,7 +2534,6 @@ footer {
       }
     }
   }
-
 
   /* Productos
   ========================================================================== */
@@ -2529,7 +2572,6 @@ footer {
             h2 {
               padding: 0 0 0.5vh 0;
             }
-      
           }
         }
       }
@@ -2539,27 +2581,26 @@ footer {
   /* Vallas / Mapas
   ========================================================================== */
   .vallas {
-    ul {
-      .flex();
-      .vallas__ficha {
-        .w-half();
-        margin-bottom: 1.833333333%;
-        &:nth-child(2n) {
-          margin-left: 1.833333333%;
-        }
-        padding: 2vh;
-        .mapa {
-          height: 20vh;
-        }
-        h2 {
-          padding-top: 1vh;
-        }
-        p {     
-          padding: 0.5vh 0;
-        }
-        a {
-          font-size: 0.8rem;
-        }
+    &__ficha {
+      .w-full();
+      margin-bottom: 1.833333333%;
+      &:nth-child(2n) {
+        margin-left: 1.833333333%;
+      }
+      padding: 2vh;
+      h2 {
+        padding-top: 1vh;
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 0.97rem;
+        padding: 0.5vh 0;
+      }
+      a {
+        font-size: 0.8rem;
+      }
+      .mapa {
+        height: 20vh;
       }
     }
   }
@@ -2578,11 +2619,11 @@ footer {
           padding-left: 2vh;
           .w-half();
           h2 {
-            padding-top: 0; 
+            padding-top: 0;
           }
           p {
             padding-top: 1vh;
-            display: block;            
+            display: block;
           }
         }
       }
@@ -2642,10 +2683,9 @@ footer {
         -webkit-column-gap: 1.5em;
         column-gap: 0.8em;
         p {
-
           &:first-child {
             padding-top: 0;
-          }         
+          }
         }
       }
     }
@@ -2698,12 +2738,12 @@ footer {
 /*-------------------------------------------- Desktop responsive --------------------------------------------*/
 @media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
   h2 {
-    font-size:1.5rem;
+    font-size: 1.5rem;
   }
   h3 {
     font-size: 1.3rem;
   }
-  
+
   /* Contenedores principales
   ========================================================================== */
   header {
@@ -2828,23 +2868,38 @@ footer {
   .vallas {
     background-image: url(../images/vall-desk-bg.jpg);
     background-position: bottom center;
-    ul {
-      .flex();
-      .vallas__ficha {
-        margin-bottom: 1.633333333%;
-        &:nth-child(2n) {
-          margin-left: 1.633333333%;
+    .mapa {
+      .w-full();
+      height: 55vh;
+    }
+    &__principal {
+      .w-full();
+      height: 55vh;
+    }
+    &__ficha {
+      height: 60vh;
+      margin-bottom: 1.633333333%;
+      &:nth-child(2n) {
+        margin-left: 1.633333333%;
+      }
+      .gatsby-image-wrapper {
+        img {
+          .w-half();
+          height: auto !important;
         }
-        .mapa {
-          height: 22vh;
-        }
-        h2 {
-          font-size: 1.3rem;
-        }
-        p {
-          line-height: 1.4rem;
-          padding: 0.5vh 0 0;
-        }
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      p {
+        line-height: 1.4rem;
+        padding: 0.5vh 0 0;
+      }
+      a {
+        font-size: 0.8rem;
+      }
+      &--mapa {
+        height: 22vh;
       }
     }
   }
@@ -2905,7 +2960,7 @@ footer {
   .post {
     background-image: url(../images/blog-desk-bg.jpg);
     h1 {
-      font-size:1.7rem
+      font-size: 1.7rem;
     }
     .post__contenedor {
       .gatsby-image-wrapper {
@@ -2985,7 +3040,6 @@ footer {
       }
     }
   }
-
 }
 
 /*-------------------------------------------- Desktop responsive 1440--------------------------------------------*/
@@ -3075,5 +3129,20 @@ footer {
       }
     }
   }
-
+  /* Productos
+  ========================================================================== */
+  .vallas {
+    &__ficha {
+      h2 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 1rem;
+        padding: 0.5vh 0;
+      }
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
