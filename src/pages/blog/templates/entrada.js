@@ -25,6 +25,7 @@ const EntradaTemplate = ({ data }) => (
             alt={data.strapiEntrada.seo_image.alt}
           />
           <div className="post__cabecera">
+            <a className="boton-regreso">« Volver</a>
             <h1>{data.strapiEntrada.title}</h1>
           </div>
           <div className="post__contenido">

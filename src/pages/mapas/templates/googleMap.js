@@ -5,9 +5,11 @@ import Img from "gatsby-image"
 const InfoWindow = ({ title, address, image, show }) => (
   <div className={`infowindow infowindow--${show ? "show" : "hide"}`}>
     <div className="infowindow__body">
-      <Img fluid={image} />
-      <p>{title}</p>
-      <p>{address}</p>
+      <Img className="infowindow__body-img" fluid={image} />
+      <div className="infowindow__body-texto">
+        <h4>{title}</h4>
+        <p>{address}</p>
+      </div>
     </div>
   </div>
 )
