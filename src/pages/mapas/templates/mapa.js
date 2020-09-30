@@ -9,20 +9,22 @@ const MapaTemplate = ({ data }) => (
     <div className="vallas">
       <div className="contenedor">
         <div className="vallas__ficha">
-          <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
-          <h1>{data.strapiMap.location}</h1>
-          <p>
-            Código<span>{data.strapiMap.code}</span>
-          </p>
-          <p>
-            Ciudad<span>{data.strapiMap.ciudad}</span>
-          </p>
-          <p>
-            Municipio<span>{data.strapiMap.municipio}</span>
-          </p>
-          <p>
-            Medidas<span>{data.strapiMap.medidas}</span>
-          </p>
+          <div  className="vallas__ficha--inf">
+            <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
+            <h1>{data.strapiMap.location}</h1>
+            <p>
+              Código<span>{data.strapiMap.code}</span>
+            </p>
+            <p>
+              Ciudad<span>{data.strapiMap.ciudad}</span>
+            </p>
+            <p>
+              Municipio<span>{data.strapiMap.municipio}</span>
+            </p>
+            <p>
+              Medidas<span>{data.strapiMap.medidas}</span>
+            </p>
+          </div>
           <GoogleMap
             className="vallas__ficha--mapa"
             lat={Number(data.strapiMap.lat)}

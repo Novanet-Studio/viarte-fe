@@ -1306,19 +1306,43 @@ footer {
 .vallas {
   .dropdown-list {
     position: absolute;
-    background-color: rgb(150, 150, 150);
-    width: 16%;
     z-index: 1000;
+    .blanco-bg();
+    select {
+      .lato();
+      .blanco();
+      .azul-bg();
+      font-weight: bold;
+      border: none;
+      option {
+        .lato();
+        .gris-oscuro();
+        .gris-claro-bg();
+        font-weight:400
+      }
+    }
+    a {
+      .lato();
+      .gris();
+      font-weight: 400;
+    }
   }
 
+  &__ficha {
+    h1 {
+      .gris-claro-bg();
+      .naranja();
+    }
+  }
+  
   .dropdown-list__locations {
     .w-full();
     display: block;
-    padding: 8px;
   }
 
   .dropdown-list__locations:hover {
-    background: #ccc;
+    .gris-claro-bg();
+    transition: 0.5s;
   }
 
   .infowindow {
@@ -1334,10 +1358,10 @@ footer {
   }
 
   .infowindow__body {
-    background: rgba(206, 206, 206, 0.6);
-    width: 150px;
-    height: 180px;
+    .blanco-bg();
+    .gris();
     transform: translate(-40%, -100%);
+    font-weight:600;
   }
   .img-bg();
   &__principal {
@@ -1346,13 +1370,10 @@ footer {
   &__ficha {
     .gris-claro-bg();
     .w-full();
+    .flex();
     border: #c1c1c1 1px solid;
     h1 {
       display: block;
-    }
-    h2 {
-      font-weight: 400;
-      .naranja();
     }
     p {
       font-weight: 500;
@@ -1531,6 +1552,7 @@ footer {
   main > div {
     .contenedor {
       padding: 22vh 6vw;
+      .w-full();
     }
   }
   footer {
@@ -1665,24 +1687,47 @@ footer {
   ========================================================================== */
   .vallas {
     background-image: url(../images/vall-mov-bg.jpg);
+    &__principal {
+      height: 90vh;
+      .dropdown-list {
+        width: 51%;
+        margin: 2vh;
+        select {
+          .w-full();
+          padding:1vh 0.7vh;
+          font-size: 1.03rem;
+          option {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.87rem;
+      padding:1.5vh 1vh;
+    }
+
     &__ficha {
-      .w-full();
-      margin-bottom: 7.5%;
-      &:nth-child(6) {
-        margin-bottom: 0;
-      }
-      padding: 2.5vh;
-      h2 {
-        padding-top: 1.5vh;
-        font-size: 1.27rem;
-      }
+      padding:2vh;
+      &--inf {
+        .w-full();
+        .gatsby-image-wrapper {
+          .w-half();
+        }
+      h1 {
+        font-size: 1.3rem;
+        padding: 1.2vh 0 0.2vh 0;
+        }
       p {
-        padding: 1vh 0 0.3vh 0;
-        font-size: 0.91rem;
-        line-height: 1.3rem;
+        font-size: 0.9rem;
+        padding: 1vh 0;
+        }
       }
-      a {
-        font-size: 0.8rem;
+      &--mapa {
+        .w-full();
+        margin-top: 4%;
+        height: 45.2vh;
       }
     }
   }
@@ -1828,6 +1873,7 @@ footer {
   main > div {
     .contenedor {
       padding: 24vh 3vw;
+      .w-full();
     }
   }
   footer {
@@ -1959,27 +2005,51 @@ footer {
   ========================================================================== */
   .vallas {
     background-image: url(../images/vall-lan-bg.jpg);
+    &__principal {
+      height: 90vh;
+      .dropdown-list {
+        width: 35%;
+        margin: 3vh;
+        select {
+          .w-full();
+          padding:1.5vh 1vh;
+          font-size: 1.03rem;
+          option {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.87rem;
+      padding:2.5vh 2vh;
+    }
+
+
     &__ficha {
-      width: 48%;
-      margin-bottom: 4%;
-      &:nth-child(2n) {
-        margin-left: 4%;
-      }
-      padding: 4vh;
-      h2 {
-        padding-top: 2vh;
-        font-size: 1.27rem;
-      }
+      padding:4vh;
+      &--inf {
+        width: 48%;
+        .gatsby-image-wrapper {
+          width: 60%;
+          img {
+            height: auto !important;
+          }
+        }
+      h1 {
+        font-size: 1.3rem;
+        padding: 2vh 0 0;
+        }
       p {
-        padding: 2vh 0 1vh 0;
-        font-size: 0.9rem;
-        line-height: 1.2rem;
+        padding: 2.2vh  0 0;
+        font-size: 0.8rem;
+        }
       }
-      a {
-        font-size: 0.77rem;
-      }
-      .mapa {
-        height: 40vh;
+      &--mapa {
+        width: 48%;
+        margin-left:4%;
+        height: 82vh;
       }
     }
   }
@@ -2266,30 +2336,43 @@ footer {
   ========================================================================== */
   .vallas {
     background-image: url(../images/vall-tab-bg.jpg);
+    &__principal {
+      height: 45vh;
+      .dropdown-list {
+        width: 25%;
+        select {
+          padding: 1vh 0.7vh;
+          font-size: 1.05rem;
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.95rem;
+      padding: 0.8vh 1vh;
+    }
+
     &__ficha {
-      width: 48.4%;
-      margin-bottom: 3.2%;
-      padding: 2vh;
-      &:nth-child(2n) {
-        margin-left: 3.2%;
-      }
-      &:nth-child(5) {
-        margin-bottom: 0;
-      }
-      h2 {
-        padding-top: 1vh;
-        font-size: 1.42rem;
-      }
+      padding:1.5vh;
+      &--inf {
+        .w-half();
+        .gatsby-image-wrapper {
+          width: 55%;
+        }
+      h1 {
+        font-size: 1.5rem;
+        padding: 1vh 0 0 0;
+        }
       p {
-        font-size: 0.97rem;
-        line-height: 1.4rem;
-        padding: 0.5vh 0 0.2vh 0;
+        font-size: 1rem;
+        padding: 1vh 0 0 0;
+        }
       }
-      a {
-        font-size: 0.85rem;
-      }
-      .mapa {
-        height: 15vh;
+      &--mapa {
+        .w-half();
+        margin-top: 0;
+        margin-left: 1.633333333%;
+        height: 33.2vh;
       }
     }
   }
@@ -2581,26 +2664,57 @@ footer {
   /* Vallas / Mapas
   ========================================================================== */
   .vallas {
-    &__ficha {
-      .w-full();
-      margin-bottom: 1.833333333%;
-      &:nth-child(2n) {
-        margin-left: 1.833333333%;
+    &__principal {
+      height: 55vh;
+      .dropdown-list {
+        width: 25%;
+        margin: 2vh;
+        select {
+          padding: 1vh 1vh;
+          font-size: 1.1rem;
+          option {
+            font-size: 1rem;
+          }
+        }
       }
-      padding: 2vh;
-      h2 {
-        padding-top: 1vh;
-        font-size: 1.25rem;
+    }
+
+    .dropdown-list__locations {
+      font-size: 1rem;
+      padding: 1.5vh 1vh;
+    }
+
+    .infowindow__body {
+      width: 150px;
+      padding:1.5vh;
+      img {
+        padding-bottom:0.5vh;
       }
       p {
-        font-size: 0.97rem;
-        padding: 0.5vh 0;
+        padding-top:1vh;
+        font-size:0.9rem
       }
-      a {
-        font-size: 0.8rem;
+    }
+
+    &__ficha {
+      .w-full();
+      padding:2vh;
+      &--inf {
+        .w-half();
+      h1 {
+        font-size: 1.7rem;
+        padding:1.5vh 0 0;
+        }
+      p {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        padding:1.5vh 0 0 0;
+        }
       }
-      .mapa {
-        height: 20vh;
+      &--mapa {
+        .w-half();
+        margin-left: 1.633333333%;
+        height: 55vh;
       }
     }
   }
@@ -2869,38 +2983,31 @@ footer {
     background-image: url(../images/vall-desk-bg.jpg);
     background-position: bottom center;
     .mapa {
-      .w-full();
       height: 55vh;
     }
     &__principal {
-      .w-full();
-      height: 55vh;
-    }
-    &__ficha {
-      height: 60vh;
-      margin-bottom: 1.633333333%;
-      &:nth-child(2n) {
-        margin-left: 1.633333333%;
-      }
-      .gatsby-image-wrapper {
-        img {
-          .w-half();
-          height: auto !important;
+      .dropdown-list {
+        width: 15%;
+        select {
+          padding: 1vh 0.5vh;
         }
       }
-      h2 {
-        font-size: 1.3rem;
-      }
-      p {
-        line-height: 1.4rem;
-        padding: 0.5vh 0 0;
-      }
-      a {
-        font-size: 0.8rem;
+    }
+
+    &__ficha {
+      &--inf {
+        .gatsby-image-wrapper {
+          width: 49%;
+        }
       }
       &--mapa {
-        height: 22vh;
+        .w-half();
+        height: 65vh;
       }
+    }
+
+    .infowindow__body {
+      width: 180px;
     }
   }
 
