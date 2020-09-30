@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
@@ -25,7 +25,7 @@ const EntradaTemplate = ({ data }) => (
             alt={data.strapiEntrada.seo_image.alt}
           />
           <div className="post__cabecera">
-            <a className="boton-regreso">« Volver</a>
+            <Link className="boton-regreso" to="../../blog">« Volver</Link>
             <h1>{data.strapiEntrada.title}</h1>
           </div>
           <div className="post__contenido">
