@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../../../components/layout"
 import GoogleMap from "./googleMap"
-import { useMapInfo } from "../hooks/mapa-detalle"
+import { useMapInfo } from "./../hooks/mapa-detalle"
 
-export default function MapaTemplate() {
+const MapaTemplate = () => {
   const {
     lat,
     lng,
@@ -53,3 +53,5 @@ export default function MapaTemplate() {
     </Layout>
   )
 }
+
+export default MapaTemplate
