@@ -1,6 +1,7 @@
+
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useMapInfo = () => {
+const useMapInfo = () => {
   const { strapiMap } = useStaticQuery(
     graphql`
       query mapa($id: String) {
@@ -27,3 +28,5 @@ export const useMapInfo = () => {
   )
   return strapiMap
 }
+
+export default useMapInfo
