@@ -60,7 +60,7 @@ const EntradaTemplate = ({ data }) => (
                 url={shareUrl}
                 children="a"
                 media={`${window.location.protocol}//${window.location.hostname}${data.strapiEntrada.image.childImageSharp.fluid.src}`}
-                description={data.strapiEntrada.description}
+                description={data.strapiEntrada.title}
               >
                 <PinterestIcon size={28} />
               </PinterestShareButton>
