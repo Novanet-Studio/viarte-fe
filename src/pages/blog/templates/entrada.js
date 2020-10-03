@@ -49,14 +49,19 @@ const EntradaTemplate = ({ data }) => (
               escapeHtml={false}
             />
             <div className="post__cabecera-compartir">
-              <h3>Comparte este  artículo</h3>
+              <h3>Comparte este artículo</h3>
               <FacebookShareButton url={shareUrl} children="a">
                 <FacebookIcon size={28} />
               </FacebookShareButton>
               <TwitterShareButton url={shareUrl} children="a">
                 <TwitterIcon size={28} />
               </TwitterShareButton>
-              <PinterestShareButton url={shareUrl} children="a">
+              <PinterestShareButton
+                url={shareUrl}
+                children="a"
+                media={`${window.location.protocol}//${window.location.hostname}${data.strapiEntrada.image.childImageSharp.fluid.src}`}
+                description={data.strapiEntrada.description}
+              >
                 <PinterestIcon size={28} />
               </PinterestShareButton>
             </div>
