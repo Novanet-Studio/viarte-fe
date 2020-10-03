@@ -44,6 +44,7 @@ export default class Blog extends React.Component {
                   />
                   <div className="blog__destacadotexto">
                     <h2>{item.node.title}</h2>
+                    <p className="blog__destacadotexto-fecha">{item.node.date}</p>
                     <ReactMarkdown
                       className="ficha__texto"
                       source={item.node.description
@@ -67,6 +68,7 @@ export default class Blog extends React.Component {
                       alt={item.node.seo_image.alt}
                     />
                     <h3>{item.node.title}</h3>
+                    <p className="blog__destacadotexto-fecha">{item.node.date}</p>
                     <ReactMarkdown
                       className="ficha__texto"
                       source={item.node.description
@@ -130,6 +132,7 @@ export const query = graphql`
           title
           Slug
           description
+          date(formatString: "DD MMMM YYYY", locale: "es-es")
           image {
             childImageSharp {
               fluid(maxWidth: 800) {
@@ -153,10 +156,10 @@ export const query = graphql`
       edges {
         node {
           id
-          date
           title
           Slug
           description
+          date(formatString: "DD MMMM YYYY", locale: "es-es")
           image {
             childImageSharp {
               fluid(maxWidth: 250) {

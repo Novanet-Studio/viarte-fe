@@ -52,7 +52,7 @@ const Footer = () => (
                       (faicon = document.icon.replace(/'/g, "")),
                     ]}
                     fixedWidth
-                    size="lg"
+                    size="1x"
                   />
                 </a>
               </div>
