@@ -39,6 +39,7 @@ function SEO({ title, description, type, siteUrl, image, lang, meta }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.titleTemplate}`}
+      
       meta={[
         {
           name: `description`,
@@ -83,6 +84,11 @@ function SEO({ title, description, type, siteUrl, image, lang, meta }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+         name: `p:domain_verify`,
+         content: `283967472948f458a5e394ec28244749`
+
         },
       ].concat(meta)}
     />
