@@ -12,8 +12,8 @@ const Nosotros = ({ data }) => (
     />
     <div
       className="nosotros"
-      title={data.strapiAbout.image_seo.title}
-      alt={data.strapiAbout.image_seo.alt}
+      /* title={data.strapiAbout.image_seo.title}
+      alt={data.strapiAbout.image_seo.alt} */
     >
       <h1>{data.strapiAbout.seo.title}</h1>
       <div className="contenedor">
@@ -23,8 +23,9 @@ const Nosotros = ({ data }) => (
             <li key={document.id} className="nosotros__ficha">
               <img
                 src={document.image.publicURL}
-                title={document.image_seo.title}
-                alt={document.image_seo.alt}
+                /* title={document.image_seo.title}
+                alt={document.image_seo.alt} */
+                alt="La imagen"
               />
               <h2>{document.title}</h2>
               <p className="ficha__texto">{document.description}</p>
@@ -52,15 +53,7 @@ export const query = graphql`
         description
         image {
           publicURL
-        }
-        image_seo {
-          title
-          alt
-        }
-      }
-      image_seo {
-        title
-        alt
+        }       
       }
     }
   }

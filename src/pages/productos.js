@@ -37,11 +37,7 @@ export default function Productos() {
               image
               title
             }
-            description
-            seo_image {
-              title
-              alt
-            }
+            description            
           }
           allStrapiProducto {
             nodes {
@@ -56,10 +52,6 @@ export default function Productos() {
                   }
                 }
               }
-              seo_image {
-                title
-                alt
-              }
             }
           }
         }
@@ -73,8 +65,8 @@ export default function Productos() {
           />
           <div
             className="productos"
-            title={data.strapiProduct.seo_image.title}
-            alt={data.strapiProduct.seo_image.alt}
+            /* title={data.strapiProduct.seo_image.title}
+            alt={data.strapiProduct.seo_image.alt} */
           >
             <div className="contenedor">
               <h1>{data.strapiProduct.seo.title}</h1>
@@ -84,8 +76,8 @@ export default function Productos() {
                   <li key={document.id}>
                     <Img
                       fluid={document.image.childImageSharp.fluid}
-                      title={document.seo_image.title}
-                      alt={document.seo_image.alt}
+                      /* title={document.seo_image.title}
+                      alt={document.seo_image.alt} */
                     />
                     <div className="productos__ficha">
                       <h2>{document.name}</h2>
@@ -117,8 +109,8 @@ export default function Productos() {
                           </span>
                           <Img
                             fluid={document.image.childImageSharp.fluid}
-                            title={document.seo_image.title}
-                            alt={document.seo_image.alt}
+                            /* title={document.seo_image.title}
+                            alt={document.seo_image.alt} */
                           />
                           <div className="modal-text">
                             <h2>{document.name}</h2>

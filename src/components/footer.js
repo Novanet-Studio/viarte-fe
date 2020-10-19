@@ -23,11 +23,7 @@ const Footer = () => (
             icon
             link
             prefix
-          }
-          seo_image {
-            alt
-            title
-          }
+          }      
         }
         logonn: file(relativePath: { eq: "logo-nn.svg" }) {
           publicURL
