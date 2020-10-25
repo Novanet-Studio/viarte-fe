@@ -23,11 +23,7 @@ const Footer = () => (
             icon
             link
             prefix
-          }
-          seo_image {
-            alt
-            title
-          }
+          }      
         }
         logonn: file(relativePath: { eq: "logo-nn.svg" }) {
           publicURL
@@ -52,7 +48,7 @@ const Footer = () => (
                       (faicon = document.icon.replace(/'/g, "")),
                     ]}
                     fixedWidth
-                    size="lg"
+                    size="1x"
                   />
                 </a>
               </div>

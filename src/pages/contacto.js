@@ -56,11 +56,7 @@ export default function ContactPage() {
               prefix
               icon
               content
-            }
-            seo_image {
-              title
-              alt
-            }
+            }           
           }
         }
       `}
@@ -72,8 +68,8 @@ export default function ContactPage() {
           />
           <div
             className="contacto"
-            title={data.strapiContact.seo_image.title}
-            alt={data.strapiContact.seo_image.alt}
+            /* title={data.strapiContact.seo_image.title}
+            alt={data.strapiContact.seo_image.alt} */
           >
             <div className="contenedor">
               <h1>{data.strapiContact.seo.title}</h1>

@@ -26,12 +26,11 @@ export default class Blog extends React.Component {
         />
         <div
           className="blog"
-          title={page.seo_image.title}
-          alt={page.seo_image.alt}
+          /* title={page.seo_image.title}
+          alt={page.seo_image.alt} */
         >
           <div className="contenedor">
-            <h1>{page.title}</h1>
-            {/* <p className="descripcion">{page.description}</p> */}
+            <h1>{page.title}</h1>      
 
             {/* ====== Entrada destacada ====== */}
             {destacado.map((item) => (
@@ -39,11 +38,12 @@ export default class Blog extends React.Component {
                 <Link to={`/blog/${item.node.Slug}`}>
                   <Img
                     fluid={item.node.image.childImageSharp.fluid}
-                    title={item.node.seo_image.title}
-                    alt={item.node.seo_image.alt}
+                    /* title={item.node.seo_image.title}
+                    alt={item.node.seo_image.alt} */
                   />
                   <div className="blog__destacadotexto">
                     <h2>{item.node.title}</h2>
+                    <p className="blog__destacadotexto-fecha">{item.node.date}</p>
                     <ReactMarkdown
                       className="ficha__texto"
                       source={item.node.description
@@ -63,10 +63,11 @@ export default class Blog extends React.Component {
                   <Link to={`/blog/${item.node.Slug}`}>
                     <Img
                       fluid={item.node.image.childImageSharp.fluid}
-                      title={item.node.seo_image.title}
-                      alt={item.node.seo_image.alt}
+                      /* title={item.node.seo_image.title}
+                      alt={item.node.seo_image.alt} */
                     />
                     <h3>{item.node.title}</h3>
+                    <p className="blog__destacadotexto-fecha">{item.node.date}</p>
                     <ReactMarkdown
                       className="ficha__texto"
                       source={item.node.description
@@ -115,11 +116,7 @@ export const query = graphql`
         title
         description
         image
-      }
-      seo_image {
-        title
-        alt
-      }
+      }     
     }
     allStrapiEntradaTrue: allStrapiEntrada(
       filter: { destacado: { eq: true } }
@@ -130,17 +127,14 @@ export const query = graphql`
           title
           Slug
           description
+          date(formatString: "DD MMMM YYYY", locale: "es-es")
           image {
             childImageSharp {
               fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
               }
             }
-          }
-          seo_image {
-            title
-            alt
-          }
+          }          
         }
       }
     }
@@ -153,21 +147,17 @@ export const query = graphql`
       edges {
         node {
           id
-          date
           title
           Slug
           description
+          date(formatString: "DD MMMM YYYY", locale: "es-es")
           image {
             childImageSharp {
               fluid(maxWidth: 250) {
                 ...GatsbyImageSharpFluid
               }
             }
-          }
-          seo_image {
-            title
-            alt
-          }
+          }         
         }
       }
     }

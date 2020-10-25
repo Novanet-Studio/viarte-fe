@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `novanet-viarte-caracas`,
-        short_name: `caracas-landscapes`,
+        name: `viarte`,
+        short_name: `viarte`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#00a5e7`,
@@ -58,9 +58,14 @@ module.exports = {
         queryLimit: 1000,
       },
     },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 100,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-less`,
     `gatsby-plugin-offline`,
