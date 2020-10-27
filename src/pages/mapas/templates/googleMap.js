@@ -32,6 +32,7 @@ const GoogleMap = ({
   lng,
   markers = [],
   center = [0, 0],
+  defaultZoom,
   showInfoWindow = false,
   ...props
 }) => (
@@ -39,7 +40,7 @@ const GoogleMap = ({
     <GoogleMapReact
       bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_MAPS_KEY }}
       center={center}
-      defaultZoom={15}
+      defaultZoom={defaultZoom}
     >
       {!markers.length ? (
         <Marker lat={lat} lng={lng} />

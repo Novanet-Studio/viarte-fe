@@ -32,7 +32,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #00a5e7;;
+  background-color: #00a5e7;
 }
 
 /**
@@ -944,7 +944,7 @@ template {
 }
 
 .txt-shadow {
-  text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.49);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .absolute {
@@ -1090,7 +1090,7 @@ header {
       font-weight: 500;
       transition: 0.5s;
       border-bottom: 2px rgba(0, 0, 0, 0.01) solid;
-      text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.49);
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
       .changa();
       .blanco();
     }
@@ -1101,20 +1101,12 @@ header {
   }
 }
 /* ------------ Main ------------ */
-.relative {
-  position: relative;
-}
 
 main > div {
-  width: 100vw;
   min-height: 100vh;
   .flex();
   .center();
   flex-direction: column;
-  .contenedor {
-    .flex();
-    flex-direction: row;
-  }
 }
 /* ------------ Footer ------------ */
 footer {
@@ -1167,6 +1159,7 @@ footer {
       .footer__rrssbtn {
         a {
           clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          display: block;
           .blanco();
           .azul-bg();
         }
@@ -1184,145 +1177,19 @@ footer {
 
 /* Inicio
 ========================================================================== */
-.inicio {
-  .img-bg();
-  .inicio__logo {
-    .flex();
-    .center();
-    background-image: radial-gradient(
-      ellipse at center,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0) 70%
-    );
-  }
-  .ant-carousel {
-    .w-full();
-    .inicio__carouseltxt {
-      p {
-        text-align: center;
-        .changa();
-        .blanco();
-        .txt-shadow();
-        a {
-          .blanco();
-        }
-      }
-    }
-  }
-}
 
 /* Nosotros
 ========================================================================== */
-.nosotros {
-  .img-bg();
-  h2 {
-    padding-left: 1.5vw;
-  }
-  ul {
-    .flex();
-    .nosotros__ficha {
-      align-items: center;
-      align-content: flex-start;
-      display: flex;
-      flex-wrap: wrap;
-      .gris-claro-bg();
-    }
-  }
-}
 
 /* Productos
 ========================================================================== */
-.productos {
-  .img-bg();
-  ul {
-    li {
-      .flex();
-      .gris-claro-bg();
-      .gatsby-image-wrapper {
-        img {
-          mask: url(../images/mascara.svg);
-          height: auto !important;
-        }
-      }
-      .productos__ficha {
-        p {
-          padding-top: 1vh;
-        }
-        button {
-          cursor: pointer;
-          .lato();
-          font-weight: 900;
-          .azul();
-          border: none;
-        }
-      }
-    }
-  }
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
-    opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 200ms;
-  }
-
-  /* Modal Content/Box */
-  .modal-content {
-    .gris-claro-bg();
-    margin: 10% auto; /* 15% from the top and centered */
-    position: relative;
-    top: 10%;
-  }
-
-  @keyframes fadeInOpacity {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* The Close Button */
-  .close {
-    .blanco();
-    float: right;
-    font-size: 25px;
-    font-weight: bold;
-    .azul-bg();
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  .close:hover,
-  .close:focus {
-    text-decoration: none;
-    cursor: pointer;
-    .naranja-bg();
-    transition: 1s;
-  }
-}
 
 /* Mapas
 ========================================================================== */
 .vallas {
   .dropdown-list {
-    position: absolute;
-    z-index: 1000;
     .blanco-bg();
+    width: 12.5vw;
     select {
       font-weight: bold;
       border: none;
@@ -1401,9 +1268,6 @@ footer {
   }
 
   .img-bg();
-  &__principal {
-    .w-full();
-  }
 
   &__ficha {
     .gris-claro-bg();
@@ -1438,8 +1302,8 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-image: url(../images/marcador.png);
   background-size: contain;
   background-position: center;
@@ -1455,17 +1319,17 @@ footer {
 .blog {
   .img-bg();
   .blog__destacadotexto,
-    .blog__entradas {
-      &-fecha {
-        .w-full();
-        .azul();
-        font-size: 0.9rem;       
-        text-align: left;
-        margin-bottom:-0.5vh;
-      }      
+  .blog__entradas {
+    &-fecha {
+      .w-full();
+      .azul();
+      font-size: 0.9rem;
+      text-align: left;
+      margin-bottom: -0.5vh;
     }
+  }
   .blog__destacado {
-    .gris-claro-bg();    
+    .gris-claro-bg();
   }
 
   .blog__entradas {
@@ -1476,13 +1340,13 @@ footer {
         .flex();
         .gatsby-image-wrapper {
         }
-        h3 {          
+        h3 {
           font-weight: 400;
           .naranja();
         }
         p {
           font-weight: 500;
-        }             
+        }
       }
     }
   }
@@ -1527,9 +1391,9 @@ footer {
       position: relative;
       .flex();
       &-fecha {
-      .w-full();
-      .azul();
-      font-size: 0.75rem; 
+        .w-full();
+        .azul();
+        font-size: 0.75rem;
       }
       &-compartir {
         .w-full();
@@ -1566,7 +1430,7 @@ footer {
         font-weight: 500;
         .gris();
       }
-    }    
+    }
   }
 }
 
@@ -1664,10 +1528,12 @@ footer {
       .footer__rrss {
         .footer__rrssbtn {
           a {
-            padding: 2.5vw;
-            margin: 0 2vw;
+            width: 8vw;
+            height: 8vw;
+            margin: 0 1vw;
             svg {
-              width: 0.45em !important;
+              width: 0.6rem !important;
+              margin: 2vw 0 0 2.5vw;
             }
           }
         }
@@ -1701,94 +1567,12 @@ footer {
 
   /* Inicio
 ========================================================================== */
-  .inicio {
-    background-image: url(../images/ini-mov-bg.jpg);
-    .inicio__logo {
-      height: 30vh;
-      width: 85vw;
-      margin-top: -5vh;
-      margin-bottom: 5vh;
-
-      img {
-        width: 55vw;
-      }
-    }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.32rem;
-          line-height: 1.8rem;
-        }
-      }
-    }
-  }
 
   /* Nosotros
 ========================================================================== */
-  .nosotros {
-    background-image: url(../images/nos-mov-bg.jpg);
-    ul {
-      .nosotros__ficha {
-        .w-full();
-        margin-bottom: 3vh;
-
-        padding: 2.5vh;
-        img {
-          width: 15vw;
-          height: 15vw;
-        }
-      }
-    }
-  }
 
   /* Productos
 ========================================================================== */
-  .productos {
-    h2 {
-      font-size: 1rem;
-    }
-    background-image: url(../images/pro-mov-bg.jpg);
-    ul {
-      .flex();
-      li {
-        width: 46%;
-        margin-bottom: 7.5%;
-        &:nth-child(2n) {
-          margin-left: 7.5%;
-        }
-        padding: 2vh;
-        .gatsby-image-wrapper {
-          .w-full();
-        }
-        .productos__ficha {
-          .w-full();
-          p {
-            display: none;
-          }
-          button {
-            font-size: 0.8rem;
-          }
-        }
-
-        .modal-content {
-          width: 88%;
-          padding: 3vh;
-          .close {
-            padding: 0.2vh 2.6vw;
-          }
-          .gatsby-image-wrapper {
-            width: 50%;
-            margin-bottom: 2vw;
-          }
-          .modal-text {
-            p {
-              display: block;
-            }
-          }
-        }
-      }
-    }
-  }
 
   /* Vallas / Mapas
 ========================================================================== */
@@ -1865,13 +1649,13 @@ footer {
       }
       .blog__destacadotexto {
         &-fecha {
-          font-size: 0.75rem;    
+          font-size: 0.75rem;
         }
       }
     }
-    .blog__entradas {       
-      
-      li {        width: 100%;
+    .blog__entradas {
+      li {
+        width: 100%;
         margin-top: 7.5%;
         padding: 2.5vh;
         a {
@@ -1999,7 +1783,7 @@ footer {
   }
   main > div {
     .contenedor {
-      padding: 24vh 3vw;
+      padding: 0 4vw;
       .w-full();
     }
   }
@@ -2010,10 +1794,12 @@ footer {
       .footer__rrss {
         .footer__rrssbtn {
           a {
-            padding: 1.3vw;
+            width: 4vw;
+            height: 4vw;
             margin: 0 0.5vw;
             svg {
-              width: 0.48em !important;
+              width: 0.5rem !important;
+              margin: 0.75vw 0 0 1.3vw;
             }
           }
         }
@@ -2030,7 +1816,7 @@ footer {
   /* Descripción general en las vistas */
   .descripcion {
     font-size: 1.1rem;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
     padding-bottom: 4.5vh;
   }
   .ficha__texto {
@@ -2045,93 +1831,12 @@ footer {
 
   /* Inicio
 ========================================================================== */
-  .inicio {
-    background-image: url(../images/ini-lan-bg.jpg);
-    .inicio__logo {
-      height: 38vh;
-      width: 50vw;
-      margin-top: -5vh;
-      margin-bottom: 5vh;
-      img {
-        width: 28vw;
-      }
-    }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.33rem;
-        }
-      }
-    }
-  }
 
   /* Nosotros
 ========================================================================== */
-  .nosotros {
-    background-image: url(../images/nos-lan-bg.jpg);
-    ul {
-      .nosotros__ficha {
-        .w-full();
-        margin-bottom: 6vh;
-        padding: 4vh;
-        img {
-          width: 10vw;
-          height: 10vw;
-        }
-      }
-    }
-  }
 
   /* Productos
 ========================================================================== */
-  .productos {
-    background-image: url(../images/pro-lan-bg.jpg);
-
-    ul {
-      .flex();
-      li {
-        width: 48%;
-        margin-bottom: 4%;
-        &:nth-child(2n) {
-          margin-left: 4%;
-        }
-        padding: 3.5vh;
-        height: 35vh;
-        .gatsby-image-wrapper {
-          width: 40%;
-        }
-        .productos__ficha {
-          width: 60%;
-          padding-left: 2vh;
-          p {
-            display: none;
-          }
-          button {
-            font-size: 0.8rem;
-          }
-        }
-
-        .modal-content {
-          width: 94%;
-          padding: 5vh;
-          .flex();
-          .close {
-            padding: 0.2vh 1vw;
-          }
-          .gatsby-image-wrapper {
-            width: 28%;
-          }
-          .modal-text {
-            width: 72%;
-            padding-left: 2vh;
-            p {
-              display: block;
-            }
-          }
-        }
-      }
-    }
-  }
 
   /* Vallas / Mapas
 ========================================================================== */
@@ -2264,15 +1969,15 @@ footer {
       .post__cabecera {
         .post__principal();
         .post__cabecera {
-          &-fecha{
+          &-fecha {
             align-self: flex-start;
-            margin: -1.5vh 2vw 0 0; 
+            margin: -1.5vh 2vw 0 0;
           }
         }
         .boton-regreso {
-        .w-full();
-        align-self: flex-start;  
-        text-align: left;
+          .w-full();
+          align-self: flex-start;
+          text-align: left;
         }
       }
       .post__contenido {
@@ -2357,7 +2062,7 @@ footer {
   }
   main > div {
     .contenedor {
-      padding: 12.5vh 2.7vw 12vh 2.7vw;
+      padding: 0 2.7vw 12vh 2.7vw;
     }
   }
   footer {
@@ -2367,10 +2072,12 @@ footer {
       .footer__rrss {
         .footer__rrssbtn {
           a {
-            padding: 1.2vw;
-            margin: 0 1vw;
+            width: 4vw;
+            height: 4vw;
+            margin: 0 0.5vw;
             svg {
-              width: 0.6em !important;
+              width: 0.65em !important;
+              margin: 1vw 0 0 1.3vw;
             }
           }
         }
@@ -2400,86 +2107,12 @@ footer {
 
   /* Inicio
 ========================================================================== */
-  .inicio {
-    background-image: url(../images/ini-tab-bg.jpg);
-    .inicio__logo {
-      height: 20vh;
-      width: 52vw;
-
-      img {
-        width: 36vw;
-      }
-    }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.9rem;
-        }
-      }
-    }
-  }
 
   /* Nosotros
 ========================================================================== */
-  .nosotros {
-    background-image: url(../images/nos-tab-bg.jpg);
-    ul {
-      .nosotros__ficha {
-        margin-bottom: 2vh;
-        img {
-          width: 10vw;
-          height: 10vw;
-        }
-      }
-    }
-  }
 
   /* Productos
 ========================================================================== */
-  .productos {
-    background-image: url(../images/pro-tab-bg.jpg);
-    ul {
-      .flex();
-      li {
-        width: 48.4%;
-        margin-bottom: 3.2%;
-        &:nth-child(2n) {
-          margin-left: 3.2%;
-        }
-        .gatsby-image-wrapper {
-          width: 43%;
-        }
-        .productos__ficha {
-          width: 57%;
-          padding-left: 2vw;
-          button {
-            font-size: 0.9rem;
-            line-height: 1.5rem;
-          }
-        }
-        .modal-content {
-          width: 93%;
-          padding: 2vh;
-          .flex();
-          .close {
-            padding: 0.2vh 1vw;
-          }
-          .gatsby-image-wrapper {
-            width: 25%;
-            margin-bottom: 0;
-          }
-          .modal-text {
-            width: 75%;
-            padding-left: 2.5vw;
-            h2 {
-              font-size: 1.6rem;
-              padding: 0 0 0.5vh 0;
-            }
-          }
-        }
-      }
-    }
-  }
 
   /* Vallas / Mapas
 ========================================================================== */
@@ -2607,9 +2240,9 @@ footer {
       }
       .post__cabecera {
         .post__principal();
-        &-fecha{
+        &-fecha {
           font-size: 0.9rem;
-          margin: -7.5vh 2vw 0 0; 
+          margin: -7.5vh 2vw 0 0;
         }
         .boton-regreso {
           .absolute();
@@ -2696,9 +2329,8 @@ footer {
       }
     }
   }
-  main > div {
+  main {
     .contenedor {
-      width: 85vw;
       padding: 15vh 0;
     }
   }
@@ -2709,8 +2341,12 @@ footer {
       .footer__rrss {
         .footer__rrssbtn {
           a {
+            width: 3.5vw;
+            height: 3.5vw;            
+            margin: 0 0.5vw;
             svg {
-              width: 0.6em !important;
+              width: 0.7em !important;
+              margin: 1.1vw 0 0 1.2vw;
             }
           }
         }
@@ -2734,91 +2370,12 @@ footer {
 
   /* Inicio
 ========================================================================== */
-  .inicio {
-    .inicio__logo {
-      height: 30vh;
-      width: 45vw;
-      margin-top: -7vh;
-      margin-bottom: 7vh;
-    }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 2rem;
-        }
-      }
-    }
-  }
 
   /* Nosotros
 ========================================================================== */
-  .nosotros {
-    ul {
-      .nosotros__ficha {
-        .w-third();
-        &:nth-child(2n) {
-          margin-top: 0;
-          margin-left: 1.833333333%;
-        }
-        &:nth-child(3n) {
-          margin-top: 0;
-          margin-left: 1.833333333%;
-        }
-        padding: 2vh;
-        margin-bottom: 0;
-        img {
-          width: 6vw;
-          height: 6vw;
-        }
-        p {
-          padding-top: 1.5vh;
-        }
-      }
-    }
-  }
 
   /* Productos
 ========================================================================== */
-  .productos {
-    ul {
-      .flex();
-      li {
-        .w-half();
-        padding: 2vh;
-        height: 18.5vh;
-        margin-bottom: 1.83333333%;
-        &:nth-child(2n) {
-          margin-left: 1.83333333%;
-        }
-        .gatsby-image-wrapper {
-          width: 28%;
-        }
-        .productos__ficha {
-          width: 72%;
-          p {
-            display: block;
-            padding-top: 0;
-          }
-        }
-        .modal-content {
-          width: 75%;
-          padding: 2vh;
-          .close {
-            padding: 0.2vh 1vw;
-          }
-          .gatsby-image-wrapper {
-            width: 20%;
-          }
-          .modal-text {
-            width: 80%;
-            h2 {
-              padding: 0 0 0.5vh 0;
-            }
-          }
-        }
-      }
-    }
-  }
 
   /* Vallas / Mapas
 ========================================================================== */
@@ -3029,10 +2586,10 @@ footer {
 /*-------------------------------------------- Desktop responsive --------------------------------------------*/
 @media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 
   /* Contenedores principales
@@ -3047,11 +2604,7 @@ footer {
       }
     }
   }
-  main > div {
-    .contenedor {
-      width: 80vw;
-    }
-  }
+
   footer {
     .footer__contenedor {
       height: 12vh;
@@ -3059,9 +2612,11 @@ footer {
       .footer__rrss {
         .footer__rrssbtn {
           a {
-            padding: 0.7vw;
+            width: 2.5vw;
+            height: 2.5vw;
             svg {
-              width: 0.6em !important;
+              width: 0.8em !important;
+              margin: 0.8vw 0 0 0.8vw;
             }
           }
         }
@@ -3080,8 +2635,9 @@ footer {
   }
 
   .ficha__texto {
-    font-size: 1rem;
-    line-height: 1.4rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    padding-top: 0.5vh;
   }
 
   .boton-regreso {
@@ -3090,89 +2646,32 @@ footer {
 
   /* Inicio
 ========================================================================== */
-  .inicio {
-    background-image: url(../images/ini-desk-bg.jpg);
-    background-position: bottom center;
-    .inicio__logo {
-      height: 26vh;
-      width: 30vw;
-      margin-bottom: 10vh;
-
-      img {
-        width: 19vw;
-      }
-    }
-  }
 
   /* Nosotros
 ========================================================================== */
-  .nosotros {
-    background-image: url(../images/nos-desk-bg.jpg);
-    background-position: bottom center;
-    ul {
-      .nosotros__ficha {
-        &:nth-child(2n) {
-          margin-left: 1.633333333%;
-        }
-        &:nth-child(3n) {
-          margin-left: 1.633333333%;
-        }
-        img {
-          width: 4.5vw;
-          height: 4.5vw;
-        }
-      }
-    }
-  }
 
   /* Productos
 ========================================================================== */
-  .productos {
-    background-image: url(../images/pro-desk-bg.jpg);
-    background-position: bottom center;
-    ul {
-      .flex();
-      li {
-        margin-bottom: 1.6333%;
-        &:nth-child(2n) {
-          margin-left: 1.6333%;
-        }
-        height: 17vh;
-        .gatsby-image-wrapper {
-          width: 22%;
-        }
-        .productos__ficha {
-          width: 78%;
-          button {
-            font-size: 0.85rem;
-          }
-        }
-
-        .modal-content {
-          width: 65%;
-          .close {
-            padding: 0.2vh 0.5vw;
-          }
-        }
-      }
-    }
-  }
 
   /* Vallas / Mapas
 ========================================================================== */
   .vallas {
     background-image: url(../images/vall-desk-bg.jpg);
     background-position: bottom center;
-    &__principal {
+    &__lateral {
+      width: 50%;
       .dropdown-list {
-        width: 12%;
-        select {
+        .w-full select {
           padding: 0.8vh 0.5vh;
           option {
             font-size: 0.9rem;
           }
         }
       }
+    }
+
+    &__principal {
+      width: 50%;
     }
 
     &__ficha {
@@ -3250,7 +2749,7 @@ footer {
     }
     .post__contenedor {
       .post__cabecera {
-        &-fecha{
+        &-fecha {
           font-size: 1rem;
         }
       }
@@ -3312,29 +2811,11 @@ footer {
 ========================================================================== */
 
   footer {
-    .footer__contenedor {
-      p {
-        img {
-          width: 9vh;
-          margin-bottom: -0.35em;
-        }
-      }
-    }
   }
 
   /* Productos
 ========================================================================== */
   .productos {
-    ul {
-      li {
-        .gatsby-image-wrapper {
-          width: 25%;
-        }
-        .productos__ficha {
-          width: 75%;
-        }
-      }
-    }
   }
 }
 
@@ -3343,16 +2824,6 @@ footer {
   /* Productos
 ========================================================================== */
   .productos {
-    ul {
-      li {
-        .gatsby-image-wrapper {
-          width: 19.5%;
-        }
-        .productos__ficha {
-          width: 80.5%;
-        }
-      }
-    }
   }
 
   /* Blog
@@ -3414,16 +2885,6 @@ footer {
   /* Productos
 ========================================================================== */
   .productos {
-    ul {
-      li {
-        .gatsby-image-wrapper {
-          width: 18%;
-        }
-        .productos__ficha {
-          width: 82%;
-        }
-      }
-    }
   }
   /* Vallas
 ========================================================================== */

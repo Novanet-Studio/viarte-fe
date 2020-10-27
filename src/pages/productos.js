@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
+import "./productos.less"
 
 export default function Productos() {
   // When the user clicks on the button, open the modal
@@ -37,7 +38,7 @@ export default function Productos() {
               image
               title
             }
-            description            
+            description
           }
           allStrapiProducto {
             nodes {
@@ -81,7 +82,6 @@ export default function Productos() {
                     />
                     <div className="productos__ficha">
                       <h2>{document.name}</h2>
-                      <p className="ficha__texto">{document.short_description}</p>
                       <button
                         tabIndex="0"
                         value={document.id}
@@ -114,7 +114,9 @@ export default function Productos() {
                           />
                           <div className="modal-text">
                             <h2>{document.name}</h2>
-                            <p className="ficha__texto">{document.long_description}</p>
+                            <p className="ficha__texto">
+                              {document.long_description}
+                            </p>
                           </div>
                         </div>
                       </div>

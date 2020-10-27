@@ -1,0 +1,121 @@
+@import "../assets/css/styles.less";
+
+.inicio {
+  .center();
+  .img-bg();
+  .inicio__logo {
+    .flex();
+    .center();
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+  }
+  .ant-carousel {
+    .w-full();
+    .inicio__carouseltxt {
+      p {
+        text-align: center;
+        .changa();
+        .blanco();
+        .txt-shadow();
+        a {
+          .blanco();
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .inicio {
+    background-image: url(../assets/images/ini-mov-bg.jpg);
+    .inicio__logo {
+      width: 50vw;
+      margin-top: -10vh;
+      margin-bottom: 25vh;
+    }
+    .ant-carousel {
+      .inicio__carouseltxt {
+        p {
+          font-size: 1.32rem;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .inicio {
+    background-image: url(../assets/images/ini-lan-bg.jpg);
+    background-position: center center;
+    .inicio__logo {
+      width: 24vw;
+      margin-top: -10vh;
+      margin-bottom:12vh;
+    }
+    .ant-carousel {
+      .inicio__carouseltxt {
+        p {
+          font-size: 1.35rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .inicio {
+    background-image: url(../assets/images/ini-tab-bg.jpg);
+    .inicio__logo {
+      width: 32vw;
+      margin-top: -16vh;
+      margin-bottom: 17vh;
+    }
+    .ant-carousel {
+      .inicio__carouseltxt {
+        p {
+          font-size: 1.55rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .inicio {
+    .inicio__logo {
+      width: 22vw;
+      margin-top: -16vh;
+      margin-bottom: 14vh;
+    }
+    .ant-carousel {
+      .inicio__carouseltxt {
+        p {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  .inicio {
+    background-image: url(../assets/images/ini-desk-bg.jpg);
+    background-position: bottom center;
+    .inicio__logo {   
+      width: 18vw;   
+      margin-top: -20vh;
+      margin-bottom: 14vh;
+    }
+    .ant-carousel {
+      .inicio__carouseltxt {
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

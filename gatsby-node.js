@@ -9,7 +9,6 @@
 const path = require("path")
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-
   try {
     // Entradas template
     const { data } = await graphql(`
@@ -90,11 +89,10 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         path: `/mapas/${node.slug}`,
         component: path.resolve("./src/pages/mapas/templates/mapa.js"),
         context: {
-          id: node.id       
-        }
+          id: node.id,
+        },
       })
     })
-
   } catch (e) {
     console.error(e)
   }

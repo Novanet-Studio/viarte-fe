@@ -30,7 +30,7 @@ export default class Blog extends React.Component {
           alt={page.seo_image.alt} */
         >
           <div className="contenedor">
-            <h1>{page.title}</h1>      
+            <h1>{page.title}</h1>
 
             {/* ====== Entrada destacada ====== */}
             {destacado.map((item) => (
@@ -43,13 +43,16 @@ export default class Blog extends React.Component {
                   />
                   <div className="blog__destacadotexto">
                     <h2>{item.node.title}</h2>
-                    <p className="blog__destacadotexto-fecha">{item.node.date}</p>
+                    <p className="blog__destacadotexto-fecha">
+                      {item.node.date}
+                    </p>
                     <ReactMarkdown
                       className="ficha__texto"
                       source={item.node.description
                         .substring(0, 240)
                         .concat("...")}
-                      escapeHtml={false}entradas
+                      escapeHtml={false}
+                      entradas
                     />
                   </div>
                 </Link>
@@ -67,7 +70,9 @@ export default class Blog extends React.Component {
                       alt={item.node.seo_image.alt} */
                     />
                     <h3>{item.node.title}</h3>
-                    <p className="blog__destacadotexto-fecha">{item.node.date}</p>
+                    <p className="blog__destacadotexto-fecha">
+                      {item.node.date}
+                    </p>
                     <ReactMarkdown
                       className="ficha__texto"
                       source={item.node.description
@@ -81,22 +86,30 @@ export default class Blog extends React.Component {
             </ul>
             <div className="blog__pag">
               {!isFirst && (
-                <Link className="pag__ant" to={`${prevPage}#Entradas`} rel="prev">
-                 <span>◀</span>
+                <Link
+                  className="pag__ant"
+                  to={`${prevPage}#Entradas`}
+                  rel="prev"
+                >
+                  <span>◀</span>
                 </Link>
               )}
               {Array.from({ length: numPages }, (_, i) => (
-              <Link
-                key={`pagination-number${i + 1}`}
-                to={`/blog/${i === 0 ? "" : i + 1}#Entradas`}
-              >
-                {i + 1}
-              </Link>
-            ))}
+                <Link
+                  key={`pagination-number${i + 1}`}
+                  to={`/blog/${i === 0 ? "" : i + 1}#Entradas`}
+                >
+                  {i + 1}
+                </Link>
+              ))}
 
               {!isLast && (
-                <Link className="pag__sig" to={`${nextPage}#Entradas`} rel="next">
-                <span>▶</span>
+                <Link
+                  className="pag__sig"
+                  to={`${nextPage}#Entradas`}
+                  rel="next"
+                >
+                  <span>▶</span>
                 </Link>
               )}
             </div>
@@ -116,7 +129,7 @@ export const query = graphql`
         title
         description
         image
-      }     
+      }
     }
     allStrapiEntradaTrue: allStrapiEntrada(
       filter: { destacado: { eq: true } }
@@ -134,7 +147,7 @@ export const query = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
-          }          
+          }
         }
       }
     }
@@ -157,7 +170,7 @@ export const query = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
-          }         
+          }
         }
       }
     }

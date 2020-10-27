@@ -1,0 +1,301 @@
+@import "../assets/css/styles.less";
+
+.productos {
+  flex-direction: row;
+  justify-content: left;
+  ul {
+    .flex();
+    justify-content: space-between;
+    li {
+      .flex();
+      .gris-claro-bg();
+      flex: 0 0 31.5%;
+      padding: 2vh;
+      .gatsby-image-wrapper {
+        width: 6vw;
+        height: 6vw;
+      }
+      .productos__ficha {
+        width: 60%;
+        button {
+          cursor: pointer;
+          .lato();
+          .azul();
+          width: fit-content;
+          align-self: center;
+        }
+      }
+    }
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 200ms;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    .flex();
+    width: 80%;
+    padding: 2vh;
+    .gris-claro-bg();
+    margin: 10vh auto; /* 15% from the top and centered */
+    position: relative;
+    top: 10%;
+  }
+
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* The Close Button */
+  .close {
+    .blanco();
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    .azul-bg();
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .close:hover,
+  .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    .naranja-bg();
+    transition: 1s;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .productos {
+    h2 {
+      font-size: 1rem;
+    }
+    background-image: url(../assets/images/pro-mov-bg.jpg);
+    ul {
+      li {
+        flex: 0 0 48%;
+        margin-bottom: 2vh;
+        .gatsby-image-wrapper {
+          .w-full();
+          height: auto;
+        }
+        .productos__ficha {
+          margin-top: 1vh;
+          button {
+            margin-top: 1vh;
+            font-size: 0.8rem;
+          }
+        }
+        .modal-content {
+          .close {
+            padding: 0.2vh 2.6vw;
+          }
+          .gatsby-image-wrapper {
+            width: 50%;
+            margin-bottom: 2vw;
+          }
+          .modal-text {
+            p {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .productos {
+    background-image: url(../assets/images/pro-lan-bg.jpg);
+    .contenedor {
+      margin-top: 20vh;
+      margin-bottom: 15vh;
+    }
+    ul {
+      li {
+        margin-bottom: 3vh;
+        .gatsby-image-wrapper {
+          width: 10vw;
+          height: 10vw;
+        }
+        .productos__ficha {
+          padding-left: 1vw;
+          h2 {
+            font-size: 1rem;
+            margin-bottom: 1vh;
+          }
+          button {
+            font-size: 0.65rem;
+            margin-top: 1vh;
+          }
+        }
+        .modal-content {
+          flex-direction: row;
+          .close {
+            padding: 0.2vh 1vw;
+          }
+          .gatsby-image-wrapper {
+            width: 27vw;
+            height: 27vw;
+          }
+          .modal-text {
+            width: 62%;
+            padding-left: 2vh;
+            p {
+              font-size: 0.85rem;
+              line-height: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .productos {
+    background-image: url(../assets/images/pro-tab-bg.jpg);
+    .contenedor {
+      margin-top: 12vh;
+    }
+    ul {
+      .flex();
+      li {
+        flex: 0 0 48%;
+        margin-bottom: 3.2%;
+        .gatsby-image-wrapper {
+          width: 12vw;
+          height: 12vw;
+        }
+        .productos__ficha {
+          margin-top: 0;
+          padding-left: 1vh;
+          button {
+            font-size: 0.6rem;
+            line-height: 1.5rem;
+          }
+        }
+        .modal-content {
+          .close {
+            padding: 0.2vh 1vw;
+          }
+          .gatsby-image-wrapper {
+            width: 27vw;
+            height: 27vw;
+            margin-bottom: 0;
+          }
+          .modal-text {
+            width: 55%;
+            padding-left: 2.5vw;
+            h2 {
+              font-size: 1.6rem;
+              padding: 0 0 0.5vh 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .productos {
+    ul {
+      li {
+        padding: 2vh;
+        .gatsby-image-wrapper {
+          width: 10vw;
+          height: 10vw;
+        }
+        .productos__ficha {
+          button {
+            margin-top: 0;
+          }
+        }
+        .modal-content {
+          .modal-text {
+            .ficha__texto {
+              font-size: 1rem;
+              line-height: 1.2rem;
+            }
+          }
+          .close {
+            padding: 0.2vh 1vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  .productos {
+    background-image: url(../assets/images/pro-desk-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    padding-top: 5vh;
+    .contenedor {
+      .flex();
+      width: 66%;
+      .descripcion {
+        text-align: right;
+      }
+    }
+    ul {
+      li {
+        .gatsby-image-wrapper {
+          width: 6vw;
+          height: 6vw;
+        }
+        .productos__ficha {
+          button {
+            font-size: 0.85rem;
+          }
+        }
+        .modal-content {
+          .modal-text {
+            h2 {
+              font-size: 1.4rem;
+            }
+            .ficha__texto {
+              font-size: 1.2rem;
+              line-height: 1.6rem;
+            }
+          }
+          .gatsby-image-wrapper {
+            max-width: 300px;
+            max-height: 300px;
+          }
+
+          .close {
+            padding: 0.2vh 0.5vw;
+          }
+        }
+      }
+    }
+  }
+}

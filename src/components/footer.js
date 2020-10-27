@@ -23,7 +23,7 @@ const Footer = () => (
             icon
             link
             prefix
-          }      
+          }
         }
         logonn: file(relativePath: { eq: "logo-nn.svg" }) {
           publicURL

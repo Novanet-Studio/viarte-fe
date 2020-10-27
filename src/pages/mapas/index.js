@@ -53,8 +53,8 @@ const Mapas = ({ data }) => {
       >
         <div className="contenedor">
           <h1>{data.strapiMapa.seo.title}</h1>
-          <p className="descripcion">{data.strapiMapa.description}</p>
-          <div className="vallas__principal">
+          <div className="vallas__lateral">
+            <p className="descripcion">{data.strapiMapa.description}</p>
             <div className="dropdown-list">
               {/* eslint-disable */}
               <select onChange={onChangeLocation}>
@@ -75,13 +75,14 @@ const Mapas = ({ data }) => {
                 </Link>
               ))}
             </div>
-            <GoogleMap
-              className="vallas__principal"             
-              center={defaultCenter}
-              markers={currentMarkers.edges}
-              showInfoWindow={infoWindowActive}
-            />
           </div>
+          <GoogleMap
+            className="vallas__principal"
+            center={defaultCenter}
+            defaultZoom={14}
+            markers={currentMarkers.edges}
+            showInfoWindow={infoWindowActive}
+          />
         </div>
       </div>
     </Layout>

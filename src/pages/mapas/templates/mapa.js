@@ -15,11 +15,16 @@ const MapaTemplate = ({ data }) => (
             </Link>
             <h1>{data.strapiMap.location}</h1>
             <p className="ficha__texto">
-              <span>Dirección </span>{data.strapiMap.direction} -&nbsp;
-              <span>Código </span>{data.strapiMap.code} -&nbsp; 
-              <span>Ciudad </span>{data.strapiMap.ciudad} -&nbsp;
-              <span>Municipio </span>{data.strapiMap.municipio} -&nbsp;
-              <span>Medidas </span>{data.strapiMap.medidas}
+              <span>Dirección </span>
+              {data.strapiMap.direction} -&nbsp;
+              <span>Código </span>
+              {data.strapiMap.code} -&nbsp;
+              <span>Ciudad </span>
+              {data.strapiMap.ciudad} -&nbsp;
+              <span>Municipio </span>
+              {data.strapiMap.municipio} -&nbsp;
+              <span>Medidas </span>
+              {data.strapiMap.medidas}
             </p>
           </div>
           <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
@@ -28,6 +33,7 @@ const MapaTemplate = ({ data }) => (
             lat={Number(data.strapiMap.lat)}
             lng={Number(data.strapiMap.lng)}
             center={[Number(data.strapiMap.lat), Number(data.strapiMap.lng)]}
+            defaultZoom={15}
           />
         </div>
       </div>
@@ -57,5 +63,5 @@ export const query = graphql`
         }
       }
     }
-  }`
-
+  }
+`

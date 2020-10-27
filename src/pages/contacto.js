@@ -56,7 +56,7 @@ export default function ContactPage() {
               prefix
               icon
               content
-            }           
+            }
           }
         }
       `}

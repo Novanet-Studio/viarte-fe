@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "./nosotros.less"
 
 const Nosotros = ({ data }) => (
   <Layout>
@@ -53,7 +54,7 @@ export const query = graphql`
         description
         image {
           publicURL
-        }       
+        }
       }
     }
   }
