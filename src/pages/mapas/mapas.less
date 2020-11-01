@@ -1,0 +1,386 @@
+@import "../../assets/css/styles.less";
+
+.vallas {
+  .dropdown-list {
+     padding: 2vh;
+   background: rgba(255, 255, 255, 0.8);
+    select {   
+      border: 1px solid #999999;
+      padding: 1vh;
+      margin-top: 2vh;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: transparent url("../../assets/images/dropdown.png") no-repeat;
+      background-position: 95% 50%;
+      .lato();
+      option {
+        .lato();
+      }
+    }
+    a {
+      .lato();
+      .gris();
+    }
+  }
+
+  .dropdown-list__locations {
+    .w-full();
+    display: block;
+  }
+
+  .dropdown-list__locations:hover {
+    .gris-claro-bg();
+    transition: 0.5s;
+  }
+
+  .infowindow {
+    position: relative;
+    z-index: 50;
+  }
+
+  .infowindow--hide {
+    display: none;
+  }
+
+  .infowindow--show {
+    display: block;
+  }
+
+  .infowindow__body {
+    .blanco-bg();
+    .flex();
+    transform: translate(-40%, -100%);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    &-texto {
+      h4 {
+        .azul();
+        font-weight: bold;
+      }
+      p {
+        .gris();
+        font-weight: 400;
+      }
+    }
+  }
+
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .img-bg();
+
+  &__ficha {
+    .gris-claro-bg();
+    .w-full();
+    .flex();
+    &-inf {
+      .flex();
+      h1 {
+        display: block;
+        .gris-claro-bg();
+        .naranja();
+      }
+      p {
+        font-weight: 500;
+        .gris();
+        span {
+          .azul();
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../assets/images/marcador.png);
+  background-size: contain;
+  background-position: center;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .vallas {
+    background-image: url(../../assets/images/vall-mov-bg.jpg);
+    &__principal {
+      height: 45.5vh;
+      .dropdown-list {
+        width: 51%;
+        margin: 2vh;
+        select {
+          .w-full();
+          padding: 1vh 0.7vh;
+          font-size: 0.95rem;
+          background-size: 1.7vh;
+          option {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.8rem;
+      padding: 1.5vh 1vh;
+    }
+
+    &__ficha {
+      padding: 2vh;
+      &-inf {
+        h1 {
+          .w-full();
+          font-size: 1.3rem;
+          padding-bottom: 0.5vh;
+        }
+        p {
+          padding: 0.5vh 0;
+        }
+        i {
+          padding: 0.5vh 0.8vh;
+        }
+      }
+
+      .gatsby-image-wrapper {
+        .w-full();
+        margin-top: 4%;
+      }
+
+      &-mapa {
+        .w-full();
+        margin-top: 4.5%;
+        height: 45vh;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .vallas {
+    background-image: url(../../assets/images/vall-lan-bg.jpg);
+    &__principal {
+      height: 90vh;
+      .dropdown-list {
+        width: 29%;
+        margin: 3vh;
+        select {
+          .w-full();
+          padding: 1.5vh 1vh;
+          font-size: 0.9rem;
+          background-size: 3vh;
+          option {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.7rem;
+      padding: 2vh;
+    }
+
+    &__ficha {
+      padding: 4vh;
+      &-inf {
+        h1 {
+          .w-full();
+          font-size: 1.3rem;
+          padding-bottom: 0.5vh;
+        }
+        p {
+          padding: 1vh 0;
+        }
+        i {
+          padding: 1vh 1.2vh;
+        }
+        a {
+        }
+      }
+
+      .gatsby-image-wrapper {
+        width: 48.5%;
+        margin-top: 2%;
+      }
+
+      &-mapa {
+        width: 48.5%;
+        margin-top: 2%;
+        margin-left: 3%;
+        height: 76vh;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .vallas {
+    background-image: url(../../assets/images/vall-tab-bg.jpg);
+    &__principal {
+      height: 40vh;
+      .dropdown-list {
+        width: 25%;
+        select {
+          padding: 0.7vh;
+          font-size: 1rem;
+          background-size: 1vh;
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.85rem;
+      padding: 0.8vh 1vh;
+    }
+
+    &__ficha {
+      padding: 1.5vh;
+      &-inf {
+        h1 {
+          font-size: 1.3rem;
+          padding: 0.5vh 0;
+        }
+        i {
+          padding: 0.5vh 1vh;
+        }
+      }
+
+      .gatsby-image-wrapper {
+        width: 48.4%;
+        margin-top: 2%;
+      }
+
+      &-mapa {
+        width: 48.4%;
+        margin-top: 2%;
+        margin-left: 3%;
+        height: 33vh;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .vallas {
+    &__principal {
+      height: 60vh;
+      .dropdown-list {
+        width: 19%;
+        margin: 2vh;
+        select {
+          padding: 0.7vh;
+          font-size: 1.03rem;
+          background-size: 1.25vh;
+          option {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+
+    .dropdown-list__locations {
+      font-size: 0.8rem;
+      padding: 1vh;
+    }
+
+    .infowindow__body {
+      width: 310px;
+      padding: 1.5vh;
+      &-img {
+        width: 25%;
+      }
+      &-texto {
+        width: 63.5%;
+        margin-left: 3.5%;
+        h4 {
+          font-size: 1.05rem;
+        }
+        p {
+          padding-top: 0.5vh;
+          font-size: 0.75rem;
+          line-height: 1.15rem;
+        }
+      }
+    }
+
+    &__ficha {
+      padding: 2vh;
+      &-inf {
+        h1 {
+          font-size: 1.5rem;
+          padding-bottom: 0.5vh;
+        }
+        p {
+          padding: 1vh 0;
+        }
+        i {
+          padding: 1vh 2vh 0;
+        }
+        a {
+        }
+      }
+
+      .gatsby-image-wrapper {
+        margin-top: 1.83333333%;
+        width: 49%;
+        height: 53vh;
+      }
+
+      &-mapa {
+        width: 49%;
+        margin-top: 1.83333333%;
+        margin-left: 1.83333333%;
+        height: 53vh;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  .vallas {
+    background-image: url(../../assets/images/vall-desk-bg.jpg);
+    background-position: center center;
+    .contenedor {
+      .flex();
+      width: 90vw;
+      justify-content: space-between;
+    }
+    &__lateral {
+      flex: 0 0 49%;
+      .dropdown-list {
+        select {        
+          option {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+    &__principal {
+      flex: 0 0 49%;
+      height: 50vh;
+    }
+    &__ficha {
+      .gatsby-image-wrapper {
+        margin-top: 1%;
+      }
+      &-mapa {
+        margin-top: 1%;
+      }
+    }
+  }
+}
