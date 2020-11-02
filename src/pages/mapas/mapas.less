@@ -24,13 +24,14 @@
       appearance: none;
       background: transparent url("../../assets/images/dropdown.svg") no-repeat;
       background-position: 98% 50%;
-      background-color:#fff;
-      border:none;
-      background-size: 1.5vh;
+      background-color: #fff;
+      border: none;
+      background-size: 1.8vh;
       cursor: pointer;
       .lato();
       option {
         .lato();
+        font-size: 0.9rem;
       }
     }
     a {
@@ -136,19 +137,6 @@
     background-image: url(../../assets/images/vall-mov-bg.jpg);
     &__principal {
       height: 45.5vh;
-      .dropdown-list {
-        width: 51%;
-        margin: 2vh;
-        select {
-          .w-full();
-          padding: 1vh 0.7vh;
-          font-size: 0.95rem;
-          background-size: 1.7vh;
-          option {
-            font-size: 0.9rem;
-          }
-        }
-      }
     }
 
     .dropdown-list__locations {
@@ -189,26 +177,17 @@
 @media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   .vallas {
     background-image: url(../../assets/images/vall-lan-bg.jpg);
+    .contenedor {
+      padding: 22vh 6vw;
+    }
     &__principal {
       height: 90vh;
-      .dropdown-list {
-        width: 29%;
-        margin: 3vh;
-        select {
-          .w-full();
-          padding: 1.5vh 1vh;
-          font-size: 0.9rem;
-          background-size: 3vh;
-          option {
-            font-size: 0.8rem;
-          }
-        }
-      }
     }
 
     .dropdown-list__locations {
-      font-size: 0.7rem;
-      padding: 2vh;
+      font-size: 0.85rem;
+      padding: 3vh;
+      flex: 0 0 50%;
     }
 
     &__ficha {
@@ -233,20 +212,15 @@
 @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
   .vallas {
     background-image: url(../../assets/images/vall-tab-bg.jpg);
-    &__principal {
-      height: 40vh;
-      .dropdown-list {
-        width: 25%;
-        select {
-          padding: 0.7vh;
-          font-size: 1rem;
-          background-size: 1vh;
-        }
+    .dropdown-list {
+      select {
+        background-size: 1vh;
       }
     }
 
     .dropdown-list__locations {
-      padding: 0.8vh 1vh;
+      padding: 1vh;
+      flex: 0 0 50%;
     }
 
     &__ficha {
@@ -278,26 +252,23 @@
 
 @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   .vallas {
+    .contenedor {
+      padding:0;
+      .flex();
+      width: 90vw;
+      justify-content: space-between;
+    }
+    &__lateral {
+      flex: 0 0 49%;
+    }
     &__principal {
-      height: 60vh;
-      .dropdown-list {
-        width: 19%;
-        margin: 2vh;
-        select {
-          padding: 0.7vh;
-          font-size: 1.03rem;
-          background-size: 1.25vh;
-          option {
-            font-size: 0.85rem;
-          }
-        }
-      }
+      flex: 0 0 49%;
+      height: 62.3vh;
     }
 
     .dropdown-list__locations {
       font-size: 0.95rem;
       padding: 2vh;
-      flex: 0 0 50%;
     }
 
     .infowindow__body {
@@ -323,7 +294,7 @@
     &__ficha {
       padding: 2vh;
       &-inf {
-        flex:0 0 32.5%;
+        flex: 0 0 32.5%;
         margin-right: 2vh;
         h1 {
           font-size: 1.5rem;
@@ -339,12 +310,12 @@
       }
 
       .gatsby-image-wrapper {
-        flex:0 0 32.5%;
+        flex: 0 0 32.5%;
         margin-right: 2vh;
       }
 
       &-mapa {
-        flex:0 0 32.5%;
+        flex: 0 0 31.5%;
       }
     }
   }
@@ -354,24 +325,8 @@
   .vallas {
     background-image: url(../../assets/images/vall-desk-bg.jpg);
     background-position: center center;
-    .contenedor {
-      .flex();
-      width: 90vw;
-      justify-content: space-between;
-    }
-    &__lateral {
-      flex: 0 0 49%;
-      .dropdown-list {
-        select {
-          option {
-            font-size: 0.9rem;
-          }
-        }
-      }
-    }
     &__principal {
-      flex: 0 0 49%;
-      height: 50.5vh;
+      height: 49.1vh;
     }
   }
 }
