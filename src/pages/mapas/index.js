@@ -53,11 +53,13 @@ const Mapas = ({ data }) => {
         alt={data.strapiMapa.image_seo.alt} */
       >
         <div className="contenedor">
-          <h1>{data.strapiMapa.seo.title}</h1>          
+          <h1>{data.strapiMapa.seo.title}</h1>
           <div className="vallas__lateral">
-            <p className="descripcion">{data.strapiMapa.description}</p>
             <div className="dropdown-list">
-              <p>Seleccione una ciduad para mostrar las vallas existentes:</p>
+              <p className="descripcion">{data.strapiMapa.description}</p>
+              <p className="descripcion-peq">
+                Seleccione una ciudad para mostrar las vallas existentes:
+              </p>
               {/* eslint-disable */}
               <select onChange={onChangeLocation}>
                 <option disabled>Selecciona una ubicación</option>

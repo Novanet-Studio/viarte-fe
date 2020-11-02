@@ -2,17 +2,32 @@
 
 .vallas {
   .dropdown-list {
-     padding: 2vh;
-   background: rgba(255, 255, 255, 0.8);
-    select {   
+    padding: 2vh;
+    background: rgba(255, 255, 255, 0.9);
+    .flex();
+    .descripcion {
+      color: #525052;
+      text-shadow: none;
+    }
+    .descripcion-peq {
+      width: 100%;
+    }
+    select {
+      flex: 0 0 100%;
+      font-weight: bold;
+      color: #525052;
       border: 1px solid #999999;
       padding: 1vh;
       margin-top: 2vh;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background: transparent url("../../assets/images/dropdown.png") no-repeat;
-      background-position: 95% 50%;
+      background: transparent url("../../assets/images/dropdown.svg") no-repeat;
+      background-position: 98% 50%;
+      background-color:#fff;
+      border:none;
+      background-size: 1.5vh;
+      cursor: pointer;
       .lato();
       option {
         .lato();
@@ -83,6 +98,7 @@
     .flex();
     &-inf {
       .flex();
+      align-content: flex-start;
       h1 {
         display: block;
         .gris-claro-bg();
@@ -136,7 +152,7 @@
     }
 
     .dropdown-list__locations {
-      font-size: 0.8rem;
+      font-size: 0.83rem;
       padding: 1.5vh 1vh;
     }
 
@@ -209,20 +225,6 @@
         i {
           padding: 1vh 1.2vh;
         }
-        a {
-        }
-      }
-
-      .gatsby-image-wrapper {
-        width: 48.5%;
-        margin-top: 2%;
-      }
-
-      &-mapa {
-        width: 48.5%;
-        margin-top: 2%;
-        margin-left: 3%;
-        height: 76vh;
       }
     }
   }
@@ -244,7 +246,6 @@
     }
 
     .dropdown-list__locations {
-      font-size: 0.85rem;
       padding: 0.8vh 1vh;
     }
 
@@ -294,8 +295,9 @@
     }
 
     .dropdown-list__locations {
-      font-size: 0.8rem;
-      padding: 1vh;
+      font-size: 0.95rem;
+      padding: 2vh;
+      flex: 0 0 50%;
     }
 
     .infowindow__body {
@@ -321,31 +323,28 @@
     &__ficha {
       padding: 2vh;
       &-inf {
+        flex:0 0 32.5%;
+        margin-right: 2vh;
         h1 {
           font-size: 1.5rem;
           padding-bottom: 0.5vh;
         }
         p {
-          padding: 1vh 0;
+          font-size: 1rem;
+          line-height: 1.5rem;
         }
         i {
           padding: 1vh 2vh 0;
         }
-        a {
-        }
       }
 
       .gatsby-image-wrapper {
-        margin-top: 1.83333333%;
-        width: 49%;
-        height: 53vh;
+        flex:0 0 32.5%;
+        margin-right: 2vh;
       }
 
       &-mapa {
-        width: 49%;
-        margin-top: 1.83333333%;
-        margin-left: 1.83333333%;
-        height: 53vh;
+        flex:0 0 32.5%;
       }
     }
   }
@@ -363,7 +362,7 @@
     &__lateral {
       flex: 0 0 49%;
       .dropdown-list {
-        select {        
+        select {
           option {
             font-size: 0.9rem;
           }
@@ -372,15 +371,7 @@
     }
     &__principal {
       flex: 0 0 49%;
-      height: 50vh;
-    }
-    &__ficha {
-      .gatsby-image-wrapper {
-        margin-top: 1%;
-      }
-      &-mapa {
-        margin-top: 1%;
-      }
+      height: 50.5vh;
     }
   }
 }
