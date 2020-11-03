@@ -5,6 +5,14 @@
     padding: 2vh;
     background: rgba(255, 255, 255, 0.9);
     .flex();
+    &__locations {
+      .w-full();
+      display: block;
+      &:hover {
+        .gris-claro-bg();
+        transition: 0.5s;
+      }
+    }
     .descripcion {
       color: #525052;
       text-shadow: none;
@@ -26,7 +34,6 @@
       background-position: 98% 50%;
       background-color: #fff;
       border: none;
-      background-size: 1.8vh;
       cursor: pointer;
       .lato();
       option {
@@ -38,16 +45,6 @@
       .lato();
       .gris();
     }
-  }
-
-  .dropdown-list__locations {
-    .w-full();
-    display: block;
-  }
-
-  .dropdown-list__locations:hover {
-    .gris-claro-bg();
-    transition: 0.5s;
   }
 
   .infowindow {
@@ -73,7 +70,7 @@
     &-texto {
       h4 {
         .azul();
-        font-weight: bold;
+        font-weight: 400;
       }
       p {
         .gris();
@@ -105,17 +102,19 @@
         .gris-claro-bg();
         .naranja();
       }
-      p {
-        font-weight: 500;
-        .gris();
-        span {
-          .azul();
-          font-weight: 500;
-        }
+    }
+    &-item {
+      font-weight: 400;
+      .lato();
+      .gris();
+      span {
+        .azul();
+        font-weight: 600;
       }
     }
   }
 }
+
 .marker {
   position: absolute;
   top: 50%;
@@ -137,11 +136,17 @@
     background-image: url(../../assets/images/vall-mov-bg.jpg);
     &__principal {
       height: 45.5vh;
+      margin-top: 3vh;
     }
-
-    .dropdown-list__locations {
-      font-size: 0.83rem;
-      padding: 1.5vh 1vh;
+    .dropdown-list {
+      &__locations {
+        font-size: 0.83rem;
+        padding: 1.5vh 1vh;
+      }
+      select {
+        font-size: 1rem;
+        background-size: 1.5vh;
+      }
     }
 
     &__ficha {
@@ -152,23 +157,23 @@
           font-size: 1.3rem;
           padding-bottom: 0.5vh;
         }
-        p {
-          padding: 0.5vh 0;
-        }
-        i {
-          padding: 0.5vh 0.8vh;
-        }
       }
 
-      .gatsby-image-wrapper {
-        .w-full();
-        margin-top: 4%;
+      &-item {
+        padding: 0.5vh 0;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
       }
 
       &-mapa {
-        .w-full();
-        margin-top: 4.5%;
+        margin-top: 4%;
+        flex: 1 1 100%;
         height: 45vh;
+      }
+
+      .gatsby-image-wrapper {
+        margin-top: 4%;
+        flex: 1 1 100%;
       }
     }
   }
@@ -182,12 +187,19 @@
     }
     &__principal {
       height: 90vh;
+      margin-top: 7vh;
     }
 
-    .dropdown-list__locations {
-      font-size: 0.85rem;
-      padding: 3vh;
-      flex: 0 0 50%;
+    .dropdown-list {
+      &__locations {
+        font-size: 0.85rem;
+        padding: 3vh;
+        flex: 0 0 50%;
+      }
+      select {
+        font-size: 1rem;
+        background-size: 3vh;
+      }
     }
 
     &__ficha {
@@ -198,12 +210,23 @@
           font-size: 1.3rem;
           padding-bottom: 0.5vh;
         }
-        p {
-          padding: 1vh 0;
-        }
-        i {
-          padding: 1vh 1.2vh;
-        }
+      }
+      &-item {
+        font-size: 0.9rem;
+        padding: 1vh 0;
+        line-height: 1.3rem;
+      }
+
+      &-mapa {
+        margin-top: 2vh;
+        flex: 0 0 48%;
+        margin-right: 2vh;
+      }
+
+      .gatsby-image-wrapper {
+        margin-top: 2vh;
+        flex: 0 0 48%;
+        margin-left: 2vh;
       }
     }
   }
@@ -213,14 +236,13 @@
   .vallas {
     background-image: url(../../assets/images/vall-tab-bg.jpg);
     .dropdown-list {
+      &__locations {
+        padding: 1vh;
+        flex: 0 0 33%;
+      }
       select {
         background-size: 1vh;
       }
-    }
-
-    .dropdown-list__locations {
-      padding: 1vh;
-      flex: 0 0 50%;
     }
 
     &__ficha {
@@ -230,21 +252,19 @@
           font-size: 1.3rem;
           padding: 0.5vh 0;
         }
-        i {
-          padding: 0.5vh 1vh;
-        }
-      }
-
-      .gatsby-image-wrapper {
-        width: 48.4%;
-        margin-top: 2%;
       }
 
       &-mapa {
-        width: 48.4%;
         margin-top: 2%;
-        margin-left: 3%;
-        height: 33vh;
+        flex: 1 1 47%;
+        height: 35vh;
+        margin-right: 1%;
+      }
+
+      .gatsby-image-wrapper {
+        margin-top: 2%;
+        flex: 1 1 47%;
+        margin-left: 1%;
       }
     }
   }
@@ -253,7 +273,7 @@
 @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   .vallas {
     .contenedor {
-      padding:0;
+      padding: 0;
       .flex();
       width: 90vw;
       justify-content: space-between;
@@ -263,12 +283,17 @@
     }
     &__principal {
       flex: 0 0 49%;
-      height: 62.3vh;
+      height: 47vh;
+      margin-top: 0;
     }
 
-    .dropdown-list__locations {
-      font-size: 0.95rem;
-      padding: 2vh;
+    .dropdown-list {
+      &__locations {
+        padding: 1.5vh;
+      }
+      select {
+        background-size: 1.3vh;
+      }
     }
 
     .infowindow__body {
@@ -294,28 +319,25 @@
     &__ficha {
       padding: 2vh;
       &-inf {
-        flex: 0 0 32.5%;
+        flex: 0 0 31.5%;
         margin-right: 2vh;
+        padding-left: 1vh;
         h1 {
           font-size: 1.5rem;
           padding-bottom: 0.5vh;
         }
-        p {
-          font-size: 1rem;
-          line-height: 1.5rem;
-        }
-        i {
-          padding: 1vh 2vh 0;
-        }
+      }
+
+      &-mapa {
+        flex: 0 0 32.5%;
+        margin-top: 0;
+        margin-right: 1vh;
       }
 
       .gatsby-image-wrapper {
         flex: 0 0 32.5%;
-        margin-right: 2vh;
-      }
-
-      &-mapa {
-        flex: 0 0 31.5%;
+        margin-top: 0;
+        margin-left: 1vh;
       }
     }
   }
@@ -325,8 +347,17 @@
   .vallas {
     background-image: url(../../assets/images/vall-desk-bg.jpg);
     background-position: center center;
+    .contenedor {
+      width: 80vw;
+    }
     &__principal {
-      height: 49.1vh;
+      height: 43.5vh;
+    }
+
+    &__ficha {
+      &-inf {
+        flex: 0 0 32%;
+      }
     }
   }
 }

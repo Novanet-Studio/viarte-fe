@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { Form } from "react-final-form"
 import { Field } from "react-final-form-html5-validation"
 import SEO from "../components/seo"
+import "./contacto.less"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 /* eslint-disable */

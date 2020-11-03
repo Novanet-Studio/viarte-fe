@@ -1,0 +1,325 @@
+@import "../assets/css/styles.less";
+
+.contacto {
+  .img-bg();
+  .contenedor {
+    .flex();
+  }
+  .contacto__info {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    .flex();
+    ul {
+      li {
+        svg {
+          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          display: flex;
+          .azul-bg();
+          .blanco();
+        }
+        span {
+          font-weight: 700;
+          .changa();
+          .gris-oscuro();
+        }
+      }
+    }
+  }
+  .contacto__form {
+    .flex();
+    .gris-claro-bg();
+    justify-content: left;
+    input:required,
+    input:invalid,
+    textarea:required {
+      box-shadow: none;
+    }
+    input:invalid {
+      box-shadow: none;
+    }
+    label {
+      font-weight: 500;
+      .gris();
+      .lato();
+    }
+    input,
+    textarea {
+      font-weight: 500;
+      border: none;
+      background: none;
+      border-bottom: #f37021 1px solid;
+      .w-full();
+      .lato();
+      .gris();
+    }
+    button {
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      font-weight: 600;
+      .lato();
+      .w-full();
+      .blanco();
+      .naranja-bg();
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .contacto {
+    background-image: url(../assets/images/con-mov-bg.jpg);
+    .contacto__info,
+    .contacto__form {
+      .w-full();
+    }
+    .contacto__info {
+      padding-bottom: 13%;
+      ul {
+        .w-full();
+        .flex();
+        li {
+          .w-full();
+          padding-top: 12%;
+          svg {
+            width: 13vw !important;
+            height: 13vw;
+            padding: 1.8vh 4vw;
+            margin: 0 auto 1vh;
+          }
+          span {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .contacto__form {
+      margin: 7.5% 0 0 0;
+      padding: 3.3vh;
+      input {
+        font-size: 0.95rem;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+      }
+      label {
+        font-size: 0.95rem;
+      }
+      textarea {
+        font-size: 0.95rem;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+      }
+      button {
+        font-size: 0.92rem;
+        padding: 0.8vh 0;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .contacto {
+    background-image: url(../assets/images/con-lan-bg.jpg);
+    .contacto__info,
+    .contacto__form {
+      width: 48%;
+    }
+    .contacto__info {
+      min-height: 84vh;
+      ul {
+        .w-full();
+        li {
+          padding-top: 17%;
+          svg {
+            width: 8.5vw !important;
+            height: 8.5vw;
+            padding: 2vh 2.6vw;
+            margin: 0 auto 2vh;
+          }
+          span {
+            padding-top: 1.5vh;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .contacto__form {
+      min-height: 84vh;
+      padding: 5.5vh;
+      margin-left: 4%;
+      input {
+        font-size: 0.8rem;
+        margin-top: 3.5vh;
+        margin-bottom: 4.5vh;
+      }
+      label {
+        font-size: 0.8rem;
+      }
+      textarea {
+        font-size: 0.8rem;
+        margin-top: 3.5vh;
+        margin-bottom: 3.5vh;
+      }
+      button {
+        font-size: 0.85rem;
+        padding: 1vh 0;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .contacto {
+    background-image: url(../assets/images/con-tab-bg.jpg);
+    .contacto__info,
+    .contacto__form {
+      .w-full();
+    }
+    .contacto__info {
+      min-height: 16vh;
+      padding-bottom: 0;
+      ul {
+        li {
+          .w-half();
+          padding: 7vh 0 8vh 0;
+          svg {
+            width: 8vw !important;
+            height: 8vw;
+            padding: 1.8vh 1vw;
+            margin: 0 auto 1vh;
+          }
+          span {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+    .contacto__form {
+      margin: 2.7vh 0 0 0;
+      min-height: 39vh;
+      input {
+        font-size: 1.1rem;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+      }
+      label {
+        font-size: 1.1rem;
+      }
+      textarea {
+        font-size: 1.1rem;
+        margin-top: 1vh;
+        margin-bottom: 2vh;
+      }
+      button {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .contacto {
+    .contenedor {
+      width: 90vw;
+      padding: 0;
+    }
+    .contacto__info {
+      min-height: 47vh;
+      ul {
+        li {
+          padding-top: 14%;
+          svg {
+            width: 5.4vw !important;
+            height: 5.4vw;
+            padding: 2vh 1.5vw;
+          }
+          span {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .contacto__form {
+      min-height: 47vh;
+      margin-left: 1.83333333%;
+      padding: 3vh;
+      input {
+        font-size: 1rem;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+      }
+      textarea {
+        font-size: 1rem;
+        margin-top: 1vh;
+        margin-bottom: 3vh;
+      }
+      label {
+        font-size: 1rem;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.8vh 0;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  .contacto {
+    background-image: url(../assets/images/con-desk-bg.jpg);
+    background-position: bottom center;
+    .contenedor {
+      width: 80vw;
+    }
+    .contacto__info {
+      min-height: 50vh;
+      ul {
+        li {
+          padding-top: 11%;
+          svg {
+            width: 4.9vw !important;
+            height: 4.9vw;
+          }
+          span {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+    .contacto__form {
+      min-height: 50vh;
+      input {
+        font-size: 1.04rem;
+        margin-top: 2.5vh;
+      }
+      label {
+        font-size: 1.04rem;
+      }
+      textarea {
+        font-size: 1.04rem;
+        margin-top: 0.5vh;
+      }
+      button {
+        font-size: 1.06rem;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop responsive 1440--------------------------------------------*/
+@media only screen and (min-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .contacto {
+    .contacto__info {
+      ul {
+        li {
+          padding-top: 8%;
+        }
+      }
+    }
+  }
+}

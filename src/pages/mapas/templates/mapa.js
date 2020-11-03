@@ -14,20 +14,30 @@ const MapaTemplate = ({ data }) => (
               « Volver
             </Link>
             <h1>{data.strapiMap.location}</h1>
-            <p className="ficha__texto">
-              <span>Dirección </span>
-              {data.strapiMap.direction} -&nbsp;
-              <span>Código </span>
-              {data.strapiMap.code} -&nbsp;
-              <span>Ciudad </span>
-              {data.strapiMap.ciudad} -&nbsp;
-              <span>Municipio </span>
-              {data.strapiMap.municipio} -&nbsp;
-              <span>Medidas </span>
-              {data.strapiMap.medidas}
-            </p>
+            <ul className="vallas__ficha-lista">
+              <li className="vallas__ficha-item">
+                {" "}
+                <span>Dirección </span>
+                {data.strapiMap.direction}
+              </li>
+              <li className="vallas__ficha-item">
+                <span>Código </span>
+                {data.strapiMap.code}
+              </li>
+              <li className="vallas__ficha-item">
+                <span>Ciudad </span>
+                {data.strapiMap.ciudad}
+              </li>
+              <li className="vallas__ficha-item">
+                <span>Municipio </span>
+                {data.strapiMap.municipio}
+              </li>
+              <li className="vallas__ficha-item">
+                <span>Medidas </span>
+                {data.strapiMap.medidas}
+              </li>
+            </ul>
           </div>
-          <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
           <GoogleMap
             className="vallas__ficha-mapa"
             lat={Number(data.strapiMap.lat)}
@@ -35,6 +45,7 @@ const MapaTemplate = ({ data }) => (
             center={[Number(data.strapiMap.lat), Number(data.strapiMap.lng)]}
             defaultZoom={15}
           />
+          <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
         </div>
       </div>
     </div>

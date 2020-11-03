@@ -3,6 +3,8 @@
 .productos {
   flex-direction: row;
   justify-content: left;
+  .img-bg();
+  align-items: flex-end;
   ul {
     .flex();
     justify-content: space-between;
@@ -23,6 +25,9 @@
           .azul();
           width: fit-content;
           align-self: center;
+          border: none;
+          font-weight: 600;
+          background: none;
         }
       }
     }
@@ -90,10 +95,11 @@
 
 @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
   .productos {
+    background-image: url(../assets/images/pro-mov-bg.jpg);
+    .w-full();
     h2 {
       font-size: 1rem;
     }
-    background-image: url(../assets/images/pro-mov-bg.jpg);
     ul {
       li {
         flex: 0 0 48%;
@@ -132,8 +138,9 @@
   .productos {
     background-image: url(../assets/images/pro-lan-bg.jpg);
     .contenedor {
-      margin-top: 20vh;
-      margin-bottom: 15vh;
+      margin-top: 25vh;
+      margin-bottom: 25vh;
+      padding: 0 4vw;
     }
     ul {
       li {
@@ -180,7 +187,7 @@
   .productos {
     background-image: url(../assets/images/pro-tab-bg.jpg);
     .contenedor {
-      margin-top: 12vh;
+      margin-bottom: 12vh;
     }
     ul {
       .flex();
@@ -273,7 +280,7 @@
         }
         .productos__ficha {
           button {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
           }
         }
         .modal-content {
