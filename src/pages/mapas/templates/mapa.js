@@ -37,6 +37,7 @@ const MapaTemplate = ({ data }) => (
                 {data.strapiMap.medidas}
               </li>
             </ul>
+            <Img className="vallas__ficha-img" fluid={data.strapiMap.imagen.childImageSharp.fluid} />
           </div>
           <GoogleMap
             className="vallas__ficha-mapa"
@@ -45,7 +46,6 @@ const MapaTemplate = ({ data }) => (
             center={[Number(data.strapiMap.lat), Number(data.strapiMap.lng)]}
             defaultZoom={15}
           />
-          <Img fluid={data.strapiMap.imagen.childImageSharp.fluid} />
         </div>
       </div>
     </div>
