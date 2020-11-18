@@ -37,7 +37,10 @@ const MapaTemplate = ({ data }) => (
                 {data.strapiMap.medidas}
               </li>
             </ul>
-            <Img className="vallas__ficha-img" fluid={data.strapiMap.imagen.childImageSharp.fluid} />
+            <Img
+              className="vallas__ficha-img"
+              fluid={data.strapiMap.imagen.childImageSharp.fluid}
+            />
           </div>
           <GoogleMap
             className="vallas__ficha-mapa"
