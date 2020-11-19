@@ -16,13 +16,14 @@ function SEO({ title, description, type, siteUrl, image, lang, meta }) {
       query {
         site {
           siteMetadata {
-            title
-            description
-            type
-            siteUrl
-            image
-            titleTemplate
             author
+            description
+            image
+            siteUrl
+            title
+            titleTemplate
+            type
+            twitterUsername
           }
         }
       }
@@ -74,7 +75,7 @@ function SEO({ title, description, type, siteUrl, image, lang, meta }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.author || '',
         },
         {
           name: `twitter:title`,
