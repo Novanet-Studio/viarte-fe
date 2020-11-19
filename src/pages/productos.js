@@ -53,6 +53,10 @@ export default function Productos() {
                   }
                 }
               }
+              seo_image {
+                title
+                alt
+              }
             }
           }
         }
@@ -77,8 +81,8 @@ export default function Productos() {
                   <li key={document.id}>
                     <Img
                       fluid={document.image.childImageSharp.fluid}
-                      /* title={document.seo_image.title}
-                      alt={document.seo_image.alt} */
+                      title={document.seo_image.title}
+                      alt={document.seo_image.alt}
                     />
                     <div className="productos__ficha">
                       <h2>{document.name}</h2>
@@ -109,8 +113,8 @@ export default function Productos() {
                           </span>
                           <Img
                             fluid={document.image.childImageSharp.fluid}
-                            /* title={document.seo_image.title}
-                            alt={document.seo_image.alt} */
+                            title={document.seo_image.title}
+                            alt={document.seo_image.alt}
                           />
                           <div className="modal-text">
                             <h2>{document.name}</h2>
