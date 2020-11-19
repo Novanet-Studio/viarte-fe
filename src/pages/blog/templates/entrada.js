@@ -24,17 +24,13 @@ const EntradaTemplate = ({ data }) => (
       description={data.strapiEntrada.description}
       image={data.strapiEntrada.image.publicURL}
     />
-    <div
-      className="post"
-      /* title={data.strapiBlog.seo_image.title}
-      alt={data.strapiBlog.seo_image.alt} */
-    >
+    <div className="post">
       <div className="contenedor">
         <div className="post__contenedor">
           <Img
             fluid={data.strapiEntrada.image.childImageSharp.fluid}
-            /* title={data.strapiEntrada.seo_image.title}
-            alt={data.strapiEntrada.seo_image.alt} */
+            title={data.strapiEntrada.seo_image.title}
+            alt={data.strapiEntrada.seo_image.alt}
           />
           <div className="post__cabecera">
             <Link className="boton-regreso" to="../../blog">
@@ -89,6 +85,10 @@ export const query = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+      }
+      seo_image {
+        title
+        alt
       }
     }
   }
