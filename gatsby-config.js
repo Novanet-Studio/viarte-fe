@@ -65,20 +65,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-153152757-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,     
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 2000,
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "viarte.net",
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "UA-153152757-1",
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
