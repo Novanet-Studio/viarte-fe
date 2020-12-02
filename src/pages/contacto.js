@@ -122,7 +122,7 @@ const ContactPage = () => {
                     type="text"
                     required
                     maxLength={20}
-                    tooLong="That name is too long!"
+                    tooLong="Este nombre es muy largo"
                     pattern="[A-Z].+"
                     placeholder="Nombre"
                   />
@@ -130,7 +130,7 @@ const ContactPage = () => {
                   <Field
                     name="email"
                     type="email"
-                    typeMismatch="That's not an email address"
+                    typeMismatch="Este no es un correo electrónico válido"
                     component="input"
                     required
                     placeholder="Correo"
@@ -139,7 +139,7 @@ const ContactPage = () => {
                   <Field
                     name="tel"
                     type="tel"
-                    typeMismatch="That's not an phone"
+                    typeMismatch="Este no es un teléfono válido"
                     component="input"
                     required
                     placeholder="Teléfono"
