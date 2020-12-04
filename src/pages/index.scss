@@ -1,30 +1,31 @@
-@import "../assets/css/styles.less";
+@import "../assets/scss/antd";
+@import "../assets/scss/mixins";
 
 .inicio {
-  .center();
-  .img-bg();
+  @include center;
+  @include img-bg;
   .inicio__logo {
-    .flex();
-    .center();
+    @include flex;
+    @include center;
     background-image: radial-gradient(
       ellipse at center,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0) 70%
     );
     img {
-      .w-full();
+      @include w-full;
     }
   }
   .ant-carousel {
-    .w-full();
+    @include w-full;
     .inicio__carouseltxt {
       p {
         text-align: center;
-        .changa();
-        .blanco();
-        .txt-shadow();
+        @include changa;
+        @include blanco;
+        @include txt-shadow;
         a {
-          .blanco();
+          @include blanco;
         }
       }
     }

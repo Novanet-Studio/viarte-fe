@@ -59,6 +59,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        useResolveLoader: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaultQuality: 100,
@@ -72,14 +78,12 @@ module.exports = {
         pluginConfig: {
           // Puts tracking script in the head instead of the body
           head: true,
-
         },
       },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-less`,
     `gatsby-plugin-offline`,
   ],
 }

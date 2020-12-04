@@ -1,15 +1,15 @@
-@import "../../assets/css/styles.less";
+@import "../../assets/scss/mixins";
 
 .vallas {
   .dropdown-list {
     padding: 2vh;
     background: rgba(255, 255, 255, 0.9);
-    .flex();
+    @include flex;
     &__locations {
-      .w-full();
+      @include w-full;
       display: block;
       &:hover {
-        .gris-claro-bg();
+        @include gris-claro-bg;
         transition: 0.5s;
       }
     }
@@ -33,15 +33,15 @@
       background-position: 98% 50%;
       background-color: #fff;
       cursor: pointer;
-      .lato();
+      @include lato;
       option {
-        .lato();
+        @include lato;
         font-size: 0.91rem;
       }
     }
     a {
-      .lato();
-      .gris();
+      @include lato;
+      @include gris;
     }
   }
 
@@ -59,19 +59,19 @@
   }
 
   .infowindow__body {
-    .blanco-bg();
-    .flex();
+    @include blanco-bg;
+    @include flex;
     transform: translate(-40%, -100%);
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     &-texto {
       h4 {
-        .azul();
+        @include azul;
         font-weight: 400;
       }
       p {
-        .gris();
+        @include gris;
         font-weight: 400;
       }
     }
@@ -86,28 +86,28 @@
     }
   }
 
-  .img-bg();
+  @include img-bg;
 
   &__ficha {
-    .w-full();
-    .flex();
+    @include w-full;
+    @include flex;
     justify-content: space-between;
     &-inf {
-      .flex();
+      @include flex;
       align-content: flex-start;
       background: rgba(255, 255, 255, 0.9);
       h1 {
         display: block;
-        .naranja();
+        @include naranja;
         background:none;
       }
     }
     &-item {
       font-weight: 400;
-      .lato();
-      .gris();
+      @include lato;
+      @include gris;
       span {
-        .azul();
+        @include azul;
         font-weight: 600;
       }
     }
@@ -154,7 +154,7 @@
       &-inf {
         padding: 2vh;
         h1 {
-          .w-full();
+          @include w-full;
           font-size: 1.3rem;
           padding-bottom: 0.5vh;
         }
@@ -209,7 +209,7 @@
       &-inf {
         padding: 4vh;
         h1 {
-          .w-full();
+          @include w-full;
           font-size: 1.3rem;
           padding-bottom: 0.5vh;
         }
@@ -238,7 +238,7 @@
   .vallas {
     background-image: url(../../assets/images/vall-tab-bg.jpg);
     .contenedor {
-      .flex();
+      @include flex;
       justify-content: space-between;
     }
 
@@ -291,7 +291,7 @@
   .vallas {
     .contenedor {
       padding: 0;
-      .flex();
+      @include flex;
       width: 90vw;
       justify-content: space-between;
     }

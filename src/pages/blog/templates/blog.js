@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import ReactMarkdown from "react-markdown"
-import "./blog.less"
+import "./blog.scss"
 
 export default class Blog extends React.Component {
   render() {

@@ -1,0 +1,109 @@
+@import "../assets/scss/mixins";
+
+.perdido {
+  @include img-bg;
+  @include w-full;
+  .contenedor {
+    @include gris-claro-bg;
+  }
+  &__boton {
+    @include lato;
+    @include blanco;
+    @include azul-bg;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .perdido {
+    .contenedor {
+      width: 90%;
+      padding: 2vh;
+      h2 {
+        font-size: 1.3rem;
+        padding-bottom: 1vh;
+        line-height: 1.4rem;
+      }
+      p {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+        padding-bottom: 1.5vh;
+      }
+    }
+    &__boton {
+      padding: 1vh;
+      font-size: 0.7rem;
+    }
+    background-image: url(../assets/images/404-mov-bg.jpg);
+  }
+}
+
+@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .perdido {
+    .contenedor {
+      width: 70%;
+      padding: 2.5vh 2.5vh 3vh 2.5vh;
+      h2 {
+        font-size: 1.3rem;
+        padding-bottom: 1.5vh;
+      }
+      p {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+        padding-bottom: 2vh;
+      }
+    }
+    &__boton {
+      padding: 1vh 1.5vh;
+      font-size: 0.7rem;
+    }
+    background-image: url(../assets/images/404-lan-bg.jpg);
+    background-position: center center;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+  .perdido {
+    background-image: url(../assets/images/404-tab-bg.jpg);
+    .contenedor {
+      width: 70%;
+      h2 {
+        font-size: 1.6rem !important;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  .perdido {
+    .contenedor {
+      h2 {
+        font-size: 1.7rem;
+        line-height: 1.6rem;
+      }
+      p {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+    }
+    &__boton {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+  .perdido {
+    background-image: url(../assets/images/404-desk-bg.jpg);
+    .contenedor {
+      width: 50%;
+    }
+  }
+}

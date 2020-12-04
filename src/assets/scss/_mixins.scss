@@ -1,0 +1,101 @@
+/* Variables
+========================================================================== */
+@mixin flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
+@mixin w-full {
+  width: 100%;
+}
+@mixin w-half {
+  width: 49%;
+}
+@mixin w-third {
+  width: 31.5%;
+}
+@mixin azul {
+  color: #00a5e7;
+}
+@mixin azul-oscuro {
+  color: #0088be;
+}
+@mixin naranja {
+  color: #f37021;
+}
+@mixin naranja-oscuro {
+  color: #c75c1c;
+}
+@mixin gris {
+  color: #7c7c7c;
+}
+@mixin gris-claro {
+  color: #c0bfbf;
+}
+@mixin gris-oscuro {
+  color: #525052;
+}
+@mixin blanco {
+  color: #fff;
+}
+@mixin gris-claro-a {
+  color: #e0e9f5;
+}
+
+@mixin azul-bg {
+  background-color: #00a5e7;
+}
+@mixin naranja-bg {
+  background-color: #f37021;
+}
+@mixin blanco-bg {
+  background-color: #fff;
+}
+@mixin gris-claro-bg {
+  background-color: #f4f2f3;
+}
+
+@mixin img-bg {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@mixin changa {
+  font-family: "Changa", sans-serif;
+}
+
+@mixin lato {
+  font-family: "Lato", sans-serif;
+}
+
+@mixin changa-one {
+  font-family: "Changa One", cursive;
+}
+
+@mixin txt-shadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+@mixin absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin post-principal {
+  // Entrada landscape mobile & tablet
+  order: 1;
+  width: 50%;
+  text-align: right;
+  @include flex;
+  @include center;
+  h1 {
+    @include w-full;
+    padding: 2vw;
+  }
+}

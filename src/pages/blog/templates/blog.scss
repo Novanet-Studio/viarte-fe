@@ -1,30 +1,30 @@
-@import "../../../assets/css/styles.less";
+@import "../../../assets/scss/mixins";
 
 .blog {
-  .img-bg();
+  @include img-bg;
   .blog__destacadotexto,
   .blog__entradas {
     &-fecha {
-      .w-full();
-      .azul();
+      @include w-full;
+      @include azul;
       font-size: 0.9rem;
       text-align: left;
       margin-bottom: -0.5vh;
     }
   }
   .blog__destacado {
-    .gris-claro-bg();
+    @include gris-claro-bg;
   }
 
   .blog__entradas {
-    .flex();
+    @include flex;
     li {
-      .gris-claro-bg();
+      @include gris-claro-bg;
       a {
-        .flex();
+        @include flex;
         h3 {
           font-weight: 400;
-          .naranja();
+          @include naranja;
         }
         p {
           font-weight: 500;
@@ -34,24 +34,24 @@
   }
 
   .blog__pag {
-    .w-full();
-    .flex();
-    .center();
+    @include w-full();
+    @include flex();
+    @include center();
     h1 {
-      .naranja-bg();
-      .blanco();
+      @include naranja-bg;
+      @include blanco;
     }
     a {
-      .flex();
-      .center();
-      .lato();
-      .gris-oscuro();
-      .gris-claro-bg();
+      @include flex;
+      @include center;
+      @include lato;
+      @include gris-oscuro;
+      @include gris-claro-bg;
     }
     .pag__ant,
     .pag__sig {
-      .blanco();
-      .naranja-bg();
+      @include blanco;
+      @include naranja-bg;
       span {
         font-size: 1.04rem;
       }
@@ -65,20 +65,20 @@
     display: block;
     font-size: 1.35rem;
   }
-  .img-bg();
+  @include img-bg;
   .post__contenedor {
-    .gris-claro-bg();
+    @include gris-claro-bg;
     font-weight: 400;
     .post__cabecera {
       position: relative;
-      .flex();
+      @include flex;
       &-fecha {
-        .w-full();
-        .azul();
+        @include w-full;
+        @include azul;
         font-size: 0.75rem;
       }
       &-compartir {
-        .w-full();
+        @include w-full;
         margin-top: 1vh;
         button {
           margin-right: 0.5vw;
@@ -86,7 +86,7 @@
         h3 {
           font-size: 1.1rem;
           margin-bottom: 1vh;
-          .azul();
+          @include azul;
         }
       }
     }
@@ -101,16 +101,16 @@
       padding-top: 1vh;
     }
     a {
-      .azul();
+      @include azul;
       text-decoration: none;
     }
     ul {
       list-style-type: disc;
       padding: 2vh 0 0 3vh;
       li {
-        .lato();
+        @include lato;
+        @include gris;
         font-weight: 500;
-        .gris();
       }
     }
   }
@@ -130,7 +130,7 @@
       }
       a {
         .gatsby-image-wrapper {
-          .w-full();
+          @include w-full;
           height: 30vh;
         }
       }
@@ -146,7 +146,7 @@
         margin-top: 7.5%;
         padding: 2.5vh;
         a {
-          .center();
+          @include center;
           .gatsby-image-wrapper {
             width: 40%;
             height: 17vh;
@@ -209,7 +209,7 @@
         padding-top: 1vh;
       }
       a {
-        .flex();
+        @include flex;
         .gatsby-image-wrapper {
           width: 48%;
           height: 52vh;
@@ -226,7 +226,7 @@
       }
     }
     .blog__entradas {
-      .w-full();
+      @include w-full;
       li {
         width: 48.4%;
         margin-top: 3.2%;
@@ -235,7 +235,7 @@
           margin-left: 3.2%;
         }
         a {
-          .center();
+          @include center;
           .gatsby-image-wrapper {
             width: 40%;
             height: 30vh;
@@ -265,15 +265,15 @@
   .post {
     background-image: url(../../../assets/images/blog-lan-bg.jpg);
     .post__contenedor {
-      .flex();
+      @include flex;
       padding: 4vh;
       .gatsby-image-wrapper {
         order: 2;
-        .w-half();
+        @include w-half;
         height: 52vh;
       }
       .post__cabecera {
-        .post__principal();
+        @include post-principal;
         .post__cabecera {
           &-fecha {
             align-self: flex-start;
@@ -281,7 +281,7 @@
           }
         }
         .boton-regreso {
-          .w-full();
+          @include w-full;
           align-self: flex-start;
           text-align: left;
         }
@@ -301,7 +301,7 @@
     .blog__destacado {
       padding: 1.5vh;
       a {
-        .flex();
+        @include flex;
         .gatsby-image-wrapper {
           width: 48%;
           height: auto;
@@ -365,20 +365,20 @@
     background-image: url(../../../assets/images/blog-tab-bg.jpg);
     .post__contenedor {
       padding: 2vh;
-      .flex();
+      @include flex;
       .gatsby-image-wrapper {
         order: 2;
-        .w-half();
+        @include w-half;
         height: auto;
       }
       .post__cabecera {
-        .post__principal();
+        @include post-principal;
         &-fecha {
           font-size: 0.9rem;
           margin: -10.5vh 2vw 0 0;
         }
         .boton-regreso {
-          .absolute();
+          @include absolute;
         }
       }
       .post__contenido {
@@ -398,14 +398,14 @@
   .blog {
     .blog__destacado {
       a {
-        .flex();
+        @include flex;
         .gatsby-image-wrapper {
-          .w-half();
+          @include w-half;
           height: auto;
         }
         .blog__destacadotexto {
           padding-left: 2vh;
-          .w-half();
+          @include w-half;
           h2 {
             padding-top: 0;
           }
@@ -419,7 +419,7 @@
 
     .blog__entradas {
       li {
-        .w-half();
+        @include w-half;
         margin-top: 1.83333333%;
         padding: 2vh;
         &:nth-child(2n) {
@@ -465,7 +465,7 @@
     .post__contenedor {
       padding: 2vw;
       .gatsby-image-wrapper {
-        .w-half();
+        @include w-half;
         height: auto;
       }
       .post__contenido {
@@ -510,7 +510,7 @@
 
     .blog__entradas {
       li {
-        .w-half();
+        @include w-half;
         margin-top: 1.633333333%;
         &:nth-child(2n) {
           margin-left: 1.633333333%;

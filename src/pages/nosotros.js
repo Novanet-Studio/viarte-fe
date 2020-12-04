@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "./nosotros.less"
+import "./nosotros.scss"
 
 const Nosotros = ({ data }) => (
   <Layout>

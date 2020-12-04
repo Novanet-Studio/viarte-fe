@@ -1,0 +1,73 @@
+/* Estilos generales
+========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+  @include changa-one;
+}
+
+h1 {
+  display: none;
+  font-weight: 500;
+  @include blanco;
+  @include naranja-bg;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  @include naranja;
+}
+
+h3 {
+  font-size: 1.03rem;
+  @include naranja;
+}
+
+p {
+  @include lato;
+  font-weight: 500;
+  @include gris;
+}
+
+.descripcion {
+  font-weight: 600;
+  @include changa;
+  @include blanco;
+  @include txt-shadow;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.triangulo-azul {
+  background-image: url(../images/tri-azul.svg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+}
+
+.triangulo-naranja {
+  h2 {
+    font-weight: 400;
+    @include naranja;
+  }
+  background-image: url(../images/tri-nar.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
+.boton-regreso {
+  cursor: pointer;
+  @include lato;
+  font-weight: 900;
+  @include azul;
+  border: none;
+}
