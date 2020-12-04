@@ -24,8 +24,8 @@ const IndexPage = ({ data }) => (
     />
     <div
       className="inicio"
-      /* title={data.strapiHome.seo_image.title}
-      alt={data.strapiHome.seo_image.alt} */
+      title={data.strapiHome.seo_image.title}
+      alt={data.strapiHome.seo_image.alt}
     >
       <h1>{data.strapiHome.seo.title}</h1>
       <div className="inicio__logo">
@@ -51,6 +51,10 @@ export const query = graphql`
         title
         description
         image
+      }
+      seo_image {
+        title
+        alt
       }
       message {
         id

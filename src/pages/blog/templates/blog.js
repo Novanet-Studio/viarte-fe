@@ -39,8 +39,8 @@ export default class Blog extends React.Component {
                 <Link to={`/blog/${item.node.Slug}`}>
                   <Img
                     fluid={item.node.image.childImageSharp.fluid}
-                    /* title={item.node.seo_image.title}
-                    alt={item.node.seo_image.alt} */
+                    title={item.node.seo_image.title}
+                    alt={item.node.seo_image.alt}
                   />
                   <div className="blog__destacadotexto">
                     <h2>{item.node.title}</h2>
@@ -67,8 +67,8 @@ export default class Blog extends React.Component {
                   <Link to={`/blog/${item.node.Slug}`}>
                     <Img
                       fluid={item.node.image.childImageSharp.fluid}
-                      /* title={item.node.seo_image.title}
-                      alt={item.node.seo_image.alt} */
+                      title={item.node.seo_image.title}
+                      alt={item.node.seo_image.alt}
                     />
                     <h3>{item.node.title}</h3>
                     <p className="blog__destacadotexto-fecha">
@@ -149,6 +149,10 @@ export const query = graphql`
               }
             }
           }
+          seo_image {
+            title
+            alt
+          }
         }
       }
     }
@@ -171,6 +175,10 @@ export const query = graphql`
                 ...GatsbyImageSharpFluid
               }
             }
+          }
+          seo_image {
+            title
+            alt
           }
         }
       }
