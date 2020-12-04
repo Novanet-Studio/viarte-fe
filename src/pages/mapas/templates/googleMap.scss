@@ -1,0 +1,87 @@
+@import "../../../assets/scss/mixins";
+
+$marker-direction: "../../../assets/images/marcador.png";
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
+.infowindow {
+  position: relative;
+  z-index: 50;
+
+  &--hide {
+    display: none;
+  }
+
+  &--show {
+    display: block;
+  }
+
+  &__body {
+    @include blanco-bg;
+    @include flex;
+    transform: translate(-40%, -100%);
+    opacity: 0;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  &__titulo {
+    @include azul;
+    font-weight: 400;
+  }
+
+  &__direccion {
+    @include gris;
+    font-weight: 400;
+  }
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-image: url($marker-direction);
+  background-size: contain;
+  background-position: center;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    z-index: 1;
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
+  .infowindow {
+    &__body {
+      width: 310px;
+      padding: 1.5vh;
+    }
+
+    &__img {
+      width: 25%;
+    }
+
+    &__contenido {
+      width: 63.5%;
+      margin-left: 3.5%;
+    }
+
+    &__titulo {
+      font-size: 1.05rem;
+    }
+
+    &__direccion {
+      padding-top: 0.5vh;
+      font-size: 0.75rem;
+      line-height: 1.15rem;
+    }
+  }
+}

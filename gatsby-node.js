@@ -8,6 +8,17 @@
 
 const path = require("path")
 
+/* Alias Support */
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, "src")
+      }
+    }
+  });
+}
+
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   try {
     // Entradas template

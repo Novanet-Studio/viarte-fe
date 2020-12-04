@@ -2,324 +2,347 @@
 
 .contacto {
   @include img-bg;
+
   .contenedor {
     @include flex;
   }
-  .contacto__info {
+  &__info {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
     @include flex;
-    ul {
-      li {
-        svg {
-          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-          display: flex;
-          @include azul-bg;
-          @include blanco;
-        }
-        span {
-          font-weight: 700;
-          @include changa;
-          @include gris-oscuro;
-        }
-      }
-    }
   }
-  .contacto__form {
-    @include flex;
-    @include gris-claro-bg;
-    justify-content: left;
-    input:required,
-    input:invalid,
-    textarea:required {
-      box-shadow: none;
-    }
-    input:invalid {
-      box-shadow: none;
-    }
-    label {
-      font-weight: 500;
-      @include gris;
-      @include lato;
-    }
-    input,
-    textarea {
-      font-weight: 500;
-      border: none;
-      background: none;
-      border-bottom: #f37021 1px solid;
-      @include w-full;
-      @include lato;
-      @include gris;
-    }
-    button {
-      cursor: pointer;
-      text-align: center;
-      border: none;
-      font-weight: 600;
-      @include lato;
-      @include w-full;
-      @include blanco;
-      @include naranja-bg;
-    }
+
+  &__icono {
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    @include azul-bg;
+    @include blanco;
+  }
+
+  &__texto {
+    font-weight: 700;
+    @include changa;
+    @include gris-oscuro;
+  }
+}
+
+/* --------------- FORM --------------- */
+.form {
+  @include flex;
+  @include gris-claro-bg;
+  justify-content: left;
+
+  &__input:required:invalid,
+  &__textarea:required {
+    box-shadow: none;
+  }
+
+  &__input,
+  &__textarea {
+    font-weight: 500;
+    border: none;
+    background: none;
+    border-bottom: #f37021 1px solid;
+    @include w-full;
+    @include lato;
+    @include gris;
+  }
+
+  &__button {
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    font-weight: 600;
+    @include lato;
+    @include w-full;
+    @include blanco;
+    @include naranja-bg;
+  }
+
+  &__label {
+    font-weight: 500;
+    @include gris;
+    @include lato;
   }
 }
 
 /*-------------------------------------------- Mobile Portrait --------------------------------------------*/
-@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+
+@include min-media(320px, portrait) {
   .contacto {
     background-image: url(../assets/images/con-mov-bg.jpg);
-    .contacto__info,
-    .contacto__form {
+    &__info,
+    &__form {
       @include w-full;
     }
-    .contacto__info {
+
+    &__info {
       padding-bottom: 13%;
-      ul {
-        @include w-full;
-        @include flex;
-        li {
-          @include w-full;
-          padding-top: 12%;
-          svg {
-            width: 13vw !important;
-            height: 13vw;
-            padding: 1.8vh 4vw;
-            margin: 0 auto 1vh;
-          }
-          span {
-            font-size: 1rem;
-          }
-        }
-      }
     }
-    .contacto__form {
-      margin: 7.5% 0 0 0;
-      padding: 3.3vh;
-      input {
-        font-size: 0.95rem;
-        margin-top: 3vh;
-        margin-bottom: 3vh;
-      }
-      label {
-        font-size: 0.95rem;
-      }
-      textarea {
-        font-size: 0.95rem;
-        margin-top: 2vh;
-        margin-bottom: 3vh;
-      }
-      button {
-        font-size: 0.92rem;
-        padding: 0.8vh 0;
-      }
+
+    &__lista {
+      @include w-full;
+      @include flex;
+    }
+
+    &__item {
+      @include w-full;
+      padding-top: 12%;
+    }
+
+    &__icono {
+      width: 13vw !important;
+      height: 13vw;
+      padding: 1.8vh 4vw;
+      margin: 0 auto 1vh;
+    }
+
+    &__texto {
+      font-size: 1rem;
+    }
+  }
+
+  /* --------------- FORM --------------- */
+  .form {
+    margin: 7.5% 0 0 0;
+    padding: 3.3vh;
+    &__input {
+      font-size: 0.95rem;
+      margin-top: 3vh;
+      margin-bottom: 3vh;
+    }
+    &__label {
+      font-size: 0.95rem;
+    }
+    &__textarea {
+      font-size: 0.95rem;
+      margin-top: 2vh;
+      margin-bottom: 3vh;
+    }
+    &__button {
+      font-size: 0.92rem;
+      padding: 0.8vh 0;
     }
   }
 }
 
 /*-------------------------------------------- Mobile Landscape --------------------------------------------*/
-@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+
+@include min-media(568px, landscape) {
+  .form,
+  .contacto__info {
+    width: 48%;
+  }
+
   .contacto {
     background-image: url(../assets/images/con-lan-bg.jpg);
-    .contacto__info,
-    .contacto__form {
-      width: 48%;
-    }
-    .contacto__info {
+
+    &__info {
       min-height: 84vh;
-      ul {
-        @include w-full;
-        li {
-          padding-top: 17%;
-          svg {
-            width: 8.5vw !important;
-            height: 8.5vw;
-            padding: 2vh 2.6vw;
-            margin: 0 auto 2vh;
-          }
-          span {
-            padding-top: 1.5vh;
-            font-size: 1rem;
-          }
-        }
-      }
     }
-    .contacto__form {
-      min-height: 84vh;
-      padding: 5.5vh;
-      margin-left: 4%;
-      input {
-        font-size: 0.8rem;
-        margin-top: 3.5vh;
-        margin-bottom: 4.5vh;
-      }
-      label {
-        font-size: 0.8rem;
-      }
-      textarea {
-        font-size: 0.8rem;
-        margin-top: 3.5vh;
-        margin-bottom: 3.5vh;
-      }
-      button {
-        font-size: 0.85rem;
-        padding: 1vh 0;
-      }
+
+    &__lista {
+      @include w-full;
+    }
+
+    &__item {
+      padding-top: 17%;
+    }
+
+    &__icono {
+      width: 8.5vw !important;
+      height: 8.5vw;
+      padding: 2vh 2.6vw;
+      margin: 0 auto 2vh;
+    }
+
+    &__texto {
+      padding-top: 1.5vh;
+      font-size: 1rem;
+    }
+  }
+
+  /* --------------- FORM --------------- */
+
+  .form {
+    min-height: 84vh;
+    padding: 5.5vh;
+    margin-left: 4%;
+    &__input {
+      font-size: 0.8rem;
+      margin-top: 3.5vh;
+      margin-bottom: 4.5vh;
+    }
+    &__label {
+      font-size: 0.8rem;
+    }
+    &__textarea {
+      font-size: 0.8rem;
+      margin-top: 3.5vh;
+      margin-bottom: 3.5vh;
+    }
+    &__button {
+      font-size: 0.85rem;
+      padding: 1vh 0;
     }
   }
 }
 
 /*-------------------------------------------- Tablet Portrait --------------------------------------------*/
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+
+@include min-media(768px, portrait) {
+  .form,
+  .contacto__info {
+    @include w-full;
+  }
+
   .contacto {
     background-image: url(../assets/images/con-tab-bg.jpg);
-    .contacto__info,
-    .contacto__form {
-      @include w-full;
-    }
-    .contacto__info {
+
+    &__info {
       min-height: 16vh;
       padding-bottom: 0;
-      ul {
-        li {
-          @include w-half;
-          padding: 7vh 0 8vh 0;
-          svg {
-            width: 8vw !important;
-            height: 8vw;
-            padding: 1.8vh 1vw;
-            margin: 0 auto 1vh;
-          }
-          span {
-            font-size: 1.25rem;
-          }
-        }
-      }
     }
-    .contacto__form {
-      margin: 2.7vh 0 0 0;
-      min-height: 39vh;
-      input {
-        font-size: 1.1rem;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-      }
-      label {
-        font-size: 1.1rem;
-      }
-      textarea {
-        font-size: 1.1rem;
-        margin-top: 1vh;
-        margin-bottom: 2vh;
-      }
-      button {
-        font-size: 1.2rem;
-      }
+
+    &__item {
+      @include w-half;
+      padding: 7vh 0 8vh 0;
+    }
+    &__icono {
+      width: 8vw !important;
+      height: 8vw;
+      padding: 1.8vh 1vw;
+      margin: 0 auto 1vh;
+    }
+    &__texto {
+      font-size: 1.25rem;
+    }
+  }
+  /* --------------- FORM --------------- */
+
+  .form {
+    margin: 2.7vh 0 0 0;
+    min-height: 39vh;
+    &__input {
+      font-size: 1.1rem;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+    }
+    &__label {
+      font-size: 1.1rem;
+    }
+    &__textarea {
+      font-size: 1.1rem;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+    }
+    &__button {
+      font-size: 1.2rem;
     }
   }
 }
 
 /*-------------------------------------------- Tablet Landscape --------------------------------------------*/
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+@include min-media(1024px, landscape) {
   .contacto {
     .contenedor {
       width: 90vw;
       padding: 0;
     }
-    .contacto__info {
+    &__info {
       min-height: 47vh;
-      ul {
-        li {
-          padding-top: 14%;
-          svg {
-            width: 5.4vw !important;
-            height: 5.4vw;
-            padding: 2vh 1.5vw;
-          }
-          span {
-            font-size: 1.2rem;
-          }
-        }
-      }
     }
-    .contacto__form {
-      min-height: 47vh;
-      margin-left: 1.83333333%;
-      padding: 3vh;
-      input {
-        font-size: 1rem;
-        margin-top: 2vh;
-        margin-bottom: 3vh;
-      }
-      textarea {
-        font-size: 1rem;
-        margin-top: 1vh;
-        margin-bottom: 3vh;
-      }
-      label {
-        font-size: 1rem;
-      }
-      button {
-        font-size: 1rem;
-        padding: 0.8vh 0;
-      }
+
+    &__item {
+      padding-top: 14%;
+    }
+    &__icono {
+      width: 5.4vw !important;
+      height: 5.4vw;
+      padding: 2vh 1.5vw;
+    }
+    &__texto {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* --------------- FORM --------------- */
+
+  .form {
+    min-height: 47vh;
+    margin-left: 1.83333333%;
+    padding: 3vh;
+    &__input {
+      font-size: 1rem;
+      margin-top: 2vh;
+      margin-bottom: 3vh;
+    }
+    &__textarea {
+      font-size: 1rem;
+      margin-top: 1vh;
+      margin-bottom: 3vh;
+    }
+    &__label {
+      font-size: 1rem;
+    }
+    &__button {
+      font-size: 1rem;
+      padding: 0.8vh 0;
     }
   }
 }
 
 /*-------------------------------------------- Desktop responsive --------------------------------------------*/
-@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+
+@include min-media(1280px) {
   .contacto {
     background-image: url(../assets/images/con-desk-bg.jpg);
     background-position: bottom center;
     .contenedor {
       width: 80vw;
     }
-    .contacto__info {
+    &__info {
       min-height: 50vh;
-      ul {
-        li {
-          padding-top: 11%;
-          svg {
-            width: 4.9vw !important;
-            height: 4.9vw;
-          }
-          span {
-            font-size: 1.3rem;
-          }
-        }
-      }
     }
-    .contacto__form {
-      min-height: 50vh;
-      input {
-        font-size: 1.04rem;
-        margin-top: 2.5vh;
-      }
-      label {
-        font-size: 1.04rem;
-      }
-      textarea {
-        font-size: 1.04rem;
-        margin-top: 0.5vh;
-      }
-      button {
-        font-size: 1.06rem;
-      }
+    &__item {
+      padding-top: 11%;
+    }
+    &__icono {
+      width: 4.9vw !important;
+      height: 4.9vw;
+    }
+    &__texto {
+      font-size: 1.3rem;
+    }
+
+  }
+
+  /* --------------- FORM --------------- */
+
+  .form {
+    min-height: 50vh;
+    &__input {
+      font-size: 1.04rem;
+      margin-top: 2.5vh;
+    }
+    &__label {
+      font-size: 1.04rem;
+    }
+    &__textarea {
+      font-size: 1.04rem;
+      margin-top: 0.5vh;
+    }
+    &__button {
+      font-size: 1.06rem;
     }
   }
 }
 
 /*-------------------------------------------- Desktop responsive 1440--------------------------------------------*/
-@media only screen and (min-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-  .contacto {
-    .contacto__info {
-      ul {
-        li {
-          padding-top: 8%;
-        }
-      }
-    }
+
+@include min-media(1600px) {
+  .contacto__item {
+    padding-top: 8%;
   }
 }

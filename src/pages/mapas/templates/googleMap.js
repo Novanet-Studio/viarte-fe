@@ -1,14 +1,16 @@
 import React from "react"
-import GoogleMapReact from "google-map-react"
 import Img from "gatsby-image"
+import GoogleMapReact from "google-map-react"
+
+import "./googleMap.scss"
 
 const InfoWindow = ({ title, address, image, show }) => (
   <div className={`infowindow infowindow--${show ? "show" : "hide"}`}>
     <div className="infowindow__body">
-      <Img className="infowindow__body-img" fluid={image} />
-      <div className="infowindow__body-texto">
-        <h4>{title}</h4>
-        <p>{address}</p>
+      <Img className="infowindow__img" fluid={image} />
+      <div className="infowindow__contenido">
+        <h4 className="infowindow__titulo">{title}</h4>
+        <p className="infowindow__direccion">{address}</p>
       </div>
     </div>
   </div>

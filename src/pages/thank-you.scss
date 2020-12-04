@@ -21,21 +21,24 @@
   }
 }
 
-@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
   .gracias {
+    background-image: url(../assets/images/con-mov-bg.jpg);
     .contenedor {
       width: 90%;
       padding: 2vh;
-      h2 {
-        flex: 0 0 80%;
-        padding-right: 1.5vh;
-      }
-      p {
-        padding-top: 1.5vh;
-        padding-bottom: 1.5vh;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
-      }
+    }
+    &__titulo {
+      flex: 0 0 80%;
+      padding-right: 1.5vh;
+    }
+    &__descripcion {
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+      font-size: 0.85rem;
+      line-height: 1.2rem;
     }
     &__icono {
       width: 15vw;
@@ -45,24 +48,28 @@
       padding: 1vh;
       font-size: 0.7rem;
     }
-    background-image: url(../assets/images/con-mov-bg.jpg);
   }
 }
 
-@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
   .gracias {
+    background-image: url(../assets/images/con-lan-bg.jpg);
+    background-position: center center;
+
     .contenedor {
       width: 70%;
       padding: 4vh;
-      h2 {
-        padding-right: 2vh;
-      }
-      p {
-        padding-top: 2.5vh;
-        padding-bottom: 2.5vh;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
-      }
+    }
+    &__titulo {
+      padding-right: 2vh;
+    }
+    &__descripcion {
+      padding-top: 2.5vh;
+      padding-bottom: 2.5vh;
+      font-size: 0.85rem;
+      line-height: 1.2rem;
     }
     &__icono {
       width: 7vw;
@@ -72,25 +79,26 @@
       padding: 1.5vh;
       font-size: 0.7rem;
     }
-    background-image: url(../assets/images/con-lan-bg.jpg);
-    background-position: center center;
   }
 }
 
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
   .gracias {
     background-image: url(../assets/images/con-tab-bg.jpg);
     .contenedor {
       width: 70%;
-      h2 {
-        padding-right: 1vh;
-      }
-      p {
-        font-size: 0.95rem;
-        line-height: 1.4rem;
-        padding-top: 1vh;
-        padding-bottom: 1.5vh;
-      }
+    }
+
+    &__titulo {
+      padding-right: 1vh;
+    }
+    &__descripcion {
+      font-size: 0.95rem;
+      line-height: 1.4rem;
+      padding-top: 1vh;
+      padding-bottom: 1.5vh;
     }
     &__icono {
       width: 7vw;
@@ -103,19 +111,20 @@
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
   .gracias {
     .contenedor {
       padding: 2vh;
-      h2 {
-        padding-right: 1.5vh;
-      }
-      p {
-        padding-top: 1.6vh;
-        padding-bottom: 1.4vh;
-        font-size: 1rem;
-        line-height: 1.4rem;
-      }
+    }
+    &__titulo {
+      padding-right: 1.5vh;
+    }
+    &__descripcion {
+      padding-top: 1.6vh;
+      padding-bottom: 1.4vh;
+      font-size: 1rem;
+      line-height: 1.4rem;
     }
     &__icono {
       width: 6vw;
@@ -128,7 +137,9 @@
   }
 }
 
-@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
   .gracias {
     background-image: url(../assets/images/con-desk-bg.jpg);
     .contenedor {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+
+import Layout from "~/components/layout"
+import SEO from "~/components/seo"
 import GoogleMap from "./templates/googleMap"
 import "./mapas.scss"
 
@@ -54,23 +55,31 @@ const Mapas = ({ data }) => {
       >
         <div className="contenedor">
           <h1>{data.strapiMapa.seo.title}</h1>
-          <div className="vallas__lateral">
-            <div className="dropdown-list">
-              <p className="descripcion">{data.strapiMapa.description}</p>
-              <p className="descripcion-peq">
+          <div className="contenedor__lateral">
+            <div className="card">
+              <p className="card__descripcion descripcion">{data.strapiMapa.description}</p>
+              <p className="card__descripcion-corta">
                 Seleccione una ciudad para mostrar las vallas existentes:
               </p>
               {/* eslint-disable */}
-              <select onChange={onChangeLocation}>
-                <option disabled>Selecciona una ubicación</option>
-                <option value="caracas">Caracas</option>
-                <option value="guarenas">Guarenas</option>
-                <option value="valencia">Valencia</option>
+              <select className="dropdown" onChange={onChangeLocation}>
+                <option className="dropdown__option" disabled>
+                  Selecciona una ubicación
+                </option>
+                <option className="dropdown__option" value="caracas">
+                  Caracas
+                </option>
+                <option className="dropdown__option" value="guarenas">
+                  Guarenas
+                </option>
+                <option className="dropdown__option" value="valencia">
+                  Valencia
+                </option>
               </select>
               {currentMarkers.edges.map((item) => (
                 <Link
                   key={item.node.id}
-                  className="dropdown-list__locations"
+                  className="card__link"
                   to={`/mapas/${item.node.slug}`}
                   onMouseOver={() => setInfoWindowActive(item.node.id)}
                   onMouseLeave={() => setInfoWindowActive(null)}
@@ -81,7 +90,7 @@ const Mapas = ({ data }) => {
             </div>
           </div>
           <GoogleMap
-            className="vallas__principal"
+            className="mapa"
             center={defaultCenter}
             defaultZoom={14}
             markers={currentMarkers.edges}

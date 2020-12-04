@@ -1,11 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql, navigate } from "gatsby"
-import Layout from "../components/layout"
+
 import { Form } from "react-final-form"
 import { Field } from "react-final-form-html5-validation"
-import SEO from "../components/seo"
-import "./contacto.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import Layout from "~/components/layout"
+import SEO from "~/components/seo"
+import "./contacto.scss"
 
 /* eslint-disable */
 let faicon = null
@@ -75,10 +77,11 @@ const ContactPage = () => {
         <div className="contenedor">
           <h1>{strapiContact.seo.title}</h1>
           <div className="contacto__info">
-            <ul>
+            <ul className="contacto__lista">
               {strapiContact.info.map((document) => (
-                <li key={document.id}>
+                <li className="contacto__item" key={document.id}>
                   <FontAwesomeIcon
+                    className="contacto__icono"
                     icon={[
                       (faprefix = document.prefix.replace(/'/g, "")),
                       (faicon = document.icon.replace(/'/g, "")),
@@ -86,14 +89,14 @@ const ContactPage = () => {
                     fixedWidth
                     size="lg"
                   />
-                  <span>{document.content}</span>
+                  <span className="contacto__texto">{document.content}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="contacto__form">
-            <h2>Envíanos un mensaje</h2>
+          <div className="form">
+            <h2 className="form__titulo">Envíanos un mensaje</h2>
             <Form
               onSubmit={handleSubmit}
               render={({ handleSubmit, pristine, invalid }) => (
@@ -118,17 +121,19 @@ const ContactPage = () => {
                   <label className="oculto">Nombre</label>
                   <Field
                     name="name"
+                    className="form__input"
                     component="input"
                     type="text"
-                    required
                     maxLength={20}
                     tooLong="Este nombre es muy largo"
                     pattern="[A-Z].+"
                     placeholder="Nombre"
+                    required
                   />
                   <label className="oculto">Correo</label>
                   <Field
                     name="email"
+                    className="form__input"
                     type="email"
                     typeMismatch="Este no es un correo electrónico válido"
                     component="input"
@@ -138,15 +143,21 @@ const ContactPage = () => {
                   <label className="oculto">Teléfono</label>
                   <Field
                     name="tel"
+                    className="form__input"
                     type="tel"
                     typeMismatch="Este no es un teléfono válido"
                     component="input"
                     required
                     placeholder="Teléfono"
                   />
-                  <label>Mensaje</label>
-                  <Field name="message" component="textarea" required />
-                  <button type="submit">Enviar &#9654;</button>
+                  <label className="form__label">Mensaje</label>
+                  <Field
+                    name="message"
+                    className="form__textarea"
+                    component="textarea"
+                    required
+                  />
+                  <button className="form__button" type="submit">Enviar &#9654;</button>
                 </form>
               )}
             />

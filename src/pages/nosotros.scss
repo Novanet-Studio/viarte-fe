@@ -3,101 +3,108 @@
 .nosotros {
   @include img-bg();
   align-items: flex-end;
-  h2 {
+
+  &__titulo {
     padding-left: 0.5vw;
   }
-  ul {
+
+  &__lista {
     @include flex;
     justify-content: space-between;
-    .nosotros__ficha {
-      @include flex;
-      @include w-third;
-      @include gris-claro-bg;
-      align-items: center;
-      align-content: flex-start;
-      padding: 2vh;
+  }
+
+  &__item {
+    @include flex;
+    @include w-third;
+    @include gris-claro-bg;
+    align-items: center;
+    align-content: flex-start;
+    padding: 2vh;
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
+  .nosotros {
+    background-image: url(../assets/images/nos-mov-bg.jpg);
+    @include w-full;
+    &__item {
+      @include w-full;
+      margin-bottom: 4vh;
+    }
+    &__icono {
+      width: 15vw;
+      height: 15vw;
     }
   }
 }
 
-@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
   .nosotros {
-    background-image: url(../assets/images/nos-mov-bg.jpg);
+    background-image: url(../assets/images/nos-lan-bg.jpg);
+    background-position: center center;
     @include w-full;
-    ul {
-      .nosotros__ficha {
-        @include w-full;
-        margin-bottom: 4vh;
-        img {
-          width: 15vw;
-          height: 15vw;
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
-  .nosotros {
+
     .contenedor {
       margin-top: 25vh;
       margin-bottom: 20vh;
       padding: 0 4vw;
     }
-    background-image: url(../assets/images/nos-lan-bg.jpg);
-    background-position: center center;
-    @include w-full;
-    ul {
-      .nosotros__ficha {
-        img {
-          width: 7vw;
-          height: 7vw;
-        }
-        p {
-          font-size: 0.6rem;
-          line-height: 1rem;
-        }
-      }
+    &__icono {
+      width: 7vw;
+      height: 7vw;
+    }
+  
+    &__texto {
+      font-size: 0.6rem;
+      line-height: 1rem;
     }
   }
+
 }
 
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
   .nosotros {
     background-image: url(../assets/images/nos-tab-bg.jpg);
-    ul {
-      .nosotros__ficha {
-        @include w-third;
-        img {
-          width: 7vw;
-          height: 7vw;
-        }
-        p {
-          font-size: 0.75rem;
-        }
-      }
+    &__item {
+      @include w-third;
+    }
+    
+    &__icono {
+      width: 7vw;
+      height: 7vw;
+    }
+    
+    &__texto {
+      font-size: 0.75rem;
     }
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
   .nosotros {
-    ul {
-      .nosotros__ficha {
-        img {
-          width: 6vw;
-          height: 6vw;
-        }
-        p {
-          font-size: 0.8rem;
-          line-height: 1.3rem;
-          padding-top: 1.5vh;
-        }
-      }
+    &__icono {
+      width: 6vw;
+      height: 6vw;
+    }
+
+    &__texto {
+      font-size: 0.8rem;
+      line-height: 1.3rem;
+      padding-top: 1.5vh;
     }
   }
 }
 
-@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
   .nosotros {
     background-image: url(../assets/images/nos-desk-bg.jpg);
     background-position: center center;
@@ -105,13 +112,14 @@
       @include flex;
       width: 63%;
     }
-    ul {
-      .nosotros__ficha {
-        img {
-          width: 4.5vw;
-          height: 4.5vw;
-        }
-      }
+
+    &__icono {
+      width: 4.5vw;
+      height: 4.5vw;
+    }
+
+    &__texto {
+      font-weight: 500;
     }
   }
 }

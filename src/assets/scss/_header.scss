@@ -1,0 +1,147 @@
+.header {
+  position: absolute;
+  @include w-full;
+  background: rgba(0, 0, 0, 0.8);
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+}
+
+/* ------------ Menú ------------ */
+.nav {
+  @include flex;
+  @extend .triangulo-azul;
+  justify-content: center;
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.5s;
+    border-bottom: 2px rgba(0, 0, 0, 0.01) solid;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    @include changa;
+    @include blanco;
+
+    &:hover {
+      transition: 0.5s;
+      border-bottom: 2px #f36f21 solid;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+// @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+@include min-media(320px, portrait) {
+  .nav {
+    height: 15vh;
+    background-size: 28vw;
+    align-content: flex-end;
+    &__link {
+      font-size: 0.9rem;
+      margin: 0 4.5vw 1.8vw;
+    }
+  }
+}
+
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+// @media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+@include min-media(568px, landscape) {
+  .nav {
+    height: 16vh;
+    background-size: 17vw;
+    justify-content: center;
+    align-content: flex-end;
+    &__link {
+      font-size: 0.85rem;
+      margin: 0 1.5vw;
+      padding: 0.6vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+// @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+@include min-media(768px, portrait) {
+  /* Contenedores principales
+========================================================================== */
+  h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.2rem;
+  }
+
+  .nav {
+    justify-content: center;
+    align-content: flex-end;
+    height: 8vh;
+    background-size: 18vw;
+    padding-left: 0;
+      &__link {
+        font-size: 1.1rem;
+        margin: 0 1.5vw;
+      }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+// @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+@include min-media(1024px, landscape) {
+  /* Contenedores principales
+========================================================================== */
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .nav {
+    height: 12vh;
+    align-content: center;
+    &__link {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+// @media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+@include min-media(1280px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .nav {
+    height: 14vh;
+    background-size: 16vw;
+    &__link {
+      font-size: 1.2rem;
+    }
+  }
+}

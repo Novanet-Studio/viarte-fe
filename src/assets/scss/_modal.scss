@@ -1,0 +1,150 @@
+@import "./mixins";
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 200ms;
+
+  /* Modal Content/Box */
+  &__content {
+    @include flex;
+    @include gris-claro-bg;
+    width: 80%;
+    padding: 2vh;
+    margin: 10vh auto; /* 15% from the top and centered */
+    position: relative;
+    top: 10%;
+  }
+
+  &__btn-close {
+    @include blanco;
+    @include azul-bg;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: pointer;
+      @include naranja-bg;
+      transition: 1s;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
+  .modal {
+    &__btn-close {
+      padding: 0.2vh 2.6vw;
+    }
+    &__image {
+      width: 50%;
+      margin-bottom: 2vw;
+    }
+    &__text {
+      display: block;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
+  .modal {
+    flex-direction: row;
+
+    &__btn-close {
+      padding: 0.2vh 1vw;
+    }
+    &__image {
+      width: 27vw;
+      height: 27vw;
+    }
+    &__body {
+      width: 62%;
+      padding-left: 2vh;
+    }
+    &__text {
+      font-size: 0.85rem;
+      line-height: 1.3rem;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
+  .modal {
+    &__btn-close {
+      padding: 0.2vh 1vw;
+    }
+    &__image {
+      width: 27vw;
+      height: 27vw;
+      margin-bottom: 0;
+    }
+    &__body {
+      width: 55%;
+      padding-left: 2.5vw;
+    }
+    &__title {
+      font-size: 1.6rem;
+      padding: 0 0 0.5vh 0;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
+  .modal {
+    &__btn-close {
+      padding: 0.2vh 1vw;
+    }
+    &__text {
+      font-size: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
+  .modal {
+    &__btn-close {
+      padding: 0.2vh 0.5vw;
+    }
+    &__image {
+      max-width: 300px;
+      max-height: 300px;
+    }
+    &__title {
+      font-size: 1.4rem;
+    }
+    &__text {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      font-weight: 500;
+    }
+  }
+}

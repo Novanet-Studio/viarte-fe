@@ -1,10 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Carousel } from "antd"
 import ReactMarkdown from "react-markdown"
-import Logo from "../assets/images/viarte-logo.svg"
+
+import { graphql } from "gatsby"
+import { Carousel } from "antd"
+
+import Layout from "~/components/layout"
+import SEO from "~/components/seo"
+import Logo from "~/assets/images/viarte-logo.svg"
 import "./index.scss"
 
 const settings = {
@@ -28,12 +30,12 @@ const IndexPage = ({ data }) => (
       alt={data.strapiHome.seo_image.alt}
     >
       <h1>{data.strapiHome.seo.title}</h1>
-      <div className="inicio__logo">
-        <img src={Logo} alt="logo viarte" />
+      <div className="inicio__logo-contenedor">
+        <img className="inicio__logo" src={Logo} alt="logo viarte" />
       </div>
       <Carousel {...settings}>
         {data.strapiHome.message.map((document) => (
-          <div className="inicio__carouseltxt" key={document.id}>
+          <div className="inicio__carousel-txt" key={document.id}>
             <ReactMarkdown source={document.content} escapeHtml={false} />
           </div>
         ))}

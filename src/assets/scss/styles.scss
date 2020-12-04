@@ -3,4 +3,9 @@
 @import "./antd";
 @import "./mixins";
 @import "./general";
-@import "./containers";
+
+// Layout
+@import "./header";
+@import "./main";
+@import "./footer";
+// @import "./containers";

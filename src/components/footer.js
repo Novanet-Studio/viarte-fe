@@ -31,13 +31,14 @@ const Footer = () => (
       }
     `}
     render={(data) => (
-      <footer>
+      <footer className="footer">
         <div className="footer__contenedor">
           <div className="footer__rrss">
             {data.strapiContact.contact.map((document) => (
-              <div className="footer__rrssbtn" key={document.id}>
+              <div className="footer__rrss-btn" key={document.id}>
                 <a
                   href={document.link}
+                  className="footer__rrss-link"
                   rel="noopener noreferrer"
                   target="_blank"
                   aria-label={`Ir a ${document.content}`}
@@ -54,16 +55,17 @@ const Footer = () => (
               </div>
             ))}
           </div>
-          <p>
+          <p className="footer__texto">
             viarte.net - Derechos reservados - {new Date().getFullYear()} |
             Desarrollado por:
             <a
               href="https://novanet.studio"
+              className="footer__link-novanet"
               target="_blank"
               rel="noopener noreferrer"
             >
               &nbsp;
-              <img src={data.logonn.publicURL} />
+              <img className="footer__logo-novanet" src={data.logonn.publicURL} />
             </a>
           </p>
         </div>

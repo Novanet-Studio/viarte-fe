@@ -1,49 +1,52 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../../../components/layout"
+import { Link, graphql } from "gatsby"
+
+import Layout from "~/components/layout"
 import GoogleMap from "./googleMap"
+
+import "./mapa.scss"
 
 const MapaTemplate = ({ data }) => (
   <Layout>
     <div className="vallas">
       <div className="contenedor">
-        <div className="vallas__ficha">
-          <div className="vallas__ficha-inf">
+        <div className="ficha">
+          <div className="ficha__info">
             <Link className="boton-regreso" to="../../mapas/">
               « Volver
             </Link>
-            <h1>{data.strapiMap.location}</h1>
-            <ul className="vallas__ficha-lista">
-              <li className="vallas__ficha-item">
+            <h1 className="ficha__titulo">{data.strapiMap.location}</h1>
+            <ul className="ficha__lista">
+              <li className="ficha__item">
                 {" "}
-                <span>Dirección </span>
+                <span className="ficha__nombre">Dirección </span>
                 {data.strapiMap.direction}
               </li>
-              <li className="vallas__ficha-item">
-                <span>Código </span>
+              <li className="ficha__item">
+                <span className="ficha__nombre">Código </span>
                 {data.strapiMap.code}
               </li>
-              <li className="vallas__ficha-item">
-                <span>Ciudad </span>
+              <li className="ficha__item">
+                <span className="ficha__nombre">Ciudad </span>
                 {data.strapiMap.ciudad}
               </li>
-              <li className="vallas__ficha-item">
-                <span>Municipio </span>
+              <li className="ficha__item">
+                <span className="ficha__nombre">Municipio </span>
                 {data.strapiMap.municipio}
               </li>
-              <li className="vallas__ficha-item">
-                <span>Medidas </span>
+              <li className="ficha__item">
+                <span className="ficha__nombre">Medidas </span>
                 {data.strapiMap.medidas}
               </li>
             </ul>
             <Img
-              className="vallas__ficha-img"
+              className="ficha__img"
               fluid={data.strapiMap.imagen.childImageSharp.fluid}
             />
           </div>
           <GoogleMap
-            className="vallas__ficha-mapa"
+            className="ficha__mapa"
             lat={Number(data.strapiMap.lat)}
             lng={Number(data.strapiMap.lng)}
             center={[Number(data.strapiMap.lat), Number(data.strapiMap.lng)]}

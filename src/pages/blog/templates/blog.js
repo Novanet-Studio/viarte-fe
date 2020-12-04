@@ -1,9 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../../../components/layout"
-import SEO from "../../../components/seo"
 import ReactMarkdown from "react-markdown"
+import { Link, graphql } from "gatsby"
+
+import Layout from "~/components/layout"
+import SEO from "~/components/seo"
+
 import "./blog.scss"
 
 export default class Blog extends React.Component {
@@ -35,16 +37,17 @@ export default class Blog extends React.Component {
 
             {/* ====== Entrada destacada ====== */}
             {destacado.map((item) => (
-              <div className="blog__destacado" key={item.node.id}>
-                <Link to={`/blog/${item.node.Slug}`}>
+              <div className="destacado" key={item.node.id}>
+                <Link className="destacado__link" to={`/blog/${item.node.Slug}`}>
                   <Img
+                    className="destacado__imagen"
                     fluid={item.node.image.childImageSharp.fluid}
                     title={item.node.seo_image.title}
                     alt={item.node.seo_image.alt}
                   />
-                  <div className="blog__destacadotexto">
-                    <h2>{item.node.title}</h2>
-                    <p className="blog__destacadotexto-fecha">
+                  <div className="destacado__texto">
+                    <h2 className="destacado__titulo">{item.node.title}</h2>
+                    <p className="destacado__fecha">
                       {item.node.date}
                     </p>
                     <ReactMarkdown
@@ -61,17 +64,18 @@ export default class Blog extends React.Component {
             ))}
 
             {/* ====== Entradas no destacadas ====== */}
-            <ul id="Entradas" className="blog__entradas">
+            <ul id="Entradas" className="entradas">
               {noDestacados.map((item) => (
-                <li key={item.node.id}>
-                  <Link to={`/blog/${item.node.Slug}`}>
+                <li className="entradas__lista" key={item.node.id}>
+                  <Link className="entradas__link" to={`/blog/${item.node.Slug}`}>
                     <Img
+                      className="entradas__imagen"
                       fluid={item.node.image.childImageSharp.fluid}
                       title={item.node.seo_image.title}
                       alt={item.node.seo_image.alt}
                     />
-                    <h3>{item.node.title}</h3>
-                    <p className="blog__destacadotexto-fecha">
+                    <h3 className="entradas__titulo">{item.node.title}</h3>
+                    <p className="entradas__fecha">
                       {item.node.date}
                     </p>
                     <ReactMarkdown
@@ -85,18 +89,20 @@ export default class Blog extends React.Component {
                 </li>
               ))}
             </ul>
-            <div className="blog__pag">
+
+            <div className="paginacion">
               {!isFirst && (
                 <Link
-                  className="pag__ant"
+                  className="paginacion__ant"
                   to={`${prevPage}#Entradas`}
                   rel="prev"
                 >
-                  <span>◀</span>
+                  <span className="paginacion__indicador">◀</span>
                 </Link>
               )}
               {Array.from({ length: numPages }, (_, i) => (
                 <Link
+                  className="paginacion__numero"
                   key={`pagination-number${i + 1}`}
                   to={`/blog/${i === 0 ? "" : i + 1}#Entradas`}
                 >
@@ -106,11 +112,11 @@ export default class Blog extends React.Component {
 
               {!isLast && (
                 <Link
-                  className="pag__sig"
+                  className="paginacion__sig"
                   to={`${nextPage}#Entradas`}
                   rel="next"
                 >
-                  <span>▶</span>
+                  <span className="paginacion__indicador">▶</span>
                 </Link>
               )}
             </div>

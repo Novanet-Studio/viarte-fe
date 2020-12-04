@@ -1,0 +1,45 @@
+main > div {
+  @include flex;
+  @include center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+@include min-media(320px, portrait) {
+
+  main > div {
+    .contenedor {
+      padding: 22vh 6vw;
+      @include w-full;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+@include min-media(568px, landscape) {
+  main > div {
+    .contenedor {
+      padding: 25vh 4vw;
+      @include w-full;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+@include min-media(768px, portrait) {
+  main > div {
+    .contenedor {
+      padding: 12vh 2.7vw 12vh 2.7vw;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
+  main {
+    .contenedor {
+      padding: 15vh 0;
+    }
+  }
+}

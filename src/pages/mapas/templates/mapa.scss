@@ -1,0 +1,153 @@
+@import "../../../assets/scss/mixins";
+
+.ficha {
+  @include w-full;
+  @include flex;
+  justify-content: space-between;
+
+  &__info {
+    @include flex;
+    align-content: flex-start;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  &__titulo {
+    display: block;
+    @include naranja;
+    background: none;
+  }
+
+  &__item {
+    font-weight: 400;
+    @include lato;
+    @include gris;
+  }
+
+  &__nombre {
+    @include azul;
+    font-weight: 600;
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
+  .ficha {
+    &__info {
+      padding: 2vh;
+    }
+
+    &__titulo {
+      @include w-full;
+      font-size: 1.3rem;
+      padding-bottom: 0.5vh;
+    }
+
+    &__item {
+      padding: 0.5vh 0;
+      font-size: 0.8rem;
+      line-height: 1.3rem;
+    }
+
+    &__img {
+      flex: 0 0 100%;
+      margin-top: 3vh;
+    }
+
+    &__mapa {
+      flex: 0 0 100%;
+      height: 46vh;
+      margin-top: 3vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
+  .ficha {
+    &__info {
+      padding: 4vh;
+    }
+    &__titulo {
+      @include w-full;
+      font-size: 1.3rem;
+      padding-bottom: 0.5vh;
+    }
+    &__item {
+      font-size: 0.9rem;
+      padding: 0.5vh 0;
+      line-height: 1.3rem;
+    }
+
+    &__img {
+      flex: 0 0 40%;
+      margin-top: 3vh;
+    }
+
+    &__mapa {
+      flex: 0 0 100%;
+      height: 90vh;
+      margin-top: 5vh;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
+  .ficha {
+    &__info {
+      padding: 1.5vh;
+      flex: 0 0 49%;
+    }
+    &__titulo {
+      font-size: 1.3rem;
+      padding: 0.5vh 0;
+    }
+
+    &__img {
+      flex: 0 0 60%;
+      margin-top: 1.5vh;
+    }
+
+    &__mapa {
+      flex: 0 0 49%;
+      margin-top: 0;
+      height: auto;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
+  .ficha {
+    &__info {
+      padding: 2vh;
+      flex: 0 0 49%;
+    }
+    &__titulo {
+      font-size: 1.5rem;
+      padding-bottom: 0.5vh;
+    }
+
+    &__img {
+      margin-top: 1vh;
+      flex: 0 0 45%;
+    }
+
+    &__mapa {
+      flex: 0 0 49%;
+      margin-top: 0;
+      height: auto;
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
+  .ficha__item {
+    font-size: 1rem;
+  }
+}

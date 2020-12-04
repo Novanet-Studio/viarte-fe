@@ -1,9 +1,11 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Layout from "../components/layout"
 import Img from "gatsby-image"
-import SEO from "../components/seo"
+import { StaticQuery, graphql } from "gatsby"
+
+import Layout from "~/components/layout"
+import SEO from "~/components/seo"
 import "./productos.scss"
+import "~/assets/scss/_modal.scss"
 
 export default function Productos() {
   // When the user clicks on the button, open the modal
@@ -76,23 +78,27 @@ export default function Productos() {
             <div className="contenedor">
               <h1>{data.strapiProduct.seo.title}</h1>
               <p className="descripcion">{data.strapiProduct.description}</p>
-              <ul>
+              <ul className="productos__lista">
                 {data.allStrapiProducto.nodes.map((document) => (
-                  <li key={document.id}>
+                  <li className="productos__item" key={document.id}>
                     <Img
+                      className="productos__imagen"
                       fluid={document.image.childImageSharp.fluid}
                       title={document.seo_image.title}
                       alt={document.seo_image.alt}
                     />
-                    <div className="productos__ficha">
-                      <h2>{document.name}</h2>
+                    <div className="productos__card">
+                      <h2 className="productos__titulo">{document.name}</h2>
                       <button
+                        className="productos__button"
                         tabIndex="0"
                         value={document.id}
                         onClick={(e) => openModal(e.target.value)}
                       >
                         Ver más
                       </button>
+
+                      {/* Modal */}
                       <div
                         id={document.id}
                         role="button"
@@ -101,9 +107,9 @@ export default function Productos() {
                         onClick={(e) => windowClose(e.target.id)}
                         onKeyDown={(e) => windowClose(e.target.id)}
                       >
-                        <div className="modal-content">
+                        <div className="modal__content">
                           <span
-                            className="close"
+                            className="modal__btn-close"
                             role="button"
                             tabIndex="0"
                             onClick={() => closeModal()}
@@ -112,13 +118,14 @@ export default function Productos() {
                             &times;
                           </span>
                           <Img
+                            className="modal__image"
                             fluid={document.image.childImageSharp.fluid}
                             title={document.seo_image.title}
                             alt={document.seo_image.alt}
                           />
-                          <div className="modal-text">
-                            <h2>{document.name}</h2>
-                            <p className="ficha__texto">
+                          <div className="modal__body">
+                            <h2 className="modal__title">{document.name}</h2>
+                            <p className="modal__text ficha__texto">
                               {document.long_description}
                             </p>
                           </div>

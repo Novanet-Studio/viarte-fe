@@ -4,7 +4,8 @@
 .inicio {
   @include center;
   @include img-bg;
-  .inicio__logo {
+
+  &__logo-contenedor {
     @include flex;
     @include center;
     background-image: radial-gradient(
@@ -12,111 +13,124 @@
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0) 70%
     );
-    img {
-      @include w-full;
-    }
   }
+
+  &__logo {
+    @include w-full;
+  }
+
   .ant-carousel {
     @include w-full;
-    .inicio__carouseltxt {
-      p {
-        text-align: center;
-        @include changa;
+  }
+
+  /* Markdown */
+  &__carousel-txt {
+    p {
+      text-align: center;
+      @include changa;
+      @include blanco;
+      @include txt-shadow;
+      a {
         @include blanco;
-        @include txt-shadow;
-        a {
-          @include blanco;
-        }
       }
     }
   }
 }
 
-@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
   .inicio {
     background-image: url(../assets/images/ini-mov-bg.jpg);
-    .inicio__logo {
+    &__logo-contenedor {
       width: 50vw;
       margin-top: -10vh;
       margin-bottom: 25vh;
     }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.2rem;
-          line-height: 1.6rem;
-        }
+
+    /* Markdown */
+    &__carousel-txt {
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
       }
     }
   }
 }
 
-@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
   .inicio {
     background-image: url(../assets/images/ini-lan-bg.jpg);
     background-position: center center;
-    .inicio__logo {
+    &__logo-contenedor {
       width: 30vw;
       margin-top: -10vh;
       margin-bottom:12vh;
     }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.35rem;
-        }
+
+    /* Markdown */
+    &__carousel-txt {
+      p {
+        font-size: 1.35rem;
       }
     }
   }
 }
 
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
   .inicio {
     background-image: url(../assets/images/ini-tab-bg.jpg);
-    .inicio__logo {
+    &__logo-contenedor {
       width: 32vw;
       margin-top: -16vh;
       margin-bottom: 17vh;
     }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.55rem;
-        }
+
+    /* Markdown */
+    &__carousel-txt {
+      p {
+        font-size: 1.55rem;
       }
     }
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
   .inicio {
-    .inicio__logo {
+    &__logo-contenedor {
       width: 22vw;
     }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.6rem;
-        }
+
+    /* Markdown */
+    &__carousel-txt {
+      p {
+        font-size: 1.6rem;
       }
     }
   }
 }
 
-@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
   .inicio {
     background-image: url(../assets/images/ini-desk-bg.jpg);
     background-position: bottom center;
-    .inicio__logo {   
+    &__logo-contenedor {   
       width: 18vw;   
       margin-top: -20vh;
       margin-bottom: 14vh;
     }
-    .ant-carousel {
-      .inicio__carouseltxt {
-        p {
-          font-size: 1.8rem;
-        }
+
+    /* Markdown */
+    &__carousel-txt {
+      p {
+        font-size: 1.8rem;
       }
     }
   }

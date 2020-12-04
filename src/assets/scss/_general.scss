@@ -71,3 +71,106 @@ a {
   @include azul;
   border: none;
 }
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
+  .descripcion {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    padding-bottom: 2.7vh;
+  }
+  .ficha__texto {
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+  }
+
+  .boton-regreso {
+    font-size: 0.8rem;
+    padding-bottom: 1vh;
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
+  .descripcion {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    padding-bottom: 4.5vh;
+  }
+  .ficha__texto {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+
+  .boton-regreso {
+    font-size: 0.8rem;
+    padding-bottom: 1.5vh;
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
+  h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.2rem;
+  }
+
+  .descripcion {
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    padding-bottom: 2vh;
+  }
+  .ficha__texto {
+    font-size: 0.95rem;
+    line-height: 1.25rem;
+  }
+
+  .boton-regreso {
+    font-size: 0.9rem;
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+
+@include min-media(1024px, landscape) {
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  .descripcion {
+    font-size: 1.2rem;
+    padding-bottom: 1.7vh;
+  }
+  .ficha__texto {
+    font-size: 0.85rem;
+  }
+}
+
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  .descripcion {
+    font-size: 1.45rem;
+  }
+
+  .ficha__texto {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    padding-top: 0.5vh;
+  }
+
+  .boton-regreso {
+    font-size: 0.85rem;
+  }
+}

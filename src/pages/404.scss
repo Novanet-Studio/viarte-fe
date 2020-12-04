@@ -3,12 +3,14 @@
 .perdido {
   @include img-bg;
   @include w-full;
-  .contenedor {
+
+  &__contenedor {
     @include flex;
     @include gris-claro-bg;
     align-items: center;
     align-content: flex-start;
   }
+
   &__boton {
     @include lato;
     @include blanco;
@@ -20,21 +22,24 @@
   }
 }
 
-@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
   .perdido {
-    .contenedor {
+    background-image: url(../assets/images/404-mov-bg.jpg);
+    &__contenedor {
       width: 90%;
       padding: 2vh;
-      h2 {
-        float: 0 0 65%;
-        padding-left: 1vh;
-      }
-      p {
-        padding-top: 1.5vh;
-        padding-bottom: 1.3vh;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
-      }
+    }
+    &__titulo {
+      flex: 0 0 65%;
+      padding-left: 1vh;
+    }
+    &__texto {
+      padding-top: 1.5vh;
+      padding-bottom: 1.3vh;
+      font-size: 0.85rem;
+      line-height: 1.2rem;
     }
     &__icono {
       width: 15vw;
@@ -44,24 +49,27 @@
       padding: 1vh;
       font-size: 0.7rem;
     }
-    background-image: url(../assets/images/404-mov-bg.jpg);
   }
 }
 
-@media only screen and (min-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
   .perdido {
-    .contenedor {
+    background-image: url(../assets/images/404-lan-bg.jpg);
+    background-position: center center;
+    &__contenedor {
       width: 70%;
       padding: 4vh;
-      h2 {
-        padding-left: 2vh;
-      }
-      p {
-        padding-top: 2.5vh;
-        padding-bottom: 2vh;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
-      }
+    }
+    &__titulo {
+      padding-left: 2vh;
+    }
+    &__texto {
+      padding-top: 2.5vh;
+      padding-bottom: 2vh;
+      font-size: 0.85rem;
+      line-height: 1.2rem;
     }
     &__icono {
       width: 7vw;
@@ -71,20 +79,20 @@
       padding: 1.5vh;
       font-size: 0.7rem;
     }
-    background-image: url(../assets/images/404-lan-bg.jpg);
-    background-position: center center;
   }
 }
 
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
   .perdido {
     background-image: url(../assets/images/404-tab-bg.jpg);
-    .contenedor {
+    &__contenedor {
       width: 70%;
-      p {
-        font-size: 0.95rem;
-        line-height: 1.4rem;
-      }
+    }
+    &__texto {
+      font-size: 0.95rem;
+      line-height: 1.4rem;
     }
     &__icono {
       width: 6vw;
@@ -97,19 +105,20 @@
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+@include min-media(1024px, landscape) {
   .perdido {
-    .contenedor {
+    &__contenedor {
       padding: 2vh;
-      h2 {
-        padding-left: 1vh;
-      }
-      p {
-        padding-top: 1.6vh;
-        padding-bottom: 1.4vh;
-        font-size: 1rem;
-        line-height: 1.4rem;
-      }
+    }
+    &__titulo {
+      padding-left: 1vh;
+    }
+    &__texto {
+      padding-top: 1.6vh;
+      padding-bottom: 1.4vh;
+      font-size: 1rem;
+      line-height: 1.4rem;
     }
     &__icono {
       width: 6vw;
@@ -122,10 +131,12 @@
   }
 }
 
-@media only screen and (min-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
   .perdido {
     background-image: url(../assets/images/404-desk-bg.jpg);
-    .contenedor {
+    &__contenedor {
       width: 50%;
     }
     &__icono {

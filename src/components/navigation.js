@@ -10,9 +10,10 @@ const linkActivo = {
 const linkStyles = {}
 
 const Navigation = () => (
-  <nav>
+  <nav className="nav">
     <AniLink
       cover
+      className="nav__link"
       direction="right"
       duration={0.55}
       bg="#f36f21"
@@ -24,6 +25,7 @@ const Navigation = () => (
     </AniLink>
     <AniLink
       cover
+      className="nav__link"
       direction="left"
       duration={0.55}
       bg="#00a5e7"
@@ -38,6 +40,7 @@ const Navigation = () => (
     </AniLink>
     <AniLink
       cover
+      className="nav__link"
       direction="right"
       duration={0.55}
       to="/productos"
@@ -51,6 +54,7 @@ const Navigation = () => (
     </AniLink>
     <AniLink
       cover
+      className="nav__link"
       direction="left"
       duration={0.55}
       bg="#00a5e7"
@@ -65,6 +69,7 @@ const Navigation = () => (
     </AniLink>
     <AniLink
       cover
+      className="nav__link"
       direction="right"
       duration={0.55}
       to="/blog"
@@ -78,6 +83,7 @@ const Navigation = () => (
     </AniLink>
     <AniLink
       cover
+      className="nav__link"
       direction="left"
       duration={0.55}
       to="/contacto"

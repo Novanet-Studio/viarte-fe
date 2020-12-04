@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+
+import Layout from "~/components/layout"
+import SEO from "~/components/seo"
 import "./nosotros.scss"
 
 const Nosotros = ({ data }) => (
@@ -15,16 +16,17 @@ const Nosotros = ({ data }) => (
       <h1>{data.strapiAbout.seo.title}</h1>
       <div className="contenedor">
         <p className="descripcion">{data.strapiAbout.description}</p>
-        <ul>
+        <ul className="nosotros__lista">
           {data.strapiAbout.Statement.map((document) => (
-            <li key={document.id} className="nosotros__ficha">
+            <li key={document.id} className="nosotros__ficha nosotros__item">
               <img
+                className="nosotros__icono"
                 src={document.image.publicURL}
                 title={document.seo_image.title}
                 alt={document.seo_image.alt}
               />
-              <h2>{document.title}</h2>
-              <p className="ficha__texto">{document.description}</p>
+              <h2 className="nosotros__titulo">{document.title}</h2>
+              <p className="ficha__texto nosotros__texto">{document.description}</p>
             </li>
           ))}
         </ul>

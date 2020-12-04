@@ -1,0 +1,244 @@
+@import "../../../assets/scss/mixins";
+
+.post {
+  @include img-bg;
+
+  &__contenedor {
+    @include gris-claro-bg;
+    font-weight: 400;
+  }
+}
+
+.cabecera {
+  position: relative;
+  @include flex;
+
+  &__titulo {
+    display: block;
+    font-size: 1.35rem;
+  }
+
+  &__fecha {
+    @include w-full;
+    @include azul;
+    font-size: 0.75rem;
+    padding-top: 1vh;
+  }
+}
+
+.contenido {
+  /* Markdown */
+  h2,
+  h3 {
+    padding: 2.5vh 0 0;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  p {
+    padding-top: 1vh;
+  }
+  a {
+    @include azul;
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: disc;
+    padding: 2vh 0 0 3vh;
+    li {
+      @include lato;
+      @include gris;
+      font-weight: 500;
+    }
+  }
+}
+
+.social {
+  @include w-full;
+  margin-top: 1vh;
+  &__titulo {
+    font-size: 1.1rem;
+    margin-bottom: 1vh;
+    @include azul;
+  }
+  &__boton {
+    margin-right: 0.5vw;
+  }
+}
+
+/*-------------------------------------------- Mobile Portrait --------------------------------------------*/
+
+@include min-media(320px, portrait) {
+  .post {
+    background-image: url(../../../assets/images/blog-mov-bg.jpg);
+    &__imagen {
+      margin-bottom: 1.5vh;
+    }
+
+    &__contenedor {
+      padding: 2.5vh;
+    }
+
+    p {
+      padding-top: 1vh;
+    }
+  }
+
+  .cabecera {
+    &__titulo {
+      padding: 2vh 0 2vh 2vh;
+      margin-top: 0.5vh;
+    }
+    &__fecha {
+      margin-top: 0.5vh;
+    }
+  }
+
+  .contenido {
+    padding-top: 0.5vh;
+  }
+}
+
+/*-------------------------------------------- Mobile Landscape --------------------------------------------*/
+
+@include min-media(568px, landscape) {
+  .post {
+    background-image: url(../../../assets/images/blog-lan-bg.jpg);
+
+    &__contenedor {
+      @include flex;
+      padding: 4vh;
+    }
+
+    &__imagen {
+      order: 2;
+      @include w-half;
+      height: 52vh;
+    }
+  }
+
+  .cabecera {
+    @include post-principal;
+    &__fecha {
+      align-self: flex-start;
+      margin: -1.5vh 2vw 0 0;
+    }
+    .boton-regreso {
+      @include w-full;
+      align-self: flex-start;
+      text-align: left;
+    }
+  }
+
+  .contenido {
+    order: 3;
+    margin-top: 4vh;
+  }
+}
+
+/*-------------------------------------------- Tablet Portrait --------------------------------------------*/
+
+@include min-media(768px, portrait) {
+  .post {
+    background-image: url(../../../assets/images/blog-tab-bg.jpg);
+
+    &__contenedor {
+      padding: 2vh;
+      @include flex;
+    }
+
+    &__imagen {
+      order: 2;
+      @include w-half;
+      height: auto;
+    }
+  }
+
+  .cabecera {
+    @include post-principal;
+    &__fecha {
+      font-size: 0.9rem;
+      margin: -10.5vh 2vw 0 0;
+    }
+    .boton-regreso {
+      @include absolute;
+    }
+  }
+
+  .contenido {
+    order: 3;
+    font-size: 1.05rem;
+
+    /* Markdown */
+    p {
+      font-size: 1rem;
+      line-height: 1.6rem;
+    }
+  }
+}
+
+/*-------------------------------------------- Tablet Landscape --------------------------------------------*/
+
+@include min-media(1024px, landscape) {
+  .post {
+    .contenedor {
+      padding: 20vh 0 15vh 0;
+      width: 90vw;
+    }
+
+    &__contenedor {
+      padding: 2vw;
+    }
+
+    &__imagen {
+      @include w-half;
+      height: auto;
+    }
+  }
+
+  .contenido {
+    margin-top: 2vh;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+
+    p {
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------- Desktop responsive --------------------------------------------*/
+
+@include min-media(1280px) {
+  .post {
+    background-image: url(../../../assets/images/blog-desk-bg.jpg);
+    .contenedor {
+      width: 80vw;
+    }
+
+    &__imagen {
+      width: 50%;
+      height: 40vh;
+    }
+  }
+
+  .cabecera {
+    &__titulo {
+      font-size: 1.7rem;
+    }
+
+    &__fecha {
+      font-size: 1rem;
+    }
+  }
+
+  .ficha__texto {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 200;
+  }
+}
