@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import GoogleMap from "./templates/googleMap"
-import "./mapas.less"
+import "./mapas.scss"
 
 const Mapas = ({ data }) => {
   const locations = {

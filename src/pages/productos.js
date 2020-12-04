@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
-import "./productos.less"
+import "./productos.scss"
 
 export default function Productos() {
   // When the user clicks on the button, open the modal

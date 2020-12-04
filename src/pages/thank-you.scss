@@ -1,16 +1,16 @@
-@import "../assets/css/styles.less";
+@import "../assets/scss/mixins";
 
 .gracias {
-  .img-bg();
-  .w-full();
+  @include img-bg;
+  @include w-full;
   .contenedor {
-    .gris-claro-bg();
+    @include gris-claro-bg;
     text-align: right;
   }
   &__boton {
-    .lato();
-    .blanco();
-    .azul-bg;
+    @include lato;
+    @include blanco;
+    @include azul-bg;
     cursor: pointer;
     font-weight: 600;
     border: none;

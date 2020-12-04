@@ -1,16 +1,16 @@
-@import "../assets/css/styles.less";
+@import "../assets/scss/mixins";
 
 .productos {
   flex-direction: row;
   justify-content: left;
-  .img-bg();
+  @include img-bg;
   align-items: flex-end;
   ul {
-    .flex();
+    @include flex;
     justify-content: space-between;
     li {
-      .flex();
-      .gris-claro-bg();
+      @include flex;
+      @include gris-claro-bg;
       flex: 0 0 31.5%;
       padding: 2vh;
       .gatsby-image-wrapper {
@@ -21,8 +21,8 @@
         width: 60%;
         button {
           cursor: pointer;
-          .lato();
-          .azul();
+          @include lato;
+          @include azul;
           width: fit-content;
           align-self: center;
           border: none;
@@ -54,10 +54,10 @@
 
   /* Modal Content/Box */
   .modal-content {
-    .flex();
+    @include flex;
+    @include gris-claro-bg;
     width: 80%;
     padding: 2vh;
-    .gris-claro-bg();
     margin: 10vh auto; /* 15% from the top and centered */
     position: relative;
     top: 10%;
@@ -74,11 +74,11 @@
 
   /* The Close Button */
   .close {
-    .blanco();
+    @include blanco;
+    @include azul-bg;
     float: right;
     font-size: 25px;
     font-weight: bold;
-    .azul-bg();
     position: absolute;
     top: 0;
     right: 0;
@@ -88,7 +88,7 @@
   .close:focus {
     text-decoration: none;
     cursor: pointer;
-    .naranja-bg();
+    @include naranja-bg;
     transition: 1s;
   }
 }
@@ -96,7 +96,7 @@
 @media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
   .productos {
     background-image: url(../assets/images/pro-mov-bg.jpg);
-    .w-full();
+    @include w-full;
     h2 {
       font-size: 1rem;
     }
@@ -105,7 +105,7 @@
         flex: 0 0 48%;
         margin-bottom: 2vh;
         .gatsby-image-wrapper {
-          .w-full();
+          @include w-full;
           height: auto;
         }
         .productos__ficha {
@@ -190,7 +190,7 @@
       margin-bottom: 12vh;
     }
     ul {
-      .flex();
+      @include flex;
       li {
         flex: 0 0 48%;
         margin-bottom: 3.2%;
@@ -266,7 +266,7 @@
     background-size: cover;
     padding-top: 5vh;
     .contenedor {
-      .flex();
+      @include flex;
       width: 66%;
       .descripcion {
         text-align: right;
