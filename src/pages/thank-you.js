@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Gracias from "../assets/images/gracias-icono.svg"
-import "./thank-you.less"
+import "./thank-you.scss"
 
 const ThankYouPage = () => (
   <Layout>

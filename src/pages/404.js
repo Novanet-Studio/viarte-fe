@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Perdido from "../assets/images/404-icono.svg"
-import "./404.less"
+import "./404.scss"
 
 const NotFoundPage = () => (
   <Layout>

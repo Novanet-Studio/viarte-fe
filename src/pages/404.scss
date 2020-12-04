@@ -4,7 +4,10 @@
   @include img-bg;
   @include w-full;
   .contenedor {
+    @include flex;
     @include gris-claro-bg;
+    align-items: center;
+    align-content: flex-start;
   }
   &__boton {
     @include lato;
@@ -23,15 +26,19 @@
       width: 90%;
       padding: 2vh;
       h2 {
-        font-size: 1.3rem;
-        padding-bottom: 1vh;
-        line-height: 1.4rem;
+        float: 0 0 65%;
+        padding-left: 1vh;
       }
       p {
-        font-size: 0.9rem;
-        line-height: 1.3rem;
-        padding-bottom: 1.5vh;
+        padding-top: 1.5vh;
+        padding-bottom: 1.3vh;
+        font-size: 0.85rem;
+        line-height: 1.2rem;
       }
+    }
+    &__icono {
+      width: 15vw;
+      height: 15vw;
     }
     &__boton {
       padding: 1vh;
@@ -45,19 +52,23 @@
   .perdido {
     .contenedor {
       width: 70%;
-      padding: 2.5vh 2.5vh 3vh 2.5vh;
+      padding: 4vh;
       h2 {
-        font-size: 1.3rem;
-        padding-bottom: 1.5vh;
+        padding-left: 2vh;
       }
       p {
-        font-size: 0.9rem;
-        line-height: 1.3rem;
+        padding-top: 2.5vh;
         padding-bottom: 2vh;
+        font-size: 0.85rem;
+        line-height: 1.2rem;
       }
     }
+    &__icono {
+      width: 7vw;
+      height: 7vw;
+    }
     &__boton {
-      padding: 1vh 1.5vh;
+      padding: 1.5vh;
       font-size: 0.7rem;
     }
     background-image: url(../assets/images/404-lan-bg.jpg);
@@ -70,13 +81,18 @@
     background-image: url(../assets/images/404-tab-bg.jpg);
     .contenedor {
       width: 70%;
-      h2 {
-        font-size: 1.6rem !important;
-      }
       p {
-        font-size: 1.1rem;
-        line-height: 1.7rem;
+        font-size: 0.95rem;
+        line-height: 1.4rem;
       }
+    }
+    &__icono {
+      width: 6vw;
+      height: 6vw;
+    }
+    &__boton {
+      padding: 0.5vh 1vh;
+      font-size: 0.8rem;
     }
   }
 }
@@ -84,17 +100,24 @@
 @media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   .perdido {
     .contenedor {
+      padding: 2vh;
       h2 {
-        font-size: 1.7rem;
-        line-height: 1.6rem;
+        padding-left: 1vh;
       }
       p {
-        font-size: 1.25rem;
-        line-height: 1.7rem;
+        padding-top: 1.6vh;
+        padding-bottom: 1.4vh;
+        font-size: 1rem;
+        line-height: 1.4rem;
       }
     }
+    &__icono {
+      width: 6vw;
+      height: 6vw;
+    }
     &__boton {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      padding: 1vh;
     }
   }
 }
@@ -104,6 +127,10 @@
     background-image: url(../assets/images/404-desk-bg.jpg);
     .contenedor {
       width: 50%;
+    }
+    &__icono {
+      width: 4vw;
+      height: 4vw;
     }
   }
 }
