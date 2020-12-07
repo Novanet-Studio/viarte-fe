@@ -1,11 +1,11 @@
 import React from "react"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
+import Modal from "../components/modal"
 
 import Layout from "~/components/layout"
 import SEO from "~/components/seo"
 import "./productos.scss"
-import "~/assets/scss/_modal.scss"
 
 export default function Productos() {
   // When the user clicks on the button, open the modal
@@ -97,40 +97,11 @@ export default function Productos() {
                       >
                         Ver más
                       </button>
-
-                      {/* Modal */}
-                      <div
-                        id={document.id}
-                        role="button"
-                        tabIndex="0"
-                        className="modal"
-                        onClick={(e) => windowClose(e.target.id)}
-                        onKeyDown={(e) => windowClose(e.target.id)}
-                      >
-                        <div className="modal__content">
-                          <span
-                            className="modal__btn-close"
-                            role="button"
-                            tabIndex="0"
-                            onClick={() => closeModal()}
-                            onKeyDown={() => closeModal()}
-                          >
-                            &times;
-                          </span>
-                          <Img
-                            className="modal__image"
-                            fluid={document.image.childImageSharp.fluid}
-                            title={document.seo_image.title}
-                            alt={document.seo_image.alt}
-                          />
-                          <div className="modal__body">
-                            <h2 className="modal__title">{document.name}</h2>
-                            <p className="modal__text ficha__texto">
-                              {document.long_description}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                      <Modal 
+                        document={document}
+                        closeModal={closeModal}
+                        windowClose={windowClose}
+                      />
                     </div>
                   </li>
                 ))}
