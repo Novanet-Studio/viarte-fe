@@ -23,7 +23,7 @@ const EntradaTemplate = ({ data }) => (
   <Layout>
     <SEO
       title={data.strapiEntrada.title}
-      description={data.strapiEntrada.description}
+      description={data.strapiEntrada.seo_description}
       image={data.strapiEntrada.image.publicURL}
     />
     <div className="post">
@@ -47,6 +47,7 @@ const EntradaTemplate = ({ data }) => (
               className="ficha__texto"
               source={data.strapiEntrada.description}
               escapeHtml={false}
+              linkTarget="_blank"
             />
             <div className="social">
               <h3 className="social__titulo">Comparte este artículo</h3>
@@ -98,6 +99,7 @@ export const query = graphql`
           }
         }
       }
+      seo_description
       seo_image {
         title
         alt

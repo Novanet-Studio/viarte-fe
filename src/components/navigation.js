@@ -9,92 +9,86 @@ const linkActivo = {
 
 const linkStyles = {}
 
+const getPropsFn = ({ isPartiallyCurrent }) => isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
+
+const links = [
+  {
+    cover: true,
+    className: 'nav__link',
+    direction: 'right',
+    duration: 0.55,
+    bg: '#f36f21',
+    to: '/',
+    activeStyle: linkActivo,
+    ariaLabel: 'Ir al vinculo de Inicio',
+    text: 'Inicio',
+  },
+  {
+    cover: true,
+    className: 'nav__link',
+    direction: 'left',
+    duration: 0.55,
+    bg: '#00a5e7',
+    to: '/nosotros',
+    activeStyle: linkActivo,
+    ariaLabel: 'Ir al vinculo de Nosotros',
+    getProps: getPropsFn,
+    text: 'Nosotros',
+  },
+  {
+    cover: true,
+    className: 'nav__link',
+    direction: 'right',
+    duration: 0.55,
+    to: '/productos',
+    activeStyle: linkActivo,
+    ariaLabel: 'Ir al vinculo de Productos',
+    getProps: getPropsFn,
+    text: 'Productos',
+  },
+  {
+    cover: true,
+    className: 'nav__link',
+    direction: 'left',
+    duration: 0.55,
+    bg: '#00a5e7',
+    to: '/mapas',
+    activeStyle: linkActivo,
+    ariaLabel: 'Ir al vinculo de Vallas',
+    getProps: getPropsFn,
+    text: 'Vallas',
+  },
+  {
+    cover: true,
+    className: 'nav__link',
+    direction: 'right',
+    duration: 0.55,
+    to: '/blog',
+    activeStyle: linkActivo,
+    ariaLabel: 'Ir al vinculo de Blog',
+    getProps: getPropsFn,
+    text: 'Blog',
+  },
+  {
+    cover: true,
+    className: 'nav__link',
+    direction: 'left',
+    duration: 0.55,
+    to: '/contacto',
+    activeStyle: linkActivo,
+    ariaLabel: 'Ir al vinculo de Contacto',
+    getProps: getPropsFn,
+    text: 'Contacto',
+  },
+]
+
 const Navigation = () => (
   <nav className="nav">
-    <AniLink
-      cover
-      className="nav__link"
-      direction="right"
-      duration={0.55}
-      bg="#f36f21"
-      to="/"
-      activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Inicio"
-    >
-      Inicio
-    </AniLink>
-    <AniLink
-      cover
-      className="nav__link"
-      direction="left"
-      duration={0.55}
-      bg="#00a5e7"
-      to="/nosotros"
-      activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Nosotros"
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
-      }
-    >
-      Nosotros
-    </AniLink>
-    <AniLink
-      cover
-      className="nav__link"
-      direction="right"
-      duration={0.55}
-      to="/productos"
-      activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Productos"
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
-      }
-    >
-      Productos
-    </AniLink>
-    <AniLink
-      cover
-      className="nav__link"
-      direction="left"
-      duration={0.55}
-      bg="#00a5e7"
-      to="/mapas"
-      activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Vallas"
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
-      }
-    >
-      Vallas
-    </AniLink>
-    <AniLink
-      cover
-      className="nav__link"
-      direction="right"
-      duration={0.55}
-      to="/blog"
-      activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Blog"
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
-      }
-    >
-      Blog
-    </AniLink>
-    <AniLink
-      cover
-      className="nav__link"
-      direction="left"
-      duration={0.55}
-      to="/contacto"
-      activeStyle={linkActivo}
-      aria-label="Ir al vínculo de Contacto"
-      getProps={({ isPartiallyCurrent }) =>
-        isPartiallyCurrent ? { style: { ...linkStyles, ...linkActivo } } : null
-      }
-    >
-      Contacto
-    </AniLink>
+    {links.map(link => (
+      <AniLink {...link} >
+        {link.text}
+      </AniLink>
+    ))}
   </nav>
 )
 

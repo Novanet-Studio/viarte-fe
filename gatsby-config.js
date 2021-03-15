@@ -81,9 +81,27 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-TJVQLX1LRL", // Google Analytics / GA        
+        ],
+        gtagConfig: {
+          optimize_id: "GTM-TKSZH2L",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,        
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }
